@@ -23,39 +23,39 @@ export let size = undefined
 
 <style>
 .button {
-  --lui-size: var(--lui-size-md);
-  --lui-color: currentColor;
+  --suil-size: var(--suil-size-md);
+  --suil-color: currentColor;
   display: block;
   position: relative;
   appearance: none;
-  padding: var(--lui-size);
+  padding: var(--suil-size);
   border: 0;
   width: initial;
   font: inherit;
-  font-size: var(--lui-button-font-size, inherit);
-  line-height: var(--lui-button-line-height, inherit);
+  font-size: var(--suil-button-font-size, inherit);
+  line-height: var(--suil-button-line-height, inherit);
   text-align: left;
-  color: var(--lui-color);
+  color: var(--suil-color);
   background-color: currentColor;
-  min-width: var(--lui-button-width);
+  min-width: var(--suil-button-width);
   outline: 0;
 }
 
 .button__label {
   display: block;
-  color: var(--lui-color-white);
+  color: var(--suil-color-white);
 }
 
 .button--primary {
-  --lui-color: var(--lui-color-primary);
+  --suil-color: var(--suil-color-primary);
 }
 
 .button--secondary {
-  --lui-color: var(--lui-color-secondary);
+  --suil-color: var(--suil-color-secondary);
 }
 
 .button--danger {
-  --lui-color: var(--lui-color-danger);
+  --suil-color: var(--suil-color-danger);
 }
 
 .button--outlined {
@@ -80,11 +80,11 @@ export let size = undefined
 }
 
 .button--sm {
-  --lui-size: var(--lui-size-sm);
+  --suil-size: var(--suil-size-sm);
 }
 
 .button--lg {
-  --lui-size: var(--lui-size-lg);
+  --suil-size: var(--suil-size-lg);
 }
 
 .button:hover .button__label {
@@ -92,7 +92,7 @@ export let size = undefined
 }
 
 .button:focus {
-  outline: 2px solid var(--lui-color-outline);
+  outline: 2px solid var(--suil-color-outline);
   outline-offset: 1px;
 }
 </style>

@@ -5,7 +5,7 @@ import '../css/index.css'
 <div class="minvh row">
   <div style:width="16rem">
     <header class="p2">
-      <h1 class="h1 lh2 lsh">LUI</h1>
+      <h1 class="h1 lh2 lsh">SŪIL</h1>
     </header>
     <nav class="p15">
       <ul>
