@@ -1,0 +1,31 @@
+@import 'abrusco/base';
+@import 'abrusco/modules';
+
+@import 'tables.css';
+
+@import 'abrusco/utils';
+@import 'abrusco/debug';
+
+:root {
+  --lui-color-white: hsl(220 10% 100%);
+  --lui-color-light: hsl(220 10% 90%);
+  --lui-color-dark: hsl(220 10% 10%);
+  --lui-color-black: hsl(220 10% 0%);
+  --lui-color-primary: hsl(220 80% 50%);
+  --lui-color-secondary: hsl(220 10% 40%);
+  --lui-color-danger: hsl(355 80% 50%);
+  --lui-color-outline: var(--lui-color-dark);
+
+  --lui-size-xs: 4px;
+  --lui-size-sm: 8px;
+  --lui-size-md: 16px;
+  --lui-size-lg: 24px;
+  --lui-size-xl: 32px;
+
+  --lui-button-font-size: 14px;
+  --lui-button-line-height: 20px;
+  --lui-button-width: 128px;
+
+  --lui-input-font-size: 14px;
+  --lui-input-line-height: 20px;
+}

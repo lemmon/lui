@@ -1,0 +1,27 @@
+.table {
+  width: 100%;
+}
+
+.table th {
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.table td {
+  text-align: left;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.table tbody {
+  border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:first-child td {
+  padding-top: 0.5rem;
+}
+
+.table tbody tr:last-child td {
+  padding-bottom: 0.5rem;
+}
