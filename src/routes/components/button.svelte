@@ -18,10 +18,10 @@ import Button from '$lib/Button.svelte'
   <h2 class="mt2 h2 lh2 lsh">Variants</h2>
 
   <div class="mt2 row-wrap gap1">
-    <Button>Default</Button>
     <Button color="primary">Primary</Button>
     <Button color="secondary">Secondary</Button>
     <Button color="danger">Danger</Button>
+    <Button color="current">CurrentColor</Button>
     <Button kind="outlined">Outlined</Button>
     <Button kind="ghost">Ghost</Button>
   </div>
@@ -47,8 +47,8 @@ import Button from '$lib/Button.svelte'
       <tr>
         <td>color</td>
         <td>string</td>
-        <td>primary, secondary, danger</td>
-        <td>-</td>
+        <td>primary, secondary, danger, current</td>
+        <td>primary</td>
       </tr>
       <tr>
         <td>kind</td>

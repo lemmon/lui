@@ -1,6 +1,6 @@
 <script>
 export let type = undefined
-export let color = undefined
+export let color = 'primary'
 export let kind = undefined
 export let min = false
 export let size = undefined
