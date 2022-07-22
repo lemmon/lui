@@ -9,6 +9,7 @@
 :root {
   --suil-color-white: hsl(220 10% 100%);
   --suil-color-light: hsl(220 10% 90%);
+  --suil-color-gray: hsl(220 10% 50%);
   --suil-color-dark: hsl(220 10% 10%);
   --suil-color-black: hsl(220 10% 0%);
   --suil-color-primary: hsl(220 80% 50%);

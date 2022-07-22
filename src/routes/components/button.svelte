@@ -26,6 +26,12 @@ import Button from '$lib/Button.svelte'
     <Button kind="ghost">Ghost</Button>
   </div>
 
+  <div class="mt2 row-wrap gap1">
+    <Button disabled>Disabled</Button>
+    <Button kind="outlined" disabled>Disabled</Button>
+    <Button kind="ghost" disabled>Disabled</Button>
+  </div>
+
   <h2 class="mt2 h2 lh2 lsh">Props</h2>
 
   <table class="mt2 table lh4">
@@ -67,6 +73,12 @@ import Button from '$lib/Button.svelte'
         <td>string</td>
         <td>sm, lg</td>
         <td>-</td>
+      </tr>
+      <tr>
+        <td>disabled</td>
+        <td>boolean</td>
+        <td>true, false</td>
+        <td>false</td>
       </tr>
     </tbody>
   </table>

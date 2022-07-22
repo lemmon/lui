@@ -4,10 +4,12 @@ export let color = 'primary'
 export let kind = undefined
 export let min = false
 export let size = undefined
+export let disabled = false
 </script>
 
 <button
   {type}
+  {disabled}
   class="button"
   class:button--primary={color === 'primary'}
   class:button--secondary={color === 'secondary'}
@@ -87,12 +89,18 @@ export let size = undefined
   --suil-size: var(--suil-size-lg);
 }
 
-.button:hover .button__label {
+.button:hover:not(:disabled) .button__label {
   text-decoration: underline;
 }
 
-.button:focus {
+.button:focus:not(:disabled) {
   outline: 2px solid var(--suil-color-outline);
   outline-offset: 1px;
+}
+
+.button:disabled {
+  --suil-color: var(--suil-color-gray);
+  opacity: 50%;
+  cursor: not-allowed;
 }
 </style>
