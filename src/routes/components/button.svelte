@@ -30,6 +30,9 @@ import Button from '$lib/Button.svelte'
     <Button disabled>Disabled</Button>
     <Button kind="outlined" disabled>Disabled</Button>
     <Button kind="ghost" disabled>Disabled</Button>
+    <Button loading>Loading</Button>
+    <Button kind="outlined" loading>Loading</Button>
+    <Button kind="ghost" loading>Loading</Button>
   </div>
 
   <h2 class="mt2 h2 lh2 lsh">Props</h2>
@@ -76,6 +79,12 @@ import Button from '$lib/Button.svelte'
       </tr>
       <tr>
         <td>disabled</td>
+        <td>boolean</td>
+        <td>true, false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>loading</td>
         <td>boolean</td>
         <td>true, false</td>
         <td>false</td>

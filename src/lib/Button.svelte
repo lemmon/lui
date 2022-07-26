@@ -5,12 +5,14 @@ export let kind = undefined
 export let min = false
 export let size = undefined
 export let disabled = false
+export let loading = false
 </script>
 
 <button
   {type}
-  {disabled}
+  disabled={disabled || loading}
   class="button"
+  class:button--loading={loading}
   class:button--primary={color === 'primary'}
   class:button--secondary={color === 'secondary'}
   class:button--danger={color === 'danger'}
@@ -21,12 +23,14 @@ export let disabled = false
   class:button--lg={size === 'lg'}
 >
   <span class="button__label"><slot /></span>
+  <span class="button__loader" />
 </button>
 
 <style>
 .button {
   --suil-size: var(--suil-size-md);
   --suil-color: currentColor;
+  --suil-label: var(--suil-color-white);
   display: block;
   position: relative;
   appearance: none;
@@ -45,7 +49,7 @@ export let disabled = false
 
 .button__label {
   display: block;
-  color: var(--suil-color-white);
+  color: var(--suil-label);
 }
 
 .button--primary {
@@ -61,20 +65,14 @@ export let disabled = false
 }
 
 .button--outlined {
+  --suil-label: currentColor;
   background-color: transparent;
   box-shadow: inset 0 0 0 1px currentColor;
 }
 
-.button--outlined .button__label {
-  color: currentColor;
-}
-
 .button--ghost {
+  --suil-label: currentColor;
   background-color: transparent;
-}
-
-.button--ghost .button__label {
-  color: currentColor;
 }
 
 .button--minimal {
@@ -98,9 +96,40 @@ export let disabled = false
   outline-offset: 1px;
 }
 
-.button:disabled {
+.button:disabled:not(.button--loading) {
   --suil-color: var(--suil-color-gray);
   opacity: 50%;
   cursor: not-allowed;
+}
+
+.button--loading {
+  cursor: progress;
+}
+
+.button--loading .button__label {
+  visibility: hidden;
+}
+
+.button--loading .button__loader {
+  display: block;
+  position: absolute;
+  left: calc(50% - 20px / 2);
+  top: calc(50% - 20px / 2);
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--suil-label) var(--suil-label) transparent transparent;
+  border-radius: 100%;
+  animation: rotate 0.5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(-360deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
 }
 </style>
