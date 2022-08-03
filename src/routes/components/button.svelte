@@ -10,10 +10,12 @@ import Button from '$lib/Button.svelte'
   </div>
 
   <div class="mt2">
-    <Button>Hello World</Button>
+    <Button on:click={() => alert('Hello World')}>Hello World</Button>
   </div>
 
-  <pre class="mt2 code f2 rlh1 bg-gray bg-lum90 p1">&lt;Button&gt;Hello World&lt;/Button&gt;</pre>
+  <pre class="mt2 code f2 rlh1 bg-gray bg-lum90 p1"
+    ><code>{`<Button on:click={() => alert('Hello World')}>Hello World</Button>`}</code></pre
+  >
 
   <h2 class="mt2 h2 lh2 lsh">Variants</h2>
 

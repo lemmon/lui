@@ -21,6 +21,12 @@ export let loading = false
   class:button--minimal={min}
   class:button--sm={size === 'sm'}
   class:button--lg={size === 'lg'}
+  on:click
+  on:hover
+  on:focus
+  on:mouseover
+  on:mouseenter
+  on:mouseleave
 >
   <span class="button__label"><slot /></span>
   <span class="button__loader" />
