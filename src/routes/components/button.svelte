@@ -83,6 +83,25 @@ import Button from '$lib/Button.svelte'
     </Button>
   </div>
 
+  <div class="mt2 row-wrap gap1">
+    <Button href="https://www.lemmonjuice.com/" target="_blank" rel="noopener">
+      Link
+      <svg
+        style="display: block; margin-left: auto;"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1"
+      >
+        <line x1="10" y1="10" x2="17" y2="3" />
+        <polyline points="12,3 17,3 17,8" />
+        <polyline points="10,5 5,5 5,15 15,15 15,10" />
+      </svg>
+    </Button>
+  </div>
+
   <h2 class="mt2 h2 lh2 lsh">Props</h2>
 
   <table class="mt2 table lh4">
@@ -99,6 +118,24 @@ import Button from '$lib/Button.svelte'
         <td>type</td>
         <td>string</td>
         <td>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-type</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>href</td>
+        <td>string</td>
+        <td>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-href</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>target</td>
+        <td>string</td>
+        <td>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-target</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>rel</td>
+        <td>string</td>
+        <td>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-rel</td>
         <td>-</td>
       </tr>
       <tr>

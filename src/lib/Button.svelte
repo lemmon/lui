@@ -1,5 +1,8 @@
 <script>
 export let type = undefined
+export let href = undefined
+export let target = undefined
+export let rel = undefined
 export let color = 'primary'
 export let kind = undefined
 export let min = false
@@ -8,29 +11,56 @@ export let disabled = false
 export let loading = false
 </script>
 
-<button
-  {type}
-  disabled={disabled || loading}
-  class="button"
-  class:button--loading={loading}
-  class:button--primary={color === 'primary'}
-  class:button--secondary={color === 'secondary'}
-  class:button--danger={color === 'danger'}
-  class:button--outlined={kind === 'outlined'}
-  class:button--ghost={kind === 'ghost'}
-  class:button--minimal={min}
-  class:button--sm={size === 'sm'}
-  class:button--lg={size === 'lg'}
-  on:click
-  on:hover
-  on:focus
-  on:mouseover
-  on:mouseenter
-  on:mouseleave
->
-  <span class="button__label"><slot /></span>
-  <span class="button__loader" />
-</button>
+{#if href}
+  <a
+    {href}
+    {target}
+    {rel}
+    {disabled}
+    class="button"
+    class:button--primary={color === 'primary'}
+    class:button--secondary={color === 'secondary'}
+    class:button--danger={color === 'danger'}
+    class:button--outlined={kind === 'outlined'}
+    class:button--ghost={kind === 'ghost'}
+    class:button--minimal={min}
+    class:button--sm={size === 'sm'}
+    class:button--lg={size === 'lg'}
+    on:click
+    on:hover
+    on:focus
+    on:mouseover
+    on:mouseenter
+    on:mouseleave
+  >
+    <span class="button__label"><slot /></span>
+    <span class="button__loader" />
+  </a>
+{:else}
+  <button
+    {type}
+    disabled={disabled || loading}
+    class="button"
+    class:button--loading={loading}
+    class:button--primary={color === 'primary'}
+    class:button--secondary={color === 'secondary'}
+    class:button--danger={color === 'danger'}
+    class:button--outlined={kind === 'outlined'}
+    class:button--ghost={kind === 'ghost'}
+    class:button--minimal={min}
+    class:button--sm={size === 'sm'}
+    class:button--lg={size === 'lg'}
+    on:click
+    on:hover
+    on:focus
+    on:mouseover
+    on:mouseenter
+    on:mouseleave
+  >
+    <span class="button__label"><slot /></span>
+    <span class="button__loader" />
+  </button>
+{/if}
 
 <style>
 .button {
