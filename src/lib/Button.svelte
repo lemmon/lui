@@ -1,4 +1,7 @@
 <script>
+let className
+export { className as class }
+export let style = undefined
 export let type = undefined
 export let href = undefined
 export let target = undefined
@@ -17,7 +20,7 @@ export let loading = false
     {target}
     {rel}
     {disabled}
-    class="button"
+    class="button {className || ''}"
     class:button--primary={color === 'primary'}
     class:button--secondary={color === 'secondary'}
     class:button--danger={color === 'danger'}
@@ -26,6 +29,7 @@ export let loading = false
     class:button--minimal={min}
     class:button--sm={size === 'sm'}
     class:button--lg={size === 'lg'}
+    {style}
     on:click
     on:hover
     on:focus
@@ -40,7 +44,7 @@ export let loading = false
   <button
     {type}
     disabled={disabled || loading}
-    class="button"
+    class="button {className || ''}"
     class:button--loading={loading}
     class:button--primary={color === 'primary'}
     class:button--secondary={color === 'secondary'}
@@ -50,6 +54,7 @@ export let loading = false
     class:button--minimal={min}
     class:button--sm={size === 'sm'}
     class:button--lg={size === 'lg'}
+    {style}
     on:click
     on:hover
     on:focus
