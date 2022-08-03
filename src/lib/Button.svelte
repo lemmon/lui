@@ -54,7 +54,9 @@ export let loading = false
 }
 
 .button__label {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
   color: var(--suil-label);
 }
 
