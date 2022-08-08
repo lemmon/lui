@@ -1,5 +1,6 @@
 <script>
 import '../css/index.css'
+import '$lib/all.css'
 </script>
 
 <div class="minvh row">

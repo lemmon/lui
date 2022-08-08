@@ -1,0 +1,24 @@
+:root {
+  --suil-color-white: hsl(220 10% 100%);
+  --suil-color-light: hsl(220 10% 90%);
+  --suil-color-gray: hsl(220 10% 50%);
+  --suil-color-dark: hsl(220 10% 10%);
+  --suil-color-black: hsl(220 10% 0%);
+  --suil-color-primary: hsl(220 80% 50%);
+  --suil-color-secondary: hsl(220 10% 40%);
+  --suil-color-danger: hsl(355 80% 50%);
+  --suil-color-outline: var(--suil-color-dark);
+
+  --suil-size-xs: 0.25rem;
+  --suil-size-sm: 0.5rem;
+  --suil-size-md: 1rem;
+  --suil-size-lg: 1.5rem;
+  --suil-size-xl: 2rem;
+
+  --suil-button-font-size: 14px;
+  --suil-button-line-height: 20px;
+  --suil-button-width: 8rem;
+
+  --suil-input-font-size: 14px;
+  --suil-input-line-height: 20px;
+}
