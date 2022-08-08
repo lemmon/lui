@@ -1,5 +1,5 @@
 <script>
-let className
+let className = undefined
 export { className as class }
 export let style = undefined
 export let type = undefined
