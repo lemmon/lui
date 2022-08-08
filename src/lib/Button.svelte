@@ -78,9 +78,10 @@ export let loading = false
   padding: var(--suil-size);
   border: 0;
   width: initial;
-  font: inherit;
-  font-size: var(--suil-button-font-size, inherit);
-  line-height: var(--suil-button-line-height, inherit);
+  font: initial;
+  font-family: var(--suil-font-family);
+  font-size: var(--suil-button-font-size);
+  line-height: var(--suil-button-line-height);
   text-align: left;
   color: var(--suil-color);
   background-color: currentColor;

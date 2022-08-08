@@ -1,4 +1,6 @@
 :root {
+  --suil-font-family: system-ui;
+
   --suil-color-white: hsl(220 10% 100%);
   --suil-color-light: hsl(220 10% 90%);
   --suil-color-gray: hsl(220 10% 50%);
