@@ -1,20 +1,33 @@
 <script>
 import '../css/index.css'
 import '$lib/all.css'
+import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
 </script>
 
 <div class="minvh row">
   <div style:width="16rem">
     <header class="p2">
-      <h1 class="h1 lh2 lsh">SŪIL</h1>
+      <h1 class="h1 lh2 lsh"><a class="block" href="/">SŪIL</a></h1>
     </header>
-    <nav class="p15">
+    <nav class="p15 rlh1">
       <ul>
         <li><a class="block p05 ul:hover" href="/">Home</a></li>
       </ul>
       <h2 class="p05 gray">Components</h2>
       <ul>
         <li><a class="block p05 ul:hover" href="/components/button">Button</a></li>
+      </ul>
+    </nav>
+    <nav class="p15 rlh1">
+      <ul>
+        <li
+          ><a
+            class="row gap025 p05 ul:hover"
+            href="https://github.com/lemmon/suil"
+            target="_blank"
+            rel="external noopener">Github <ExternalLinkIcon /></a
+          ></li
+        >
       </ul>
     </nav>
   </div>
