@@ -1,5 +1,7 @@
 <script>
 import Button from '$lib/Button.svelte'
+import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
+import PlusIcon from '$lib/icons/PlusIcon.svelte'
 </script>
 
 <div class="span1 p2">
@@ -39,66 +41,17 @@ import Button from '$lib/Button.svelte'
 
   <div class="mt2 row-wrap gap1">
     <Button>
-      <svg
-        style="display: block;"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1"
-      >
-        <line x1="10" y1="4" x2="10" y2="16" />
-        <line x1="4" y1="10" x2="16" y2="10" />
-      </svg>
+      <PlusIcon />
       Icon
     </Button>
-    <Button>
-      <svg
-        style="display: block;"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1"
-      >
-        <line x1="10" y1="4" x2="10" y2="16" />
-        <line x1="4" y1="10" x2="16" y2="10" />
-      </svg>
-    </Button>
-    <Button min>
-      <svg
-        style="display: block;"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1"
-      >
-        <line x1="10" y1="4" x2="10" y2="16" />
-        <line x1="4" y1="10" x2="16" y2="10" />
-      </svg>
-    </Button>
+    <Button><PlusIcon /></Button>
+    <Button min><PlusIcon /></Button>
   </div>
 
   <div class="mt2 row-wrap gap1">
     <Button href="https://www.lemmonjuice.com/" target="_blank" rel="noopener">
       Link
-      <svg
-        style="display: block; margin-left: auto;"
-        width="20"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1"
-      >
-        <line x1="10" y1="10" x2="17" y2="3" />
-        <polyline points="12,3 17,3 17,8" />
-        <polyline points="10,5 5,5 5,15 15,15 15,10" />
-      </svg>
+      <ExternalLinkIcon style="margin-left: auto;" />
     </Button>
   </div>
 
