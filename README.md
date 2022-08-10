@@ -10,6 +10,24 @@ Svelte UI Library. <https://suil.vercel.app/>
 npm install suil --save-dev
 ```
 
+## Usage
+
+### CSS StyleSheet
+
+```js
+import 'suil/css/all.css'
+```
+
+### Importing components
+
+```svelte
+<script>
+import Button from 'suil/Button.svelte'
+</script>
+
+<Button>Hello World</Button>
+```
+
 ## License
 
 MIT
