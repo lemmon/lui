@@ -4,6 +4,10 @@ import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
 import PlusIcon from '$lib/icons/PlusIcon.svelte'
 </script>
 
+<svelte:head>
+  <title>Button Component &ndash; SŪIL</title>
+</svelte:head>
+
 <div class="span1 p2">
   <h1 class="h1 lh2 lsh">Button</h1>
 
