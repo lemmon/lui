@@ -77,6 +77,7 @@ export let loading = false
   appearance: none;
   padding: var(--suil-size);
   border: 0;
+  border-radius: 0;
   width: initial;
   font-family: var(--suil-font-family);
   font-size: var(--suil-button-font-size);
@@ -88,6 +89,7 @@ export let loading = false
   text-align: left;
   color: var(--suil-color);
   background-color: currentColor;
+  transition: initial;
   min-width: var(--suil-button-width);
   outline: 0;
 }
