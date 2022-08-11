@@ -23,6 +23,10 @@ import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
     </Button>
   </div>
 
+  <h2 class="mt2 h2 lh2 lsh">Install</h2>
+
+  <pre class="mt2 code f2 rlh1 bg-gray bg-lum90 p1"><code>{`npm install suil --save-dev`}</code></pre>
+
   <h2 class="mt2 h2 lh2 lsh">Usage</h2>
 
   <h3 class="mt2 h3 lh2 lsh">CSS StyleSheet</h3>
@@ -34,7 +38,7 @@ import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
   <pre class="mt2 code f2 rlh1 bg-gray bg-lum90 p1"
     ><code
       >{`<script>
-import Button from 'suil\/Button.svelte'
+import { Button } from 'suil'
 <\/script>
 
 <Button>Hello World<\/Button>`}</code

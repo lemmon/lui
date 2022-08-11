@@ -22,7 +22,7 @@ import 'suil/css/all.css'
 
 ```svelte
 <script>
-import Button from 'suil/Button.svelte'
+import { Button } from 'suil'
 </script>
 
 <Button>Hello World</Button>
