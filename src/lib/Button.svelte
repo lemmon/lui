@@ -76,8 +76,8 @@ export let loading = false
   display: block;
   position: relative;
   appearance: none;
-  padding: var(--suil-size);
-  border: 0;
+  padding: calc(var(--suil-size) - 1px);
+  border: 1px solid transparent;
   border-radius: 0;
   width: initial;
   font-family: var(--suil-font-family);
@@ -119,7 +119,7 @@ export let loading = false
 .button--outlined {
   --suil-label: currentColor;
   background-color: transparent;
-  box-shadow: inset 0 0 0 1px currentColor;
+  border-color: currentColor;
 }
 
 .button--ghost {
