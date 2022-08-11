@@ -12,9 +12,13 @@ import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
 
   <p class="mt2 lh4">Components library inspired by Carbon Design System.</p>
 
-  <div class="mt2 row">
+  <div class="mt2 row-wrap gap1">
     <Button kind="outlined" href="https://github.com/lemmon/suil" target="_blank" rel="external noopener">
-      Github
+      GitHub
+      <ExternalLinkIcon style="margin-left: auto;" />
+    </Button>
+    <Button kind="outlined" href="https://www.npmjs.com/package/suil" target="_blank" rel="external noopener">
+      NPM
       <ExternalLinkIcon style="margin-left: auto;" />
     </Button>
   </div>

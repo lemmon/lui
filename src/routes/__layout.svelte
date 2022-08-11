@@ -25,7 +25,15 @@ import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
             class="row gap025 p05 ul:hover"
             href="https://github.com/lemmon/suil"
             target="_blank"
-            rel="external noopener">Github <ExternalLinkIcon /></a
+            rel="external noopener">GitHub <ExternalLinkIcon /></a
+          ></li
+        >
+        <li
+          ><a
+            class="row gap025 p05 ul:hover"
+            href="https://www.npmjs.com/package/suil"
+            target="_blank"
+            rel="external noopener">NPM <ExternalLinkIcon /></a
           ></li
         >
       </ul>
