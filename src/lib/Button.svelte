@@ -38,7 +38,6 @@ export let loading = false
     on:mouseleave
   >
     <span class="button__label"><slot /></span>
-    <span class="button__loader" />
   </a>
 {:else}
   <button
@@ -63,7 +62,9 @@ export let loading = false
     on:mouseleave
   >
     <span class="button__label"><slot /></span>
-    <span class="button__loader" />
+    {#if loading}
+      <span class="button__loader" />
+    {/if}
   </button>
 {/if}
 
@@ -91,12 +92,14 @@ export let loading = false
   background-color: currentColor;
   transition: initial;
   min-width: var(--suil-button-width);
+  cursor: pointer;
   outline: 0;
 }
 
 .button__label {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 0.25rem;
   color: var(--suil-label);
 }
