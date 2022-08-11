@@ -88,8 +88,7 @@ export let loading = false
   font-weight: normal;
   line-height: var(--suil-button-line-height);
   text-align: left;
-  color: var(--suil-color);
-  background-color: currentColor;
+  background-color: var(--suil-color);
   transition: initial;
   min-width: var(--suil-button-width);
   cursor: pointer;
@@ -150,8 +149,13 @@ export let loading = false
 
 .button:disabled:not(.button--loading) {
   --suil-color: var(--suil-color-gray);
+  color: var(--suil-color);
   opacity: 50%;
   cursor: not-allowed;
+}
+
+.button:disabled:not(.button--outlined, .button--ghost, .button--loading) .button__label {
+  opacity: 50%;
 }
 
 .button--loading {
