@@ -116,13 +116,13 @@ export let loading = false
 }
 
 .button--outlined {
-  --suil-label: currentColor;
+  --suil-label: var(--suil-color);
   background-color: transparent;
-  border-color: currentColor;
+  border-color: var(--suil-color);
 }
 
 .button--ghost {
-  --suil-label: currentColor;
+  --suil-label: var(--suil-color);
   background-color: transparent;
 }
 
