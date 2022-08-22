@@ -1,4 +1,5 @@
 <script>
+import Code from '$lib/Code.svelte'
 import Button from '$lib/Button.svelte'
 import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
 import PlusIcon from '$lib/icons/PlusIcon.svelte'
@@ -19,9 +20,9 @@ import PlusIcon from '$lib/icons/PlusIcon.svelte'
     <Button on:click={() => alert('Hello World')}>Hello World</Button>
   </div>
 
-  <pre class="mt2 code f2 rlh1 bg-gray bg-lum90 p1"
-    ><code>{`<Button on:click={() => alert('Hello World')}>Hello World</Button>`}</code></pre
-  >
+  <div class="mt2">
+    <Code code={`<Button on:click={() => alert('Hello World')}>Hello World</Button>`} />
+  </div>
 
   <h2 class="mt2 h2 lh2 lsh">Variants</h2>
 
