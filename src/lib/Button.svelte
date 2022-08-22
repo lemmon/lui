@@ -1,16 +1,28 @@
 <script>
+/** @type {string} */
 let className = undefined
 export { className as class }
+/** @type {string} */
 export let style = undefined
+/** @type {string} */
 export let type = undefined
+/** @type {string} */
 export let href = undefined
+/** @type {string} */
 export let target = undefined
+/** @type {string} */
 export let rel = undefined
+/** @type {string} */
 export let color = 'primary'
+/** @type {string} */
 export let kind = undefined
+/** @type {boolean} */
 export let min = false
+/** @type {string} */
 export let size = undefined
+/** @type {boolean} */
 export let disabled = false
+/** @type {boolean} */
 export let loading = false
 </script>
 

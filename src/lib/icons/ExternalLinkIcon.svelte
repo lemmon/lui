@@ -1,6 +1,8 @@
 <script>
+/** @type {string} */
 let className = undefined
 export { className as class }
+/** @type {string} */
 export let style = undefined
 </script>
 

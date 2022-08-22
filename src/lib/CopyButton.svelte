@@ -5,12 +5,18 @@ import CheckIcon from '$lib/icons/CheckIcon.svelte'
 
 export let text
 
+/** @type {string} */
 let className = undefined
 export { className as class }
+/** @type {string} */
 export let style = undefined
+/** @type {string} */
 export let color = undefined
+/** @type {string} */
 export let kind = undefined
+/** @type {string} */
 export let size = undefined
+/** @type {boolean} */
 export let disabled = false
 
 let copied = null
