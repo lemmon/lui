@@ -16,6 +16,7 @@ import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
       <h2 class="p05 gray">Components</h2>
       <ul>
         <li><a class="block p05 ul:hover" href="/components/button">Button</a></li>
+        <li><a class="block p05 ul:hover" href="/components/copybutton">CopyButton</a></li>
       </ul>
     </nav>
     <nav class="p15 rlh1">
