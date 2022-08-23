@@ -155,8 +155,13 @@ export let loading = false
 }
 
 .button:focus:not(:disabled) {
-  outline: 2px solid var(--suil-color-outline);
-  outline-offset: 1px;
+  outline: 1px solid var(--suil-color-primary);
+  border-color: var(--suil-color-primary);
+  box-shadow: inset 0 0 0 1px var(--suil-bg);
+}
+
+.button:focus:not(:disabled, .button--outlined, .button--ghost) {
+  box-shadow: inset 0 0 0 1px var(--suil-bg);
 }
 
 .button:disabled:not(.button--loading) {
