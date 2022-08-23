@@ -35,7 +35,7 @@ import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
   <h3 class="mt2 h3 lh2 lsh">CSS StyleSheet</h3>
 
   <div class="mt2">
-    <Code code={`import 'suil/css/all.css'`} />
+    <Code code={`import 'suil/styles.css'`} />
   </div>
 
   <h3 class="mt2 h3 lh2 lsh">Importing components</h3>

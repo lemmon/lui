@@ -15,7 +15,7 @@ npm install suil --save-dev
 ### CSS StyleSheet
 
 ```js
-import 'suil/css/all.css'
+import 'suil/styles.css'
 ```
 
 ### Importing components

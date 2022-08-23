@@ -1,6 +1,6 @@
 <script>
 import '../css/index.css'
-import '$lib/css/all.css'
+import '$lib/styles.css'
 import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
 </script>
 
