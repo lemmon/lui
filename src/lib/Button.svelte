@@ -93,12 +93,12 @@ export let loading = false
   border-radius: 0;
   width: initial;
   font-family: var(--suil-font-family);
-  font-size: var(--suil-button-font-size);
+  font-size: var(--suil-font-size);
   font-stretch: normal;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
-  line-height: var(--suil-button-line-height);
+  line-height: var(--suil-line-height);
   text-align: left;
   background-color: var(--suil-color);
   transition: initial;
