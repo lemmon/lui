@@ -24,4 +24,5 @@
 :root,
 .suil-white {
   --suil-bg: var(--suil-color-white);
+  --suil-color-contrast: var(--suil-color-white);
 }

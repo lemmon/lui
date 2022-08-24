@@ -84,7 +84,7 @@ export let loading = false
 .button {
   --suil-size: var(--suil-size-md);
   --suil-color: currentColor;
-  --suil-label: var(--suil-color-white);
+  --suil-label: var(--suil-color-contrast);
   display: block;
   position: relative;
   appearance: none;
@@ -157,7 +157,6 @@ export let loading = false
 .button:focus:not(:disabled) {
   outline: 1px solid var(--suil-color-primary);
   border-color: var(--suil-color-primary);
-  box-shadow: inset 0 0 0 1px var(--suil-bg);
 }
 
 .button:focus:not(:disabled, .button--outlined, .button--ghost) {
