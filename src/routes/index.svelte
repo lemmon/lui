@@ -49,4 +49,8 @@ import { Button } from 'suil'
 <Button>Hello World<\/Button>`}
     />
   </div>
+
+  <h3 class="mt2 h3 lh2 lsh">License</h3>
+
+  <p class="mt2 lh4">MIT</p>
 </div>
