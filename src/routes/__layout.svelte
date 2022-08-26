@@ -1,8 +1,15 @@
 <script>
 import '../css/index.css'
 import '$lib/styles.css'
+import { dev } from '$app/env'
 import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
 </script>
+
+<svelte:head>
+  {#if !dev}
+    <script defer data-domain="suil.vercel.app" src="https://plausible.io/js/plausible.js"></script>
+  {/if}
+</svelte:head>
 
 <div class="minvh row">
   <div style:width="16rem">
