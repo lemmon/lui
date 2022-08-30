@@ -1,0 +1,47 @@
+/* purgecss start ignore */
+
+.copy {
+  --space-primary: 2.5rem;
+  --space-secondary: 2.5rem;
+}
+
+.copy > div,
+.copy > table {
+  margin-top: var(--space-primary);
+  margin-bottom: var(--space-primary);
+}
+
+.copy > h1 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  font-size: 2em;
+  line-height: var(--lh1);
+  letter-spacing: var(--lsh);
+}
+
+.copy > h2 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  font-size: 1.5em;
+  line-height: var(--lh1);
+  letter-spacing: var(--lsh);
+}
+
+.copy > h3 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: 1.25em;
+  line-height: var(--lh1);
+  letter-spacing: var(--lsh);
+}
+
+.copy a {
+  text-decoration: underline;
+  text-decoration-style: var(--text-decoration-style, solid);
+  text-decoration-thickness: var(--text-decoration-thickness);
+  text-underline-offset: 2px;
+}
+
+.copy em {
+  font-style: italic;
+}

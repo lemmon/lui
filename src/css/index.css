@@ -1,7 +1,19 @@
 @import 'abrusco/base';
 @import 'abrusco/modules';
 
+@import 'copy.css';
 @import 'tables.css';
 
 @import 'abrusco/utils';
 @import 'abrusco/debug';
+
+:root {
+  --default-font-family: 'Inter', sans-serif;
+  --text-decoration-thickness: 1px;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    --default-font-family: 'Inter var', sans-serif;
+  }
+}

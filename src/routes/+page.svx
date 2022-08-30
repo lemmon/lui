@@ -1,0 +1,52 @@
+---
+title: Svelte UI Library
+---
+
+<script>
+import Code from '$lib/Code.svelte'
+import Button from '$lib/Button.svelte'
+import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
+</script>
+
+# Svelte UI Library
+
+Components library inspired by Carbon Design System.
+
+<div class="row-wrap gap1">
+  <Button kind="outlined" href="https://github.com/lemmon/suil" target="_blank" rel="external noopener">
+    GitHub
+    <ExternalLinkIcon style="margin-left: auto;" />
+  </Button>
+  <Button kind="outlined" href="https://www.npmjs.com/package/suil" target="_blank" rel="external noopener">
+    NPM
+    <ExternalLinkIcon style="margin-left: auto;" />
+  </Button>
+</div>
+
+## Install
+
+```sh
+npm install suil --save-dev
+```
+
+## Usage
+
+### CSS StyleSheet
+
+```js
+import 'suil/styles.css'
+```
+
+### Importing components
+
+```svelte
+<script>
+import { Button } from 'suil'
+<\/script>
+
+<Button>Hello World<\/Button>
+```
+
+## License
+
+MIT

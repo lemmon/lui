@@ -1,0 +1,39 @@
+---
+title: Dump Component
+---
+
+<script>
+import Code from '$lib/Code.svelte'
+import Dump from '$lib/Dump.svelte'
+</script>
+
+# Dump
+
+Dump component.
+
+<Dump data={{ a: 1, b: true }} />
+
+```svelte
+<Dump data={{ a: 1, b: true }} />
+```
+
+## Props
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Prop.</th>
+      <th>Type</th>
+      <th>Options</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>data</td>
+      <td>any</td>
+      <td>json serializable data</td>
+      <td>required</td>
+    </tr>
+  </tbody>
+</table>
