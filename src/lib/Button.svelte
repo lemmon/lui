@@ -99,6 +99,7 @@ export let loading = false
   font-variant: normal;
   font-weight: normal;
   line-height: var(--suil-line-height);
+  text-decoration: none;
   text-align: left;
   background-color: var(--suil-color);
   transition: initial;
