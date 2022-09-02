@@ -35,8 +35,6 @@ Button component.
   <Button kind="outlined" disabled>Disabled</Button>
   <Button kind="ghost" disabled>Disabled</Button>
   <Button loading>Loading</Button>
-  <Button kind="outlined" loading>Loading</Button>
-  <Button kind="ghost" loading>Loading</Button>
 
   <Button>
     <PlusIcon />

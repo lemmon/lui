@@ -184,13 +184,22 @@ export let loading = false
 }
 
 .button--loading .button__loader {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  left: calc(50% - 20px / 2);
-  top: calc(50% - 20px / 2);
-  width: 20px;
-  height: 20px;
-  border-width: 2px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.button--loading .button__loader::before {
+  content: '';
+  display: block;
+  width: var(--suil-line-height);
+  height: var(--suil-line-height);
+  border-width: 1px;
   border-style: solid;
   border-color: var(--suil-label) var(--suil-label) transparent transparent;
   border-radius: 100%;
