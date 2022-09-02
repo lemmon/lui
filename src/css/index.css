@@ -17,3 +17,7 @@
     --default-font-family: 'Inter var', sans-serif;
   }
 }
+
+a:focus {
+  outline: 2px solid var(--suil-color-primary, currentColor);
+}
