@@ -11,13 +11,13 @@ export let style = undefined
 export let code
 </script>
 
-<div class="container {className || ''}" {style}>
-  <pre class="code"><code>{code}</code></pre>
-  <div class="button"><CopyButton text={code} size="sm" color="secondary" kind="ghost" /></div>
+<div class="suil-container {className || ''}" {style}>
+  <pre class="suil-code"><code>{code}</code></pre>
+  <div class="suil-button"><CopyButton text={code} size="sm" color="secondary" kind="ghost" /></div>
 </div>
 
 <style>
-.container {
+.suil-container {
   font-family: JetBrains Mono, JetBrainsMono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 14px;
   line-height: 20px;
@@ -26,13 +26,13 @@ export let code
   flex-direction: row;
 }
 
-.code {
+.suil-code {
   flex: 1;
   padding: var(--suil-size-md);
   font: inherit;
 }
 
-.button {
+.suil-button {
   padding: calc(var(--suil-size-md) - var(--suil-size-sm));
 }
 </style>

@@ -32,15 +32,15 @@ export let loading = false
     {target}
     {rel}
     {disabled}
-    class="button {className || ''}"
-    class:button--primary={color === 'primary'}
-    class:button--secondary={color === 'secondary'}
-    class:button--danger={color === 'danger'}
-    class:button--outlined={kind === 'outlined'}
-    class:button--ghost={kind === 'ghost'}
-    class:button--minimal={min}
-    class:button--sm={size === 'sm'}
-    class:button--lg={size === 'lg'}
+    class="suil-button {className || ''}"
+    class:suil-button--primary={color === 'primary'}
+    class:suil-button--secondary={color === 'secondary'}
+    class:suil-button--danger={color === 'danger'}
+    class:suil-button--outlined={kind === 'outlined'}
+    class:suil-button--ghost={kind === 'ghost'}
+    class:suil-button--minimal={min}
+    class:suil-button--sm={size === 'sm'}
+    class:suil-button--lg={size === 'lg'}
     {style}
     on:click
     on:hover
@@ -49,22 +49,22 @@ export let loading = false
     on:mouseenter
     on:mouseleave
   >
-    <span class="button__label"><slot /></span>
+    <span class="suil-button__label"><slot /></span>
   </a>
 {:else}
   <button
     {type}
     disabled={disabled || loading}
-    class="button {className || ''}"
-    class:button--loading={loading}
-    class:button--primary={color === 'primary'}
-    class:button--secondary={color === 'secondary'}
-    class:button--danger={color === 'danger'}
-    class:button--outlined={kind === 'outlined'}
-    class:button--ghost={kind === 'ghost'}
-    class:button--minimal={min}
-    class:button--sm={size === 'sm'}
-    class:button--lg={size === 'lg'}
+    class="suil-button {className || ''}"
+    class:suil-button--loading={loading}
+    class:suil-button--primary={color === 'primary'}
+    class:suil-button--secondary={color === 'secondary'}
+    class:suil-button--danger={color === 'danger'}
+    class:suil-button--outlined={kind === 'outlined'}
+    class:suil-button--ghost={kind === 'ghost'}
+    class:suil-button--minimal={min}
+    class:suil-button--sm={size === 'sm'}
+    class:suil-button--lg={size === 'lg'}
     {style}
     on:click
     on:hover
@@ -73,15 +73,15 @@ export let loading = false
     on:mouseenter
     on:mouseleave
   >
-    <span class="button__label"><slot /></span>
+    <span class="suil-button__label"><slot /></span>
     {#if loading}
-      <span class="button__loader" />
+      <span class="suil-button__loader" />
     {/if}
   </button>
 {/if}
 
 <style>
-.button {
+.suil-button {
   --suil-size: var(--suil-size-md);
   --suil-color: currentColor;
   --suil-label: var(--suil-color-contrast);
@@ -108,7 +108,7 @@ export let loading = false
   outline: 0;
 }
 
-.button__label {
+.suil-button__label {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -116,74 +116,74 @@ export let loading = false
   color: var(--suil-label);
 }
 
-.button--primary {
+.suil-button--primary {
   --suil-color: var(--suil-color-primary);
 }
 
-.button--secondary {
+.suil-button--secondary {
   --suil-color: var(--suil-color-secondary);
 }
 
-.button--danger {
+.suil-button--danger {
   --suil-color: var(--suil-color-danger);
 }
 
-.button--outlined {
+.suil-button--outlined {
   --suil-label: var(--suil-color);
   background-color: transparent;
   border-color: var(--suil-color);
 }
 
-.button--ghost {
+.suil-button--ghost {
   --suil-label: var(--suil-color);
   background-color: transparent;
 }
 
-.button--minimal {
+.suil-button--minimal {
   min-width: auto;
 }
 
-.button--sm {
+.suil-button--sm {
   --suil-size: var(--suil-size-sm);
 }
 
-.button--lg {
+.suil-button--lg {
   --suil-size: var(--suil-size-lg);
 }
 
-.button:hover:not(:disabled) .button__label {
+.suil-button:hover:not(:disabled) .suil-button__label {
   text-decoration: underline;
 }
 
-.button:focus:not(:disabled) {
+.suil-button:focus:not(:disabled) {
   outline: 1px solid var(--suil-color-primary);
   border-color: var(--suil-color-primary);
 }
 
-.button:focus:not(:disabled, .button--outlined, .button--ghost) {
+.suil-button:focus:not(:disabled, .suil-button--outlined, .suil-button--ghost) {
   box-shadow: inset 0 0 0 1px var(--suil-bg);
 }
 
-.button:disabled:not(.button--loading) {
+.suil-button:disabled:not(.suil-button--loading) {
   --suil-color: var(--suil-color-gray);
   color: var(--suil-color);
   opacity: 50%;
   cursor: not-allowed;
 }
 
-.button:disabled:not(.button--outlined, .button--ghost, .button--loading) .button__label {
+.suil-button:disabled:not(.suil-button--outlined, .suil-button--ghost, .suil-button--loading) .suil-button__label {
   opacity: 50%;
 }
 
-.button--loading {
+.suil-button--loading {
   cursor: progress;
 }
 
-.button--loading .button__label {
+.suil-button--loading .suil-button__label {
   visibility: hidden;
 }
 
-.button--loading .button__loader {
+.suil-button--loading .suil-button__loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -194,7 +194,7 @@ export let loading = false
   bottom: 0;
 }
 
-.button--loading .button__loader::before {
+.suil-button--loading .suil-button__loader::before {
   content: '';
   display: block;
   width: var(--suil-line-height);

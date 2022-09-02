@@ -1,6 +1,7 @@
 # 0.4.0 (2022-09-XX)
 
   * Button loader tweak
+  * prefix all classes with `suil-`
 
 # 0.3.0 (2022-08-24)
 
