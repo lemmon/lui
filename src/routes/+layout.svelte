@@ -2,6 +2,7 @@
 import '../css/index.css'
 import '$lib/styles.css'
 import { dev } from '$app/env'
+import PageLoader from './PageLoader.svelte'
 import Header from './Header.svelte'
 import Sidebar from './Sidebar.svelte'
 </script>
@@ -12,6 +13,8 @@ import Sidebar from './Sidebar.svelte'
     <script defer data-domain="suil.vercel.app" src="https://plausible.io/js/plausible.js"></script>
   {/if}
 </svelte:head>
+
+<PageLoader />
 
 <div class="minvh col">
   <Header />
