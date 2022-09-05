@@ -24,5 +24,22 @@
     "build": "vite build",
     "package": "svelte-package",
     "preview": "vite preview"
-  }
+  },
+  "homepage": "https://suil.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemmon/suil.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lemmon/suil/issues"
+  },
+  "keywords": [
+    "ui",
+    "ux",
+    "components",
+    "component library",
+    "svelte",
+    "sveltekit",
+    "design"
+  ]
 }
