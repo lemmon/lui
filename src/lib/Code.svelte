@@ -18,6 +18,7 @@ export let code
 
 <style>
 .suil-container {
+  box-sizing: border-box;
   font-family: JetBrains Mono, JetBrainsMono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
   font-size: 14px;
   line-height: 20px;
@@ -27,12 +28,14 @@ export let code
 }
 
 .suil-code {
+  box-sizing: border-box;
   flex: 1;
   padding: var(--suil-size-md);
   font: inherit;
 }
 
 .suil-button {
+  box-sizing: border-box;
   padding: calc(var(--suil-size-md) - var(--suil-size-sm));
 }
 </style>

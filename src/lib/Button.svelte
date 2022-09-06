@@ -85,13 +85,18 @@ export let loading = false
   --suil-size: var(--suil-size-md);
   --suil-color: currentColor;
   --suil-label: var(--suil-color-contrast);
+  box-sizing: border-box;
   display: block;
   position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
+  margin: 0;
   padding: calc(var(--suil-size) - 1px);
   border: 1px solid transparent;
   border-radius: 0;
   width: initial;
+  height: calc(20px + 2 * var(--suil-size)); /* Safari fix */
   font-family: var(--suil-font-family);
   font-size: var(--suil-font-size);
   font-stretch: normal;
@@ -109,6 +114,7 @@ export let loading = false
 }
 
 .suil-button__label {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -184,6 +190,7 @@ export let loading = false
 }
 
 .suil-button--loading .suil-button__loader {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -196,6 +203,7 @@ export let loading = false
 
 .suil-button--loading .suil-button__loader::before {
   content: '';
+  box-sizing: border-box;
   display: block;
   width: var(--suil-line-height);
   height: var(--suil-line-height);
