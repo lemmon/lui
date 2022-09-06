@@ -1,0 +1,34 @@
+---
+title: TextInput Component
+---
+
+<script>
+import Code from '$lib/Code.svelte'
+import Dump from '$lib/Dump.svelte'
+import TextInput from '$lib/TextInput.svelte'
+import Button from '$lib/Button.svelte'
+
+let value = 'hello world'
+let something = null
+</script>
+
+# TextInput
+
+TextInput component.
+
+<figure>
+  <div class="grid2 gap1">
+    <TextInput name="value" label="First Name" bind:value />
+    <TextInput name="something" label="Something Else" placeholder="Placeholder" bind:value={something} />
+  </div>
+  <div class="mt1 row gap05">
+    <Button>Update</Button>
+    <Button color="secondary">Cancel</Button>
+  </div>
+</figure>
+
+<Dump data={{ value, something }} />
+
+```svelte
+<TextInput name="value" label="First Name" bind:value />
+```

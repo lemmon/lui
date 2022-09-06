@@ -30,6 +30,10 @@ const nav = [
         title: 'Dump',
         href: '/components/dump',
       },
+      {
+        title: 'TextInput',
+        href: '/components/textinput',
+      },
     ],
   },
 ]
