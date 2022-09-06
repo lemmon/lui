@@ -60,10 +60,12 @@ function handleChange({ target }) {
 
 <style>
 .suil-field {
+  box-sizing: border-box;
   display: block;
 }
 
 .suil-label {
+  box-sizing: border-box;
   display: block;
   font-family: var(--suil-font-family);
   font-size: var(--suil-font-size);
@@ -80,6 +82,7 @@ function handleChange({ target }) {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
+  box-sizing: border-box;
   display: block;
   background-color: hsl(220 10% 95%);
   border-style: solid;
