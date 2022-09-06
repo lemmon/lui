@@ -1,5 +1,6 @@
 <script>
 import { uid } from 'uid'
+import options from './options'
 
 /** @type {string} */
 export let label = undefined
@@ -22,9 +23,9 @@ export let readonly = false
 /** @type {boolean} */
 export let disabled = false
 /** @type {boolean} */
-export let nullable = true
+export let nullable = options.nullable
 /** @type {boolean} */
-export let trim = true
+export let trim = options.trim
 
 const id = 'suil-' + uid()
 
