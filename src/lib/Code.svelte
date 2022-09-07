@@ -5,31 +5,31 @@ import CopyButton from '$lib/CopyButton.svelte'
 export let code
 </script>
 
-<div class="suil-container {$$props.class || ''}" style={$$props.style}>
-  <pre class="suil-code"><code>{code}</code></pre>
-  <div class="suil-button"><CopyButton text={code} size="sm" color="secondary" kind="ghost" /></div>
+<div class="suil-code {$$props.class || ''}" style={$$props.style}>
+  <pre><code>{code}</code></pre>
+  <div><CopyButton text={code} size="sm" color="secondary" kind="ghost" /></div>
 </div>
 
 <style>
-.suil-container {
+.suil-code {
   box-sizing: border-box;
-  font-family: JetBrains Mono, JetBrainsMono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-  font-size: 14px;
-  line-height: 20px;
+  font-family: var(--suil-code-font-family);
+  font-size: var(--suil-code-font-size);
+  line-height: var(--suil-code-line-height);
   background-color: hsl(220 10% 95%);
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 
-.suil-code {
+.suil-code > pre {
   box-sizing: border-box;
   flex: 1;
   padding: var(--suil-size-md);
   font: inherit;
 }
 
-.suil-button {
-  box-sizing: border-box;
+.suil-code > div {
   padding: calc(var(--suil-size-md) - var(--suil-size-sm));
 }
 </style>

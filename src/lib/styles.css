@@ -3,6 +3,10 @@
   --suil-font-size: 14px;
   --suil-line-height: 20px;
 
+  --suil-code-font-family: JetBrains Mono, JetBrainsMono, Menlo, Consolas, Monaco, Lucida Console, monospace;
+  --suil-code-font-size: var(--suil-font-size);
+  --suil-code-line-height: var(--suil-line-height);
+
   --suil-color-white: hsl(220 10% 100%);
   --suil-color-light: hsl(220 10% 90%);
   --suil-color-gray: hsl(220 10% 50%);
