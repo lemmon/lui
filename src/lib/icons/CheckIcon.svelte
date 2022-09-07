@@ -1,14 +1,6 @@
-<script>
-/** @type {string} */
-let className = undefined
-export { className as class }
-/** @type {string} */
-export let style = undefined
-</script>
-
 <svg
-  class={className}
-  {style}
+  class={$$props.class}
+  style={$$props.style}
   style:display="block"
   width="20"
   height="20"

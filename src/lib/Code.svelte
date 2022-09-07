@@ -2,16 +2,10 @@
 import CopyButton from '$lib/CopyButton.svelte'
 
 /** @type {string} */
-let className = undefined
-/** @type {string} */
-export { className as class }
-/** @type {string} */
-export let style = undefined
-/** @type {string} */
 export let code
 </script>
 
-<div class="suil-container {className || ''}" {style}>
+<div class="suil-container {$$props.class || ''}" style={$$props.style}>
   <pre class="suil-code"><code>{code}</code></pre>
   <div class="suil-button"><CopyButton text={code} size="sm" color="secondary" kind="ghost" /></div>
 </div>

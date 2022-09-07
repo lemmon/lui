@@ -1,10 +1,5 @@
 <script>
 /** @type {string} */
-let className = undefined
-export { className as class }
-/** @type {string} */
-export let style = undefined
-/** @type {string} */
 export let type = undefined
 /** @type {string} */
 export let href = undefined
@@ -32,7 +27,7 @@ export let loading = false
     {target}
     {rel}
     {disabled}
-    class="suil-button {className || ''}"
+    class="suil-button {$$props.class || ''}"
     class:suil-button--primary={color === 'primary'}
     class:suil-button--secondary={color === 'secondary'}
     class:suil-button--danger={color === 'danger'}
@@ -41,7 +36,7 @@ export let loading = false
     class:suil-button--minimal={min}
     class:suil-button--sm={size === 'sm'}
     class:suil-button--lg={size === 'lg'}
-    {style}
+    style={$$props.style}
     on:click
     on:hover
     on:focus
@@ -55,7 +50,7 @@ export let loading = false
   <button
     {type}
     disabled={disabled || loading}
-    class="suil-button {className || ''}"
+    class="suil-button {$$props.class || ''}"
     class:suil-button--loading={loading}
     class:suil-button--primary={color === 'primary'}
     class:suil-button--secondary={color === 'secondary'}
@@ -65,7 +60,7 @@ export let loading = false
     class:suil-button--minimal={min}
     class:suil-button--sm={size === 'sm'}
     class:suil-button--lg={size === 'lg'}
-    {style}
+    style={$$props.style}
     on:click
     on:hover
     on:focus
