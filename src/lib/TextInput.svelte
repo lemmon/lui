@@ -9,7 +9,7 @@ export let type = 'text'
 /** @type {string} */
 export let name
 /** @type {string|number} */
-export let value
+export let value = undefined
 /** @type {string} */
 export let placeholder = undefined
 /** @type {number} */
@@ -38,7 +38,7 @@ function handleChange({ target }) {
 }
 </script>
 
-<div class="suil-field">
+<div class="suil-field {$$props.class || ''}">
   {#if label}
     <label for={id} class="suil-label">{label}</label>
   {/if}
