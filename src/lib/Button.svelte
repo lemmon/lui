@@ -34,8 +34,11 @@ export let loading = false
     class:suil-button--outlined={kind === 'outlined'}
     class:suil-button--ghost={kind === 'ghost'}
     class:suil-button--minimal={min}
-    class:suil-button--sm={size === 'sm'}
-    class:suil-button--lg={size === 'lg'}
+    class:suil-xs={size === 'xs'}
+    class:suil-sm={size === 'sm'}
+    class:suil-md={size === 'md'}
+    class:suil-lg={size === 'lg'}
+    class:suil-xl={size === 'xl'}
     style={$$props.style}
     on:click
     on:hover
@@ -58,8 +61,11 @@ export let loading = false
     class:suil-button--outlined={kind === 'outlined'}
     class:suil-button--ghost={kind === 'ghost'}
     class:suil-button--minimal={min}
-    class:suil-button--sm={size === 'sm'}
-    class:suil-button--lg={size === 'lg'}
+    class:suil-xs={size === 'xs'}
+    class:suil-sm={size === 'sm'}
+    class:suil-md={size === 'md'}
+    class:suil-lg={size === 'lg'}
+    class:suil-xl={size === 'xl'}
     style={$$props.style}
     on:click
     on:hover
@@ -77,7 +83,6 @@ export let loading = false
 
 <style>
 .suil-button {
-  --suil-size: var(--suil-size-md);
   --suil-color: currentColor;
   --suil-label: var(--suil-color-contrast);
   box-sizing: border-box;
@@ -142,14 +147,6 @@ export let loading = false
 
 .suil-button--minimal {
   min-width: auto;
-}
-
-.suil-button--sm {
-  --suil-size: var(--suil-size-sm);
-}
-
-.suil-button--lg {
-  --suil-size: var(--suil-size-lg);
 }
 
 .suil-button:hover:not(:disabled) .suil-button__label {

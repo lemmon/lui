@@ -3,9 +3,19 @@ import CopyButton from '$lib/CopyButton.svelte'
 
 /** @type {string} */
 export let code
+/** @type {string} */
+export let size = undefined
 </script>
 
-<div class="suil-code {$$props.class || ''}" style={$$props.style}>
+<div
+  class="suil-code {$$props.class || ''}"
+  class:suil-xs={size === 'xs'}
+  class:suil-sm={size === 'sm'}
+  class:suil-md={size === 'md'}
+  class:suil-lg={size === 'lg'}
+  class:suil-xl={size === 'xl'}
+  style={$$props.style}
+>
   <pre><code>{code}</code></pre>
   <div><CopyButton text={code} size="sm" color="secondary" kind="ghost" /></div>
 </div>
@@ -25,11 +35,11 @@ export let code
 .suil-code > pre {
   box-sizing: border-box;
   flex: 1;
-  padding: var(--suil-size-md);
+  padding: var(--suil-size);
   font: inherit;
 }
 
 .suil-code > div {
-  padding: calc(var(--suil-size-md) - var(--suil-size-sm));
+  padding: calc(var(--suil-size) - var(--suil-size-sm));
 }
 </style>

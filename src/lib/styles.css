@@ -16,9 +16,10 @@
   --suil-color-secondary: hsl(220 10% 40%);
   --suil-color-danger: hsl(355 80% 50%);
 
+  --suil-size: 1rem;
   --suil-size-xs: 0.25rem;
   --suil-size-sm: 0.5rem;
-  --suil-size-md: 1rem;
+  --suil-size-md: 0.75rem;
   --suil-size-lg: 1.5rem;
   --suil-size-xl: 2rem;
 
@@ -29,4 +30,24 @@
 .suil-white {
   --suil-bg: var(--suil-color-white);
   --suil-color-contrast: var(--suil-color-white);
+}
+
+.suil-xs {
+  --suil-size: var(--suil-size-xs);
+}
+
+.suil-sm {
+  --suil-size: var(--suil-size-sm);
+}
+
+.suil-md {
+  --suil-size: var(--suil-size-md);
+}
+
+.suil-lg {
+  --suil-size: var(--suil-size-lg);
+}
+
+.suil-xl {
+  --suil-size: var(--suil-size-xl);
 }
