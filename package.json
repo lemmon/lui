@@ -8,7 +8,6 @@
     "@sveltejs/package": "^1.0.0-next.3",
     "abrusco": "~0.21.0",
     "cssnano": "~5.1.0",
-    "dotenv": "~16.0.0",
     "mdsvex": "~0.10.0",
     "postcss": "~8.4.0",
     "postcss-import": "~14.1.0",
