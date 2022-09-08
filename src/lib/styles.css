@@ -23,6 +23,13 @@
   --suil-size-lg: 1.5rem;
   --suil-size-xl: 2rem;
 
+  --suil-border-width: 1px;
+  --suil-focus-color: var(--suil-color-primary);
+  --suil-focus-inset-width: 1px;
+  --suil-outline-color: var(--suil-focus-color);
+  --suil-outline-width: 1px;
+  --suil-outline-offset: 0px;
+
   --suil-button-width: 8rem;
 }
 

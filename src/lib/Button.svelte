@@ -92,8 +92,8 @@ export let loading = false
   -moz-appearance: none;
   appearance: none;
   margin: 0;
-  padding: calc(var(--suil-size) - 1px);
-  border: 1px solid transparent;
+  padding: calc(var(--suil-size) - var(--suil-border-width));
+  border: var(--suil-border-width) solid transparent;
   border-radius: 0;
   width: initial;
   height: calc(20px + 2 * var(--suil-size)); /* Safari fix */
@@ -154,12 +154,13 @@ export let loading = false
 }
 
 .suil-button:focus:not(:disabled) {
-  outline: 1px solid var(--suil-color-primary);
-  border-color: var(--suil-color-primary);
+  outline: var(--suil-outline-width) solid var(--suil-outline-color);
+  outline-offset: var(--suil-outline-offset);
+  border-color: var(--suil-focus-color, var(--suil-color));
 }
 
 .suil-button:focus:not(:disabled, .suil-button--outlined, .suil-button--ghost) {
-  box-shadow: inset 0 0 0 1px var(--suil-bg);
+  box-shadow: inset 0 0 0 var(--suil-focus-inset-width) var(--suil-bg);
 }
 
 .suil-button:disabled:not(.suil-button--loading) {
@@ -199,7 +200,7 @@ export let loading = false
   display: block;
   width: var(--suil-line-height);
   height: var(--suil-line-height);
-  border-width: 1px;
+  border-width: var(--suil-border-width);
   border-style: solid;
   border-color: var(--suil-label) var(--suil-label) transparent transparent;
   border-radius: 100%;
