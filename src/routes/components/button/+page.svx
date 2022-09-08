@@ -106,7 +106,7 @@ Button component.
     <tr>
       <td>size</td>
       <td>string</td>
-      <td>sm, lg</td>
+      <td>xs, sm, md, lg, xl</td>
       <td>-</td>
     </tr>
     <tr>

@@ -6,11 +6,6 @@ import CheckIcon from '$lib/icons/CheckIcon.svelte'
 export let text
 
 /** @type {string} */
-let className = undefined
-export { className as class }
-/** @type {string} */
-export let style = undefined
-/** @type {string} */
 export let color = undefined
 /** @type {string} */
 export let kind = undefined
@@ -34,8 +29,8 @@ function handleCopy() {
 </script>
 
 <Button
-  {className}
-  {style}
+  class={$$props.class}
+  style={$$props.style}
   {color}
   {kind}
   {size}

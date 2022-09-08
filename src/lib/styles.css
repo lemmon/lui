@@ -3,6 +3,10 @@
   --suil-font-size: 14px;
   --suil-line-height: 20px;
 
+  --suil-code-font-family: JetBrains Mono, JetBrainsMono, Menlo, Consolas, Monaco, Lucida Console, monospace;
+  --suil-code-font-size: var(--suil-font-size);
+  --suil-code-line-height: var(--suil-line-height);
+
   --suil-color-white: hsl(220 10% 100%);
   --suil-color-light: hsl(220 10% 90%);
   --suil-color-gray: hsl(220 10% 50%);
@@ -12,11 +16,19 @@
   --suil-color-secondary: hsl(220 10% 40%);
   --suil-color-danger: hsl(355 80% 50%);
 
+  --suil-size: 1rem;
   --suil-size-xs: 0.25rem;
   --suil-size-sm: 0.5rem;
-  --suil-size-md: 1rem;
+  --suil-size-md: 0.75rem;
   --suil-size-lg: 1.5rem;
   --suil-size-xl: 2rem;
+
+  --suil-border-width: 1px;
+  --suil-focus-color: var(--suil-color-primary);
+  --suil-focus-inset-width: 1px;
+  --suil-outline-color: var(--suil-focus-color);
+  --suil-outline-width: 1px;
+  --suil-outline-offset: 0px;
 
   --suil-button-width: 8rem;
 }
@@ -25,4 +37,24 @@
 .suil-white {
   --suil-bg: var(--suil-color-white);
   --suil-color-contrast: var(--suil-color-white);
+}
+
+.suil-xs {
+  --suil-size: var(--suil-size-xs);
+}
+
+.suil-sm {
+  --suil-size: var(--suil-size-sm);
+}
+
+.suil-md {
+  --suil-size: var(--suil-size-md);
+}
+
+.suil-lg {
+  --suil-size: var(--suil-size-lg);
+}
+
+.suil-xl {
+  --suil-size: var(--suil-size-xl);
 }

@@ -2,37 +2,44 @@
 import CopyButton from '$lib/CopyButton.svelte'
 
 /** @type {string} */
-let className = undefined
-/** @type {string} */
-export { className as class }
-/** @type {string} */
-export let style = undefined
-/** @type {string} */
 export let code
+/** @type {string} */
+export let size = undefined
 </script>
 
-<div class="suil-container {className || ''}" {style}>
-  <pre class="suil-code"><code>{code}</code></pre>
-  <div class="suil-button"><CopyButton text={code} size="sm" color="secondary" kind="ghost" /></div>
+<div
+  class="suil-code {$$props.class || ''}"
+  class:suil-xs={size === 'xs'}
+  class:suil-sm={size === 'sm'}
+  class:suil-md={size === 'md'}
+  class:suil-lg={size === 'lg'}
+  class:suil-xl={size === 'xl'}
+  style={$$props.style}
+>
+  <pre><code>{code}</code></pre>
+  <div><CopyButton text={code} size="sm" color="secondary" kind="ghost" /></div>
 </div>
 
 <style>
-.suil-container {
-  font-family: JetBrains Mono, JetBrainsMono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-  font-size: 14px;
-  line-height: 20px;
+.suil-code {
+  box-sizing: border-box;
+  font-family: var(--suil-code-font-family);
+  font-size: var(--suil-code-font-size);
+  line-height: var(--suil-code-line-height);
   background-color: hsl(220 10% 95%);
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 
-.suil-code {
+.suil-code > pre {
+  box-sizing: border-box;
   flex: 1;
-  padding: var(--suil-size-md);
+  padding: var(--suil-size);
   font: inherit;
 }
 
-.suil-button {
-  padding: calc(var(--suil-size-md) - var(--suil-size-sm));
+.suil-code > div {
+  padding: calc(var(--suil-size) - var(--suil-size-sm));
 }
 </style>
