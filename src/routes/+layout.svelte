@@ -1,7 +1,7 @@
 <script>
 import '../css/index.css'
 import '$lib/styles.css'
-import { dev } from '$app/env'
+import { dev } from '$app/environment'
 import PageLoader from './PageLoader.svelte'
 import Header from './Header.svelte'
 import Sidebar from './Sidebar.svelte'
