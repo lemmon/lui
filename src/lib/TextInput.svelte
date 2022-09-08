@@ -22,6 +22,8 @@ export let required = false
 export let readonly = false
 /** @type {boolean} */
 export let disabled = false
+/** @type {string} */
+export let size = undefined
 /** @type {boolean} */
 export let nullable = options.nullable
 /** @type {boolean} */
@@ -30,11 +32,21 @@ export let trim = options.trim
 const id = 'suil-' + uid()
 
 function handleInput({ target }) {
-  value = target.value || null
+  value = target.value || (nullable ? null : target.value)
 }
 
 function handleChange({ target }) {
-  value = target.value.trim() || null
+  const origValue = target.value
+  if (trim) target.value = target.value.trim()
+  handleInput({ target })
+  if (value !== origValue) {
+    target.dispatchEvent(
+      new CustomEvent('input', {
+        bubbles: true,
+        cancelable: true,
+      })
+    )
+  }
 }
 </script>
 
@@ -45,6 +57,11 @@ function handleChange({ target }) {
   <input
     {id}
     class="suil-control"
+    class:suil-xs={size === 'xs'}
+    class:suil-sm={size === 'sm'}
+    class:suil-md={size === 'md'}
+    class:suil-lg={size === 'lg'}
+    class:suil-xl={size === 'xl'}
     {type}
     {name}
     {placeholder}
@@ -56,6 +73,8 @@ function handleChange({ target }) {
     value={value || ''}
     on:input={handleInput}
     on:change={handleChange}
+    on:input
+    on:change
   />
 </div>
 
@@ -79,7 +98,6 @@ function handleChange({ target }) {
 }
 
 .suil-control {
-  --suil-size: var(--suil-size-md);
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -90,13 +108,13 @@ function handleChange({ target }) {
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  border-bottom-width: 1px;
+  border-bottom-width: var(--suil-border-width);
   border-bottom-color: hsl(220 10% 50%);
   border-radius: 0;
   padding-left: var(--suil-size);
   padding-right: var(--suil-size);
   padding-top: var(--suil-size);
-  padding-bottom: calc(var(--suil-size) - 1px);
+  padding-bottom: calc(var(--suil-size) - var(--suil-border-width));
   width: 100%;
   font-family: var(--suil-font-family);
   font-size: var(--suil-font-size);
@@ -118,8 +136,9 @@ function handleChange({ target }) {
 }
 
 .suil-control:focus {
-  border: 1px solid var(--suil-color-primary);
-  padding: calc(var(--suil-size) - 1px);
-  outline: 1px solid var(--suil-color-primary);
+  border: var(--suil-border-width) solid var(--suil-focus-color);
+  padding: calc(var(--suil-size) - var(--suil-border-width));
+  outline: var(--suil-outline-width) solid var(--suil-outline-color);
+  outline-offset: var(--suil-outline-offset);
 }
 </style>

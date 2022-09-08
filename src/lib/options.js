@@ -1,6 +1,6 @@
 const options = {
-  trim: true,
-  nullable: true,
+  trim: false,
+  nullable: false,
 }
 
 export default options

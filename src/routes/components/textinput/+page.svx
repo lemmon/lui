@@ -17,6 +17,16 @@ let something = null
 TextInput component.
 
 <figure>
+  <TextInput name="value" label="Text Input" bind:value />
+</figure>
+
+```svelte
+<TextInput name="value" label="Text Input" bind:value />
+```
+
+## Demo
+
+<figure>
   <div class="grid2 gap1">
     <TextInput name="value" label="First Name" bind:value />
     <TextInput name="something" label="Something Else" placeholder="Placeholder" bind:value={something} />
@@ -28,7 +38,3 @@ TextInput component.
 </figure>
 
 <Dump data={{ value, something }} />
-
-```svelte
-<TextInput name="value" label="First Name" bind:value />
-```
