@@ -136,7 +136,9 @@ function handleChange({ target }) {
 }
 
 .suil-control:focus {
-  border: var(--suil-border-width) solid var(--suil-focus-color);
+  border-width: var(--suil-border-width);
+  border-style: solid;
+  border-color: var(--suil-focus-color);
   padding: calc(var(--suil-size) - var(--suil-border-width));
   outline: var(--suil-outline-width) solid var(--suil-outline-color);
   outline-offset: var(--suil-outline-offset);
