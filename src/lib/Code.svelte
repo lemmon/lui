@@ -1,5 +1,5 @@
 <script>
-import CopyButton from '$lib/CopyButton.svelte'
+import CopyButton from './CopyButton.svelte'
 
 /** @type {string} */
 export let code

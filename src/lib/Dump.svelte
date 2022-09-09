@@ -1,5 +1,5 @@
 <script>
-import Code from '$lib/Code.svelte'
+import Code from './Code.svelte'
 
 export let data
 </script>
