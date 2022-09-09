@@ -16,11 +16,11 @@ let value = ''
 TextInput component.
 
 <figure>
-  <TextInput name="value" label="Hello" placeholder="Enter your value here..." bind:value />
+  <TextInput name="value" label="Hello" placeholder="Enter something here..." bind:value  />
 </figure>
 
 ```svelte
-<TextInput name="value" label="Hello" placeholder="Enter your value here..." bind:value />
+<TextInput name="value" label="Hello" placeholder="Enter something here..." bind:value />
 ```
 
 ## Props
