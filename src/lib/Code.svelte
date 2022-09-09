@@ -26,7 +26,7 @@ export let size = undefined
   font-family: var(--suil-code-font-family);
   font-size: var(--suil-code-font-size);
   line-height: var(--suil-code-line-height);
-  background-color: hsl(220 10% 95%);
+  background-color: var(--suil-shade);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
