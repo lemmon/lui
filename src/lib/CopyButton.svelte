@@ -1,7 +1,7 @@
 <script>
 import Button from './Button.svelte'
-import CopyIcon from '$lib/icons/CopyIcon.svelte'
-import CheckIcon from '$lib/icons/CheckIcon.svelte'
+import CopyIcon from './icons/CopyIcon.svelte'
+import CheckIcon from './icons/CheckIcon.svelte'
 
 export let text
 
