@@ -1,6 +1,6 @@
 <script>
-import '../css/index.css'
 import '$lib/styles.css'
+import '../css/index.css'
 import { dev } from '$app/environment'
 import PageLoader from './PageLoader.svelte'
 import Header from './Header.svelte'
