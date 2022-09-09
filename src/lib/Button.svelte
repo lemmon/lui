@@ -84,7 +84,7 @@ export let loading = false
 <style>
 .suil-button {
   --suil-color: currentColor;
-  --suil-label: var(--suil-color-contrast);
+  --suil-label: var(--suil-contrast);
   box-sizing: border-box;
   display: block;
   position: relative;
@@ -170,7 +170,7 @@ export let loading = false
 }
 
 .suil-button:disabled:not(.suil-button--loading) {
-  --suil-color: var(--suil-gray50);
+  --suil-color: var(--suil-gray);
   opacity: 50%;
   cursor: not-allowed;
 }
