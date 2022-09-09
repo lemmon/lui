@@ -7,11 +7,20 @@
   --suil-code-font-size: var(--suil-font-size);
   --suil-code-line-height: var(--suil-line-height);
 
-  --suil-color-white: hsl(220 10% 100%);
-  --suil-color-light: hsl(220 10% 90%);
-  --suil-color-gray: hsl(220 10% 50%);
-  --suil-color-dark: hsl(220 10% 10%);
-  --suil-color-black: hsl(220 10% 0%);
+  --suil-hue: 220;
+  --suil-sat: 10%;
+  --suil-white: hsl(var(--suil-hue) var(--suil-sat) 100%);
+  --suil-gray10: hsl(var(--suil-hue) var(--suil-sat) 90%);
+  --suil-gray20: hsl(var(--suil-hue) var(--suil-sat) 80%);
+  --suil-gray30: hsl(var(--suil-hue) var(--suil-sat) 70%);
+  --suil-gray40: hsl(var(--suil-hue) var(--suil-sat) 60%);
+  --suil-gray50: hsl(var(--suil-hue) var(--suil-sat) 50%);
+  --suil-gray60: hsl(var(--suil-hue) var(--suil-sat) 40%);
+  --suil-gray70: hsl(var(--suil-hue) var(--suil-sat) 30%);
+  --suil-gray80: hsl(var(--suil-hue) var(--suil-sat) 20%);
+  --suil-gray90: hsl(var(--suil-hue) var(--suil-sat) 10%);
+  --suil-black: hsl(var(--suil-hue) var(--suil-sat) 0%);
+
   --suil-color-primary: hsl(220 80% 50%);
   --suil-color-secondary: hsl(220 10% 40%);
   --suil-color-danger: hsl(355 80% 50%);
@@ -35,8 +44,9 @@
 
 :root,
 .suil-white {
-  --suil-bg: var(--suil-color-white);
-  --suil-color-contrast: var(--suil-color-white);
+  --suil-bg: var(--suil-white);
+  --suil-text: var(--suil-black);
+  --suil-color-contrast: var(--suil-white);
 }
 
 .suil-xs {

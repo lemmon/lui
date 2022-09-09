@@ -134,7 +134,8 @@ export let loading = false
   --suil-color: var(--suil-color-danger);
 }
 
-.suil-button--outlined {
+.suil-button--outlined:not(:hover, :focus),
+.suil-button--outlined:disabled {
   --suil-label: var(--suil-color);
   background-color: transparent;
   border-color: var(--suil-color);
@@ -159,19 +160,19 @@ export let loading = false
   border-color: var(--suil-focus-color, var(--suil-color));
 }
 
-.suil-button:focus:not(:disabled, .suil-button--outlined, .suil-button--ghost) {
+.suil-button:focus:not(:disabled, .suil-button--ghost) {
   box-shadow: inset 0 0 0 var(--suil-focus-inset-width) var(--suil-bg);
 }
 
-.suil-button:disabled:not(.suil-button--loading) {
-  --suil-color: var(--suil-color-gray);
-  color: var(--suil-color);
-  opacity: 50%;
-  cursor: not-allowed;
+.suil-button:disabled:not(.suil-button--outlined, .suil-button--ghost, .suil-button--loading) .suil-button__label {
+  color: var(--suil-text);
+  opacity: 60%;
 }
 
-.suil-button:disabled:not(.suil-button--outlined, .suil-button--ghost, .suil-button--loading) .suil-button__label {
+.suil-button:disabled:not(.suil-button--loading) {
+  --suil-color: var(--suil-gray50);
   opacity: 50%;
+  cursor: not-allowed;
 }
 
 .suil-button--loading {
