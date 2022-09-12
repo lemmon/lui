@@ -16,7 +16,7 @@ let value = ''
 TextInput component.
 
 <figure>
-  <TextInput name="value" label="Hello" placeholder="Enter something here..." bind:value  />
+  <TextInput name="value" label="Hello" placeholder="Enter something here..." bind:value />
 </figure>
 
 ```svelte
@@ -35,12 +35,6 @@ TextInput component.
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>label</td>
-      <td>string</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
     <tr>
       <td>type</td>
       <td>string</td>
@@ -63,6 +57,24 @@ TextInput component.
       <td>placeholder</td>
       <td>string</td>
       <td>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#placeholder</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>string</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>info</td>
+      <td>string</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>error</td>
+      <td>boolean|string</td>
+      <td>-</td>
       <td>-</td>
     </tr>
     <tr>

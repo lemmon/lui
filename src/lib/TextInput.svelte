@@ -4,8 +4,6 @@ import options from './options'
 import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
 
 /** @type {string} */
-export let label = undefined
-/** @type {string} */
 export let type = 'text'
 /** @type {string} */
 export let name
@@ -13,6 +11,12 @@ export let name
 export let value = undefined
 /** @type {string} */
 export let placeholder = undefined
+/** @type {string} */
+export let label = undefined
+/** @type {string} */
+export let info = undefined
+/** @type {boolean|string} */
+export let error = undefined
 /** @type {number} */
 export let minlength = undefined
 /** @type {number} */
@@ -57,6 +61,7 @@ function handleChange({ target }) {
   {/if}
   <label
     class="suil-field"
+    class:suil-field--error={!!error}
     class:suil-field--disabled={disabled}
     class:suil-xs={size === 'xs'}
     class:suil-sm={size === 'sm'}
@@ -85,10 +90,16 @@ function handleChange({ target }) {
       <div class="suil-field__icon"><PencilSlashIcon /></div>
     {/if}
   </label>
+  {#if error && typeof error === 'string'}
+    <div class="suil-info suil-danger" class:suil-info--disabled={disabled}>{error}</div>
+  {:else if info}
+    <div class="suil-info" class:suil-info--disabled={disabled}>{info}</div>
+  {/if}
 </div>
 
 <style>
-.suil-label {
+.suil-label,
+.suil-info {
   box-sizing: border-box;
   display: block;
   font-family: var(--suil-font-family);
@@ -98,10 +109,18 @@ function handleChange({ target }) {
   font-variant: normal;
   font-weight: normal;
   line-height: var(--suil-line-height);
+}
+
+.suil-label {
   margin-bottom: 4px;
 }
 
-.suil-label--disabled {
+.suil-info {
+  margin-top: 4px;
+}
+
+.suil-label--disabled,
+.suil-info--disabled {
   color: var(--suil-gray);
   opacity: 50%;
 }
@@ -131,6 +150,7 @@ function handleChange({ target }) {
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 
+.suil-field--error:not(.suil-field--disabled),
 .suil-field:focus-within {
   border-width: var(--suil-border-width);
   border-style: solid;
@@ -138,6 +158,11 @@ function handleChange({ target }) {
   outline: var(--suil-outline-width) solid var(--suil-outline-color);
   outline-offset: var(--suil-outline-offset);
   padding: 0;
+}
+
+.suil-field--error:not(:focus-within) {
+  --suil-focus-color: var(--suil-color-danger);
+  --suil-outline-color: var(--suil-color-danger);
 }
 
 .suil-control {
