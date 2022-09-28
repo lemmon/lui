@@ -6,7 +6,6 @@ title: TextInput Component
 import Code from '$lib/Code.svelte'
 import Dump from '$lib/Dump.svelte'
 import TextInput from '$lib/TextInput.svelte'
-import Button from '$lib/Button.svelte'
 
 let value = ''
 </script>

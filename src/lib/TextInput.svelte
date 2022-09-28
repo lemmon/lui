@@ -36,8 +36,29 @@ export let trim = options.trim
 
 const id = 'suil-' + uid()
 
+let inputError = null
+let invalid = new Set()
+
+function handleFocus() {}
+
+function handleBlur({ target }) {
+  target.checkValidity()
+}
+
+function handleInvalid({ target }) {
+  inputError = target.validationMessage || null
+  invalid.add(target.name)
+  invalid = invalid
+}
+
 function handleInput({ target }) {
   value = target.value || (nullable ? null : target.value)
+  inputError = target.validationMessage || null
+  // clear invalid
+  if (target.validity.valid && invalid.has(target.name)) {
+    invalid.delete(target.name)
+    invalid = invalid
+  }
 }
 
 function handleChange({ target }) {
@@ -61,13 +82,16 @@ function handleChange({ target }) {
   {/if}
   <label
     class="suil-field"
-    class:suil-field--error={!!error}
+    class:suil-field--error={!!error || invalid.size > 0}
     class:suil-field--disabled={disabled}
     class:suil-xs={size === 'xs'}
     class:suil-sm={size === 'sm'}
     class:suil-md={size === 'md'}
     class:suil-lg={size === 'lg'}
     class:suil-xl={size === 'xl'}
+    on:focus|capture={handleFocus}
+    on:blur|capture={handleBlur}
+    on:invalid|capture|preventDefault={handleInvalid}
   >
     <input
       {id}
@@ -92,6 +116,8 @@ function handleChange({ target }) {
   </label>
   {#if error && typeof error === 'string'}
     <div class="suil-info suil-danger" class:suil-info--disabled={disabled}>{error}</div>
+  {:else if (error || invalid.size > 0) && inputError}
+    <div class="suil-info suil-danger" class:suil-info--disabled={disabled}>{inputError}</div>
   {:else if info}
     <div class="suil-info" class:suil-info--disabled={disabled}>{info}</div>
   {/if}
