@@ -1,5 +1,7 @@
 .table {
   width: 100%;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .table th {
@@ -24,4 +26,9 @@
 
 .table tbody tr:last-child td {
   padding-bottom: 0.5rem;
+}
+
+.table th:not(:last-child),
+.table td:not(:last-child) {
+  padding-right: 1rem;
 }

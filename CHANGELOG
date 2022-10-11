@@ -1,19 +1,20 @@
-# 0.4.0 (2022-09-XX)
+# 0.4.0 (2022-10-11)
 
   * Button update
+  * TextInput component
   * prefix all classes with `suil-`
   * sizes revamp
   * add more custom properties
 
 # 0.3.0 (2022-08-24)
 
-  * Code Component
-  * CopyButton Component
-  * Dump Component
+  * Code component
+  * CopyButton component
+  * Dump component
   * css/all.css -> styles.css
   * css vars update
   * Button outline update
 
 # 0.2.0 (2022-08-10)
 
-  * Button Component
+  * Button component

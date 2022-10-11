@@ -46,6 +46,10 @@
   --suil-shade: var(--suil-light1);
 }
 
+.suil-danger {
+  color: var(--suil-color-danger);
+}
+
 .suil-xs {
   --suil-size: var(--suil-size-xs);
 }
