@@ -107,6 +107,8 @@ function handleChange({ target }) {
       value={value || ''}
       on:input={handleInput}
       on:change={handleChange}
+      on:focus
+      on:blur
       on:input
       on:change
     />

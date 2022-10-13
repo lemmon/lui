@@ -43,6 +43,7 @@ export let loading = false
     on:click
     on:hover
     on:focus
+    on:blur
     on:mouseover
     on:mouseenter
     on:mouseleave
@@ -70,6 +71,7 @@ export let loading = false
     on:click
     on:hover
     on:focus
+    on:blur
     on:mouseover
     on:mouseenter
     on:mouseleave
