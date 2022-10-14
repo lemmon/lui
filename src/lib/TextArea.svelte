@@ -27,6 +27,8 @@ export let required = false
 export let readonly = false
 /** @type {boolean} */
 export let disabled = false
+/** @type {number} */
+export let minlines = 3
 /** @type {string} */
 export let size = undefined
 /** @type {boolean} */
@@ -93,7 +95,7 @@ function handleChange({ target }) {
     on:blur|capture={handleBlur}
     on:invalid|capture|preventDefault={handleInvalid}
   >
-    <div class="suil-textarea">
+    <div class="suil-textarea" style="--suil-min-lines: {minlines};">
       <div class="suil-textarea__preview">{value || ''}.</div>
       <textarea
         {id}
@@ -199,7 +201,7 @@ function handleChange({ target }) {
 .suil-textarea {
   flex: 1;
   position: relative;
-  min-height: calc(3 * var(--suil-line-height) + 2 * (var(--suil-size) - var(--suil-border-width)));
+  min-height: calc(var(--suil-min-lines) * var(--suil-line-height) + 2 * (var(--suil-size) - var(--suil-border-width)));
 }
 
 .suil-textarea__preview,

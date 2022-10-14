@@ -7,7 +7,7 @@ import Code from '$lib/Code.svelte'
 import Dump from '$lib/Dump.svelte'
 import TextArea from '$lib/TextArea.svelte'
 
-let value = 'FOO'
+let value = ''
 </script>
 
 # TextArea
@@ -15,7 +15,7 @@ let value = 'FOO'
 TextArea component.
 
 <figure>
-  <TextArea name="value" label="Text" bind:value disabled />
+  <TextArea name="value" label="Text" bind:value />
 </figure>
 
 ```svelte
@@ -105,6 +105,12 @@ TextArea component.
       <td>boolean</td>
       <td>true|false https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#disabled</td>
       <td>-</td>
+    </tr>
+    <tr>
+      <td>minlines</td>
+      <td>number</td>
+      <td>1-?</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>size</td>
