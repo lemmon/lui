@@ -1,0 +1,29 @@
+<script>
+export let id = undefined
+export let disabled = undefined
+</script>
+
+<label for={id} class="suil-label" class:suil-label--disabled={disabled}><slot /></label>
+
+<style>
+.suil-label {
+  box-sizing: border-box;
+  display: block;
+  font-family: var(--suil-font-family);
+  font-size: var(--suil-font-size);
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: var(--suil-line-height);
+}
+
+.suil-label {
+  margin-bottom: 4px;
+}
+
+.suil-label--disabled {
+  color: var(--suil-gray);
+  opacity: 50%;
+}
+</style>

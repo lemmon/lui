@@ -1,6 +1,7 @@
 <script>
 import { uid } from 'uid'
 import options from './options'
+import Label from './Label.svelte'
 import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
 
 /** @type {string} */
@@ -78,7 +79,7 @@ function handleChange({ target }) {
 
 <div class={$$props.class || ''}>
   {#if label}
-    <label for={id} class="suil-label" class:suil-label--disabled={disabled}>{label}</label>
+    <Label {id} {disabled}>{label}</Label>
   {/if}
   <label
     class="suil-field"
@@ -126,7 +127,6 @@ function handleChange({ target }) {
 </div>
 
 <style>
-.suil-label,
 .suil-info {
   box-sizing: border-box;
   display: block;
@@ -139,15 +139,10 @@ function handleChange({ target }) {
   line-height: var(--suil-line-height);
 }
 
-.suil-label {
-  margin-bottom: 4px;
-}
-
 .suil-info {
   margin-top: 4px;
 }
 
-.suil-label--disabled,
 .suil-info--disabled {
   color: var(--suil-gray);
   opacity: 50%;
