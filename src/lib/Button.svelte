@@ -98,7 +98,7 @@ export let loading = false
   border: var(--suil-border-width) solid transparent;
   border-radius: 0;
   width: initial;
-  height: calc(20px + 2 * var(--suil-size)); /* Safari fix */
+  height: calc(var(--suil-line-height) + 2 * var(--suil-size)); /* Safari fix */
   font-family: var(--suil-font-family);
   font-size: var(--suil-font-size);
   font-stretch: normal;
