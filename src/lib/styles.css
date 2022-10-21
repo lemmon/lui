@@ -36,6 +36,7 @@
   --suil-outline-offset: 0px;
 
   --suil-button-width: 8rem;
+  --suil-button-justify: start;
 }
 
 :root,

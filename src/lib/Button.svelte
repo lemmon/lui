@@ -118,6 +118,7 @@ export let loading = false
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
+  justify-content: var(--suil-button-justify);
   align-items: center;
   gap: 0.25rem;
   color: var(--suil-label);
