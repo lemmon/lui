@@ -43,7 +43,7 @@ Button component.
   <Button><PlusIcon /></Button>
   <Button min><PlusIcon /></Button>
 
-  <Button href="https://www.lemmonjuice.com/" target="_blank" rel="noopener">
+  <Button href="https://www.lemmonjuice.com/" target="_blank" rel="external noreferrer">
     Link
     <ExternalLinkIcon style="margin-left: auto;" />
   </Button>

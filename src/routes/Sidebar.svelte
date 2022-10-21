@@ -65,7 +65,7 @@ const nav = [
           class="row gap025 p05 ul:hover"
           href="https://github.com/lemmon/suil"
           target="_blank"
-          rel="external noopener">GitHub <ExternalLinkIcon /></a
+          rel="external noreferrer">GitHub <ExternalLinkIcon /></a
         ></li
       >
       <li
@@ -73,7 +73,7 @@ const nav = [
           class="row gap025 p05 ul:hover"
           href="https://www.npmjs.com/package/suil"
           target="_blank"
-          rel="external noopener">NPM <ExternalLinkIcon /></a
+          rel="external noreferrer">NPM <ExternalLinkIcon /></a
         ></li
       >
     </ul>
