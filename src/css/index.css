@@ -1,8 +1,10 @@
 @import 'abrusco/base';
 @import 'abrusco/modules';
 
+/* purgecss start ignore */
 @import 'copy.css';
 @import 'tables.css';
+/* purgecss end ignore */
 
 @import 'abrusco/utils';
 @import 'abrusco/debug';
