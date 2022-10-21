@@ -28,6 +28,8 @@ export let required = false
 export let readonly = false
 /** @type {boolean} */
 export let disabled = false
+/** @type {number} */
+export let minlines = 3
 /** @type {string} */
 export let size = undefined
 /** @type {boolean} */
@@ -94,25 +96,28 @@ function handleChange({ target }) {
     on:blur|capture={handleBlur}
     on:invalid|capture|preventDefault={handleInvalid}
   >
-    <input
-      {id}
-      class="suil-control"
-      {type}
-      {name}
-      {placeholder}
-      {minlength}
-      {maxlength}
-      {required}
-      {readonly}
-      {disabled}
-      value={value || ''}
-      on:input={handleInput}
-      on:change={handleChange}
-      on:focus
-      on:blur
-      on:input
-      on:change
-    />
+    <div class="suil-textarea" style="--suil-min-lines: {minlines};">
+      <div class="suil-textarea__preview">{value || ''}.</div>
+      <textarea
+        {id}
+        class="suil-control"
+        {type}
+        {name}
+        {placeholder}
+        {minlength}
+        {maxlength}
+        {required}
+        {readonly}
+        {disabled}
+        value={value || ''}
+        on:input={handleInput}
+        on:change={handleChange}
+        on:focus
+        on:blur
+        on:input
+        on:change
+      />
+    </div>
     {#if readonly}
       <div class="suil-field__icon"><PencilSlashIcon /></div>
     {/if}
@@ -188,15 +193,14 @@ function handleChange({ target }) {
   --suil-outline-color: var(--suil-color-danger);
 }
 
+.suil-textarea {
+  flex: 1;
+  position: relative;
+  min-height: calc(var(--suil-min-lines) * var(--suil-line-height) + 2 * (var(--suil-size) - var(--suil-border-width)));
+}
+
+.suil-textarea__preview,
 .suil-control {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-  box-sizing: border-box;
-  display: block;
-  background-color: transparent;
-  border: 0;
-  border-radius: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
   margin: 0;
   width: 100%;
@@ -208,15 +212,32 @@ function handleChange({ target }) {
   font-weight: normal;
   line-height: var(--suil-line-height);
   text-align: left;
-  outline: 0;
 }
 
-.suil-control::-webkit-inner-spin-button,
-.suil-control::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
+.suil-textarea__preview {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: normal;
+  visibility: hidden;
+}
+
+.suil-control {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  box-sizing: border-box;
+  display: block;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  resize: none;
+  outline: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
 }
 
 .suil-control:disabled {

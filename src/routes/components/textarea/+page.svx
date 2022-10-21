@@ -1,0 +1,134 @@
+---
+title: TextArea Component
+---
+
+<script>
+import Code from '$lib/Code.svelte'
+import Dump from '$lib/Dump.svelte'
+import TextArea from '$lib/TextArea.svelte'
+
+let value = ''
+</script>
+
+# TextArea
+
+TextArea component.
+
+<figure>
+  <TextArea name="value" label="Text" bind:value />
+</figure>
+
+```svelte
+<TextArea name="value" label="Text" bind:value />
+```
+
+## Props
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Prop.</th>
+      <th>Type</th>
+      <th>Options</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td>string</td>
+      <td>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#type</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#name</td>
+      <td>required</td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>string|number</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>placeholder</td>
+      <td>string</td>
+      <td>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#placeholder</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td>string</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>info</td>
+      <td>string</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>error</td>
+      <td>boolean|string</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>minlength</td>
+      <td>string</td>
+      <td>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#minlength</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>maxlength</td>
+      <td>string</td>
+      <td>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#maxlength</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>required</td>
+      <td>boolean</td>
+      <td>true|false https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#required</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>readonly</td>
+      <td>boolean</td>
+      <td>true|false https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#readonly</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>boolean</td>
+      <td>true|false https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#disabled</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>minlines</td>
+      <td>number</td>
+      <td>1-?</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>size</td>
+      <td>string</td>
+      <td>xs, sm, md, lg, xl</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>nullable</td>
+      <td>boolean</td>
+      <td>true|false</td>
+      <td>options.nullable</td>
+    </tr>
+    <tr>
+      <td>trim</td>
+      <td>boolean</td>
+      <td>true|false</td>
+      <td>options.trim</td>
+    </tr>
+  </tbody>
+</table>
