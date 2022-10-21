@@ -34,6 +34,10 @@ export let size = undefined
 
 .suil-code > pre {
   box-sizing: border-box;
+  white-space: pre-wrap;
+  word-break: normal;
+  word-break: break-word; /* Safari */
+  overflow-wrap: anywhere;
   flex: 1;
   padding: var(--suil-size);
   font: inherit;
