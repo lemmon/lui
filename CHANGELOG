@@ -1,6 +1,8 @@
 # 0.5.0 (2022-10-21)
 
   * Button justify `--suil-button-justify`
+  * TextArea component
+  * fix Code word-wrap
 
 # 0.4.0 (2022-10-11)
 
