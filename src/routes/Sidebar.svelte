@@ -31,6 +31,10 @@ const nav = [
         href: '/components/dump',
       },
       {
+        title: 'NumberInput',
+        href: '/components/numberinput',
+      },
+      {
         title: 'TextArea',
         href: '/components/textarea',
       },
