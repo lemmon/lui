@@ -6,8 +6,8 @@
     "uid": "~2.0.0"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "1.0.0-next.86",
-    "@sveltejs/kit": "1.0.0-next.532",
+    "@sveltejs/adapter-auto": "1.0.0-next.87",
+    "@sveltejs/kit": "1.0.0-next.539",
     "@sveltejs/package": "1.0.0-next.5",
     "abrusco": "~0.22.0",
     "cssnano": "~5.1.0",
