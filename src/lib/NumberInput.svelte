@@ -1,5 +1,6 @@
 <script>
 import { uid } from 'uid'
+import options from './options'
 import Label from './Label.svelte'
 import Button from './Button.svelte'
 import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
@@ -85,7 +86,7 @@ function handleInvalid({ target }) {
 }
 
 function handleInput({ target }) {
-  value = target.value.replace(/[\s,]/g, '')
+  value = target.value.replace(/\s+/, '').replaceAll(options.thousandsSep, '').replace(options.decPoint, '.')
   value = parseFloat(value)
   value = !isNaN(value) ? value : null
 }

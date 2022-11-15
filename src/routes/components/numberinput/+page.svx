@@ -7,7 +7,7 @@ import Code from '$lib/Code.svelte'
 import Dump from '$lib/Dump.svelte'
 import NumberInput from '$lib/NumberInput.svelte'
 
-let value
+let value = null
 </script>
 
 # NumberInput
@@ -15,7 +15,7 @@ let value
 NumberInput component.
 
 <figure>
-  <NumberInput label="Number" step="0.001" bind:value />
+  <NumberInput label="Number" bind:value />
 </figure>
 
 ```svelte
