@@ -15,7 +15,7 @@ let value
 NumberInput component.
 
 <figure>
-  <NumberInput label="Number" min=5 bind:value />
+  <NumberInput label="Number" step="0.001" bind:value />
 </figure>
 
 ```svelte

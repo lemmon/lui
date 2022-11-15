@@ -5,6 +5,7 @@ import Button from './Button.svelte'
 import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
 import MinusIcon from './icons/MinusIcon.svelte'
 import PlusIcon from './icons/PlusIcon.svelte'
+import formatNumber from './format-number'
 
 /** @type {string} */
 export let name = undefined
@@ -22,6 +23,10 @@ export let error = undefined
 export let min = undefined
 /** @type {number} */
 export let max = undefined
+/** @type {number} */
+export let step = undefined
+/** @type {number} */
+export let dec = step?.toString().match(/(?<=\.)\d+$/)[0].length || 0
 /** @type {boolean} */
 export let required = false
 /** @type {boolean} */
@@ -32,7 +37,6 @@ export let disabled = false
 export let size = undefined
 
 const id = 'suil-' + uid()
-const numberFormat = new Intl.NumberFormat('en-US')
 
 let inputValue = valueFormatted(value)
 let inputError = null
@@ -57,7 +61,7 @@ $: if (!focused) {
 }
 
 function valueFormatted(value) {
-  return typeof value === 'number' ? numberFormat.format(value) : ''
+  return typeof value === 'number' ? formatNumber(value, dec) : ''
 }
 
 function handleInputFocus() {
@@ -82,20 +86,20 @@ function handleInvalid({ target }) {
 
 function handleInput({ target }) {
   value = target.value.replace(/[\s,]/g, '')
-  value = parseInt(value)
+  value = parseFloat(value)
   value = !isNaN(value) ? value : null
 }
 
 function handleMinus({ target }) {
   if (min && value <= min) return
-  value--
+  value = parseFloat((value - ((step && parseFloat(step)) || 1)).toFixed(dec))
   target.dispatchEvent(new CustomEvent('input', { bubbles: true, cancelable: true }))
   target.dispatchEvent(new CustomEvent('change', { bubbles: true, cancelable: true }))
 }
 
 function handlePlus({ target }) {
   if (max && value >= max) return
-  value = (value || 0) + 1
+  value = parseFloat(((value || 0) + ((step && parseFloat(step)) || 1)).toFixed(dec))
   target.dispatchEvent(new CustomEvent('input', { bubbles: true, cancelable: true }))
   target.dispatchEvent(new CustomEvent('change', { bubbles: true, cancelable: true }))
 }
@@ -139,6 +143,7 @@ function handlePlus({ target }) {
       type="number"
       {min}
       {max}
+      {step}
       {required}
       bind:this={control}
       bind:value
