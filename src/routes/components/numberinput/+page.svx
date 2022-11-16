@@ -1,0 +1,25 @@
+---
+title: NumberInput Component
+---
+
+<script>
+import Code from '$lib/Code.svelte'
+import Dump from '$lib/Dump.svelte'
+import NumberInput from '$lib/NumberInput.svelte'
+
+let value = null
+</script>
+
+# NumberInput
+
+NumberInput component.
+
+<figure>
+  <NumberInput label="Number" bind:value />
+</figure>
+
+```svelte
+<NumberInput label="Number" bind:value />
+```
+
+<Dump data={{ value }} />
