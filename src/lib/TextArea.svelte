@@ -1,7 +1,6 @@
 <script>
-import { uid } from 'uid'
 import options from './options'
-import Label from './Label.svelte'
+import Field from './Field.svelte'
 import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
 
 /** @type {string} */
@@ -37,37 +36,30 @@ export let nullable = options.nullable
 /** @type {boolean} */
 export let trim = options.trim
 
-const id = 'suil-' + uid()
+let control
+let invalid
 
-let inputError = null
-let invalid = new Set()
-
-function handleFocus() {}
-
-function handleBlur({ target }) {
-  target.checkValidity()
-}
-
-function handleInvalid({ target }) {
-  inputError = target.validationMessage || null
-  invalid.add(target.name)
-  invalid = invalid
-}
-
-function handleInput({ target }) {
-  value = target.value || (nullable ? null : target.value)
-  inputError = target.validationMessage || null
-  // clear invalid
-  if (target.validity.valid && invalid.has(target.name)) {
-    invalid.delete(target.name)
-    invalid = invalid
+// update validity
+$: if (control && invalid) {
+  control.value = value
+  if (control.validity.valid) {
+    invalid = false
+  } else if (!control.validity.valid) {
+    control.checkValidity()
   }
 }
 
-function handleChange({ target }) {
+// events
+
+function handleInput({ target }) {
+  value = target.value || (nullable ? null : target.value)
+}
+
+function handleBlur({ target }) {
+  // sanitize value
   const origValue = target.value
   if (trim) target.value = target.value.trim()
-  handleInput({ target })
+  if (nullable && !target.value) target.value = null
   if (value !== origValue) {
     target.dispatchEvent(
       new CustomEvent('input', {
@@ -76,123 +68,45 @@ function handleChange({ target }) {
       })
     )
   }
+  // check validity
+  target.checkValidity()
+}
+
+function handleInvalid({ target }) {
+  invalid = target.validationMessage
 }
 </script>
 
-<div class={$$props.class || ''}>
-  {#if label}
-    <Label {id} {disabled}>{label}</Label>
+<Field class={$$props.class} style={$$props.style} {label} {disabled} {size} {info} error={invalid || error} let:id>
+  <div class="suil-textarea" style="--suil-min-lines: {minlines};">
+    <div class="suil-textarea__preview">{value || ''}.</div>
+    <textarea
+      {id}
+      class="suil-control"
+      {type}
+      {name}
+      {placeholder}
+      {minlength}
+      {maxlength}
+      {required}
+      {readonly}
+      {disabled}
+      value={value || ''}
+      on:input={handleInput}
+      on:blur={handleBlur}
+      on:invalid|preventDefault={handleInvalid}
+      on:focus
+      on:blur
+      on:input
+      on:change
+    />
+  </div>
+  {#if readonly}
+    <div class="suil-input-icon"><PencilSlashIcon /></div>
   {/if}
-  <label
-    class="suil-field"
-    class:suil-field--error={!!error || invalid.size > 0}
-    class:suil-field--disabled={disabled}
-    class:suil-xs={size === 'xs'}
-    class:suil-sm={size === 'sm'}
-    class:suil-md={size === 'md'}
-    class:suil-lg={size === 'lg'}
-    class:suil-xl={size === 'xl'}
-    on:focus|capture={handleFocus}
-    on:blur|capture={handleBlur}
-    on:invalid|capture|preventDefault={handleInvalid}
-  >
-    <div class="suil-textarea" style="--suil-min-lines: {minlines};">
-      <div class="suil-textarea__preview">{value || ''}.</div>
-      <textarea
-        {id}
-        class="suil-control"
-        {type}
-        {name}
-        {placeholder}
-        {minlength}
-        {maxlength}
-        {required}
-        {readonly}
-        {disabled}
-        value={value || ''}
-        on:input={handleInput}
-        on:change={handleChange}
-        on:focus
-        on:blur
-        on:input
-        on:change
-      />
-    </div>
-    {#if readonly}
-      <div class="suil-field__icon"><PencilSlashIcon /></div>
-    {/if}
-  </label>
-  {#if error && typeof error === 'string'}
-    <div class="suil-info suil-danger" class:suil-info--disabled={disabled}>{error}</div>
-  {:else if (error || invalid.size > 0) && inputError}
-    <div class="suil-info suil-danger" class:suil-info--disabled={disabled}>{inputError}</div>
-  {:else if info}
-    <div class="suil-info" class:suil-info--disabled={disabled}>{info}</div>
-  {/if}
-</div>
+</Field>
 
 <style>
-.suil-info {
-  box-sizing: border-box;
-  display: block;
-  font-family: var(--suil-font-family);
-  font-size: var(--suil-font-size);
-  font-stretch: normal;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  line-height: var(--suil-line-height);
-}
-
-.suil-info {
-  margin-top: 4px;
-}
-
-.suil-info--disabled {
-  color: var(--suil-gray);
-  opacity: 50%;
-}
-
-.suil-field {
-  display: flex;
-  flex-direction: row;
-  background-color: var(--suil-shade);
-  border-style: solid;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-  border-bottom-width: var(--suil-border-width);
-  border-bottom-color: var(--suil-gray);
-  padding-left: var(--suil-border-width);
-  padding-right: var(--suil-border-width);
-  padding-top: var(--suil-border-width);
-  padding-bottom: 0;
-}
-
-.suil-field--disabled {
-  border-color: transparent;
-  cursor: not-allowed;
-}
-
-.suil-field__icon {
-  padding: calc(var(--suil-size) - var(--suil-border-width));
-}
-
-.suil-field--error:not(.suil-field--disabled),
-.suil-field:focus-within {
-  border-width: var(--suil-border-width);
-  border-style: solid;
-  border-color: var(--suil-focus-color);
-  outline: var(--suil-outline-width) solid var(--suil-outline-color);
-  outline-offset: var(--suil-outline-offset);
-  padding: 0;
-}
-
-.suil-field--error:not(:focus-within) {
-  --suil-focus-color: var(--suil-color-danger);
-  --suil-outline-color: var(--suil-color-danger);
-}
-
 .suil-textarea {
   flex: 1;
   position: relative;
@@ -244,5 +158,9 @@ function handleChange({ target }) {
   color: var(--suil-gray);
   opacity: 50%;
   cursor: not-allowed;
+}
+
+.suil-input-icon {
+  padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 </style>
