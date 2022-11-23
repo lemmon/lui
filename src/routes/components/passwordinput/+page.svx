@@ -1,0 +1,23 @@
+---
+title: PasswordInput Component
+---
+
+<script>
+import Code from '$lib/Code.svelte'
+import Dump from '$lib/Dump.svelte'
+import PasswordInput from '$lib/PasswordInput.svelte'
+
+let value = ''
+</script>
+
+# PasswordInput
+
+PasswordInput component.
+
+<figure>
+  <PasswordInput name="password" label="Password" bind:value />
+</figure>
+
+```svelte
+<PasswordInput name="password" label="Password" bind:value />
+```
