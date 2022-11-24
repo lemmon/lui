@@ -130,8 +130,8 @@ function handleInvalid({ target }) {
     <div class="suil-input-icon"><PencilSlashIcon /></div>
   {:else}
     <div class="suil-input-buttons">
-      <Button min size="sm" color="secondary" kind="ghost" on:click={handleMinus}><MinusIcon /></Button>
-      <Button min size="sm" color="secondary" kind="ghost" on:click={handlePlus}><PlusIcon /></Button>
+      <Button type="button" min size="sm" color="secondary" kind="ghost" on:click={handleMinus}><MinusIcon /></Button>
+      <Button type="button" min size="sm" color="secondary" kind="ghost" on:click={handlePlus}><PlusIcon /></Button>
     </div>
   {/if}
 </Field>

@@ -29,6 +29,7 @@ function handleCopy() {
 </script>
 
 <Button
+  type="button"
   class={$$props.class}
   style={$$props.style}
   {color}
