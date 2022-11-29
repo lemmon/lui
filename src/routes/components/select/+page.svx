@@ -1,0 +1,46 @@
+---
+title: Select Component
+---
+
+<script>
+import Code from '$lib/Code.svelte'
+import Dump from '$lib/Dump.svelte'
+import Select from '$lib/Select.svelte'
+import TextInput from '$lib/TextInput.svelte'
+
+let value = null
+</script>
+
+# Select
+
+Select component.
+
+<figure>
+  <TextInput value="Hello (string)" />
+  <Select label="Select something" bind:value>
+    <option />
+    <option value="Hello">Hello (string)</option>
+    <option value="World">World (string)</option>
+    <option value={true}>true (boolean)</option>
+    <option value={42}>42 (number)</option>
+  </Select>
+  <div class="mt05">
+    set to:
+    <a href="#" on:click|preventDefault={() => value = 42}>42</a>
+    <a href="#" on:click|preventDefault={() => value = null}>null</a>
+    <a href="#" on:click|preventDefault={() => value = true}>true</a>
+    <a href="#" on:click|preventDefault={() => value = 'Hello'}>Hello</a>
+  </div>
+</figure>
+
+```svelte
+<Select label="Select something" bind:value>
+  <option />
+  <option value="Hello">Hello (string)</option>
+  <option value="World">World (string)</option>
+  <option value={true}>true (boolean)</option>
+  <option value={42}>42 (number)</option>
+</Select>
+```
+
+<Dump data={{ value }} />

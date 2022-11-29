@@ -39,6 +39,10 @@ const nav = [
         href: '/components/passwordinput',
       },
       {
+        title: 'Select',
+        href: '/components/select',
+      },
+      {
         title: 'TextArea',
         href: '/components/textarea',
       },
