@@ -16,7 +16,6 @@ let value = null
 Select component.
 
 <figure>
-  <TextInput value="Hello (string)" />
   <Select label="Select something" bind:value>
     <option />
     <option value="Hello">Hello (string)</option>

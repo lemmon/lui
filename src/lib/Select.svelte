@@ -104,10 +104,6 @@ function handleInvalid({ target }) {
   cursor: not-allowed;
 }
 
-.suil-control option {
-  padding: 20px;
-}
-
 .suil-input-icon {
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
