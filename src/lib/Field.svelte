@@ -59,6 +59,7 @@ const id = 'suil-' + uid()
 .suil-field {
   display: flex;
   flex-direction: row;
+  position: relative;
   background-color: var(--suil-shade);
   border-style: solid;
   border-left: 0;

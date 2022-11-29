@@ -1,6 +1,7 @@
 <script>
 import options from './options'
 import Field from './Field.svelte'
+import ChevronExpandIcon from './icons/ChevronExpandIcon.svelte'
 import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
 
 /** @type {string} */
@@ -69,8 +70,11 @@ function handleInvalid({ target }) {
   >
     <slot />
   </select>
+  <div class="suil-placeholder" />
   {#if readonly}
     <div class="suil-input-icon"><PencilSlashIcon /></div>
+  {:else}
+    <div class="suil-input-icon"><ChevronExpandIcon /></div>
   {/if}
 </Field>
 
@@ -86,6 +90,12 @@ function handleInvalid({ target }) {
   border-radius: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
   margin: 0;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   width: 100%;
   font-family: var(--suil-font-family);
   font-size: var(--suil-font-size);
@@ -102,6 +112,11 @@ function handleInvalid({ target }) {
   color: var(--suil-gray);
   opacity: 50%;
   cursor: not-allowed;
+}
+
+.suil-placeholder {
+  box-sizing: border-box;
+  flex: 1;
 }
 
 .suil-input-icon {
