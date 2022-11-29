@@ -16,12 +16,10 @@ import Sidebar from './Sidebar.svelte'
 
 <PageLoader />
 
-<div class="minvh col">
-  <Header />
-  <div class="span1 row">
-    <Sidebar />
-    <div class="span1 col">
-      <slot />
-    </div>
+<Header />
+<div class="span1 row">
+  <Sidebar />
+  <div class="span1 col">
+    <slot />
   </div>
 </div>
