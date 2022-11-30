@@ -39,7 +39,7 @@ let invalid
 
 // update validity
 $: if (control && invalid) {
-  control.value = value
+  control.value = value || ''
   if (control.validity.valid) {
     invalid = false
   } else if (!control.validity.valid) {
