@@ -17,9 +17,10 @@ import Sidebar from './Sidebar.svelte'
 <PageLoader />
 
 <Header />
-<div class="span1 row">
-  <Sidebar />
+
+<div class="span1 md:row-reverse">
   <div class="span1 col">
     <slot />
   </div>
+  <Sidebar />
 </div>

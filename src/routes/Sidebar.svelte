@@ -52,7 +52,7 @@ const nav = [
 </script>
 
 <div class="h6 rlh1" style:width="16rem">
-  <nav class="p1">
+  <nav class="py1 sd:p1">
     {#each nav as section}
       <div class="p05">
         {#if section.title}
@@ -70,8 +70,8 @@ const nav = [
       </div>
     {/each}
   </nav>
-  <nav class="p15">
-    <ul>
+  <nav class="py1 sd:p1">
+    <ul class="p05">
       <li
         ><a
           class="row gap025 p05 ul:hover"

@@ -6,7 +6,7 @@ export let title
   <title>{title} &ndash; SŪIL</title>
 </svelte:head>
 
-<div class="span1 p2">
+<div class="span1 px1 py2 sd:p2">
   <div class="copy h6 lh2">
     <slot />
   </div>
