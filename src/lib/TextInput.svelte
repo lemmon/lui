@@ -12,6 +12,8 @@ export let value = undefined
 /** @type {string} */
 export let placeholder = undefined
 /** @type {string} */
+export let pattern = undefined
+/** @type {string} */
 export let label = undefined
 /** @type {string} */
 export let info = undefined
@@ -82,6 +84,7 @@ function handleInvalid({ target }) {
     {type}
     {name}
     {placeholder}
+    {pattern}
     {minlength}
     {maxlength}
     {required}
