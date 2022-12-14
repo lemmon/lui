@@ -8,7 +8,6 @@ import Sidebar from './Sidebar.svelte'
 </script>
 
 <svelte:head>
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   {#if !dev}
     <script defer data-domain="suil.vercel.app" src="https://plausible.io/js/plausible.js"></script>
   {/if}

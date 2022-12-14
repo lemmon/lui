@@ -10,14 +10,7 @@
 @import 'abrusco/debug';
 
 :root {
-  --default-font-family: 'Inter', sans-serif;
   --text-decoration-thickness: 1px;
-}
-
-@supports (font-variation-settings: normal) {
-  :root {
-    --default-font-family: 'Inter var', sans-serif;
-  }
 }
 
 a:focus {
