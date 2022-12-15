@@ -1,4 +1,6 @@
+/* purgecss start ignore */
 @import 'abrusco/base';
+/* purgecss end ignore */
 @import 'abrusco/modules';
 
 /* purgecss start ignore */
@@ -9,15 +11,10 @@
 @import 'abrusco/utils';
 @import 'abrusco/debug';
 
-:root {
-  --default-font-family: 'Inter', sans-serif;
-  --text-decoration-thickness: 1px;
-}
+/* purgecss start ignore */
 
-@supports (font-variation-settings: normal) {
-  :root {
-    --default-font-family: 'Inter var', sans-serif;
-  }
+:root {
+  --text-decoration-thickness: 1px;
 }
 
 a:focus {

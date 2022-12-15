@@ -1,5 +1,6 @@
 const postcssImport = require('postcss-import')
 const postcssPresetEnv = require('postcss-preset-env')
+const purgecss = require('@fullhuman/postcss-purgecss')
 const cssnano = require('cssnano')
 
 const mode = process.env.NODE_ENV
@@ -11,6 +12,15 @@ module.exports = {
     postcssPresetEnv({
       stage: 0,
     }),
+    !dev &&
+      purgecss({
+        content: ['./src/**/*.svelte', './src/**/*.svx', './src/**/*.html'],
+        defaultExtractor: (x) => x.match(/[\w-/:]+(?<!:)/g) || [],
+        safelist: {
+          standard: ['-d', '-view'],
+          deep: [/svelte/, /suil/, /^copy/],
+        },
+      }),
     !dev &&
       cssnano({
         preset: 'default',

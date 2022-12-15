@@ -8,7 +8,6 @@ import Sidebar from './Sidebar.svelte'
 </script>
 
 <svelte:head>
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
   {#if !dev}
     <script defer data-domain="suil.vercel.app" src="https://plausible.io/js/plausible.js"></script>
   {/if}
@@ -16,12 +15,11 @@ import Sidebar from './Sidebar.svelte'
 
 <PageLoader />
 
-<div class="minvh col">
-  <Header />
-  <div class="span1 row">
-    <Sidebar />
-    <div class="span1 col">
-      <slot />
-    </div>
+<Header />
+
+<div class="span1 md:row-reverse">
+  <div class="span1 col">
+    <slot />
   </div>
+  <Sidebar />
 </div>

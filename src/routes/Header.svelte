@@ -1,4 +1,4 @@
-<header class="bg-black bg-lum5 white px1 row justify-between">
+<header class="bg-black bg-lum5 white sd:px1 row justify-between">
   <figure>
     <h1 class="h4"
       ><a class="row gap05 p1" href="/">

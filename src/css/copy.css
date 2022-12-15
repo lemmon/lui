@@ -43,3 +43,7 @@
 .copy em {
   font-style: italic;
 }
+
+.copy table {
+  word-break: break-word;
+}
