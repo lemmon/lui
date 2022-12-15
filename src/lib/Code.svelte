@@ -17,7 +17,7 @@ export let size = undefined
   style={$$props.style}
 >
   <pre><code>{code}</code></pre>
-  <div><CopyButton text={code} size="sm" color="secondary" kind="ghost" /></div>
+  <div><CopyButton text={code} size="sm" color="current" kind="ghost" /></div>
 </div>
 
 <style>

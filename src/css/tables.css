@@ -6,7 +6,7 @@
 
 .table th {
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px dashed currentColor;
   padding-bottom: 0.5rem;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .table tbody {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px dashed currentColor;
 }
 
 .table tbody tr:first-child td {

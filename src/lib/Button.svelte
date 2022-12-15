@@ -86,7 +86,7 @@ export let loading = false
 <style>
 .suil-button {
   --suil-color: currentColor;
-  --suil-label: var(--suil-contrast);
+  --suil-label: var(--suil-button-label)
   box-sizing: border-box;
   display: block;
   position: relative;
@@ -108,6 +108,7 @@ export let loading = false
   text-decoration: none;
   text-align: left;
   background-color: var(--suil-color);
+  color: inherit;
   transition: initial;
   min-width: var(--suil-button-width);
   cursor: pointer;

@@ -86,6 +86,7 @@ function handleInvalid({ target }) {
   box-sizing: border-box;
   display: block;
   background-color: transparent;
+  color: inherit;
   border: 0;
   border-radius: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
