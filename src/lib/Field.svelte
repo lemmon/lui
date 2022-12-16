@@ -25,7 +25,7 @@ const id = 'suil-' + uid()
     class:suil-lg={size === 'lg'}
     class:suil-xl={size === 'xl'}
   >
-    <slot {id} />
+    <div class="suil-field__inner"><slot {id} /></div>
   </label>
   {#if error && typeof error === 'string'}
     <div class="suil-info suil-danger" class:suil-info--disabled={disabled}>{error}</div>
@@ -57,8 +57,7 @@ const id = 'suil-' + uid()
 }
 
 .suil-field {
-  display: flex;
-  flex-direction: row;
+  display: block;
   background-color: var(--suil-shade);
   border-style: solid;
   border-left: 0;
@@ -70,6 +69,12 @@ const id = 'suil-' + uid()
   padding-right: var(--suil-border-width);
   padding-top: var(--suil-border-width);
   padding-bottom: 0;
+}
+
+.suil-field__inner {
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 
 .suil-field--disabled {
