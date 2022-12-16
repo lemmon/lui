@@ -23,7 +23,7 @@ div {
   left: 0;
   top: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
   background-color: var(--suil-color-primary, currentColor);
   z-index: 99999;
 }
