@@ -8,7 +8,7 @@
   --suil-code-line-height: var(--suil-line-height);
 
   --suil-hue: 220;
-  --suil-sat: 10%;
+  --suil-sat: 5%;
   --suil-white: hsl(var(--suil-hue) var(--suil-sat) 100%);
   --suil-gray: hsl(var(--suil-hue) var(--suil-sat) 50%);
   --suil-black: hsl(var(--suil-hue) var(--suil-sat) 0%);
@@ -37,14 +37,44 @@
 
   --suil-button-width: 8rem;
   --suil-button-justify: start;
+  --suil-button-label: var(--suil-white);
 }
 
 :root,
-.suil-white {
+.suil-theme-white {
   --suil-bg: var(--suil-white);
   --suil-text: var(--suil-black);
   --suil-contrast: var(--suil-white);
   --suil-shade: var(--suil-light1);
+}
+
+.suil-theme-gray10 {
+  --suil-bg: var(--suil-light1);
+  --suil-text: var(--suil-black);
+  --suil-contrast: var(--suil-white);
+  --suil-shade: var(--suil-white);
+}
+
+.suil-theme-gray100 {
+  --suil-bg: var(--suil-dark1);
+  --suil-text: var(--suil-light1);
+  --suil-contrast: var(--suil-black);
+  --suil-shade: var(--suil-dark2);
+}
+
+.suil-theme-gray90 {
+  --suil-bg: var(--suil-dark2);
+  --suil-text: var(--suil-light1);
+  --suil-contrast: var(--suil-black);
+  --suil-shade: var(--suil-dark3);
+}
+
+.suil-theme-white,
+.suil-theme-gray10,
+.suil-theme-gray100,
+.suil-theme-gray90 {
+  background-color: var(--suil-bg);
+  color: var(--suil-text);
 }
 
 .suil-danger {

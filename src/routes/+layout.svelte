@@ -5,6 +5,8 @@ import { dev } from '$app/environment'
 import PageLoader from './PageLoader.svelte'
 import Header from './Header.svelte'
 import Sidebar from './Sidebar.svelte'
+
+export let data
 </script>
 
 <svelte:head>
@@ -15,9 +17,9 @@ import Sidebar from './Sidebar.svelte'
 
 <PageLoader />
 
-<Header />
+<Header bind:theme={data.theme} />
 
-<div class="span1 md:row-reverse">
+<div class="span1 md:row-reverse suil-theme-{data.theme}">
   <div class="span1 col">
     <slot />
   </div>
