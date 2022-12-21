@@ -29,6 +29,8 @@ export let readonly = false
 export let disabled = false
 /** @type {number} */
 export let minlines = 3
+/** @type {"transparent" | "ghost" | "boxed"} */
+export let kind = undefined
 /** @type {string} */
 export let size = undefined
 /** @type {boolean} */
@@ -77,7 +79,17 @@ function handleInvalid({ target }) {
 }
 </script>
 
-<Field class={$$props.class} style={$$props.style} {label} {disabled} {size} {info} error={invalid || error} let:id>
+<Field
+  class={$$props.class}
+  style={$$props.style}
+  {label}
+  {disabled}
+  {kind}
+  {size}
+  {info}
+  error={invalid || error}
+  let:id
+>
   <div class="suil-textarea" style="--suil-min-lines: {minlines};">
     <div class="suil-textarea__preview">{value || ''}.</div>
     <textarea

@@ -28,7 +28,7 @@ function handleThemeChange() {
       </a></h1
     >
   </figure>
-  <Select class="span1 max20" name="theme" bind:value={theme} on:change={handleThemeChange}>
+  <Select class="span1 max20" name="theme" kind="ghost" bind:value={theme} on:change={handleThemeChange}>
     {#each themes as [id, label] (id)}
       <option value={id} selected={id === theme}>{label}</option>
     {/each}

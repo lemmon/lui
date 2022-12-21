@@ -29,6 +29,8 @@ export let required = false
 export let readonly = false
 /** @type {boolean} */
 export let disabled = false
+/** @type {"transparent" | "ghost" | "boxed"} */
+export let kind = undefined
 /** @type {string} */
 export let size = undefined
 /** @type {boolean} */
@@ -77,7 +79,17 @@ function handleInvalid({ target }) {
 }
 </script>
 
-<Field class={$$props.class} style={$$props.style} {label} {disabled} {size} {info} error={invalid || error} let:id>
+<Field
+  class={$$props.class}
+  style={$$props.style}
+  {label}
+  {disabled}
+  {kind}
+  {size}
+  {info}
+  error={invalid || error}
+  let:id
+>
   <input
     {id}
     class="suil-control"

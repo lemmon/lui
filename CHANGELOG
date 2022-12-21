@@ -1,6 +1,7 @@
 # 0.7.0 (2022-12-XX)
 
   * Select component
+  * inputs' kind {"transparent" | "ghost" | "boxed"}
   * themes
 
 # 0.6.0 (2022-11-23)

@@ -7,6 +7,8 @@ export let disabled = false
 export let size = undefined
 export let info = undefined
 export let error = undefined
+/** @type {"transparent" | "ghost" | "boxed"} */
+export let kind = undefined
 
 const id = 'suil-' + uid()
 </script>
@@ -19,6 +21,9 @@ const id = 'suil-' + uid()
     class="suil-field"
     class:suil-field--error={!!error}
     class:suil-field--disabled={disabled}
+    class:suil-field--transparent={kind === 'transparent'}
+    class:suil-field--ghost={kind === 'ghost'}
+    class:suil-field--boxed={kind === 'boxed'}
     class:suil-xs={size === 'xs'}
     class:suil-sm={size === 'sm'}
     class:suil-md={size === 'md'}
@@ -61,11 +66,11 @@ const id = 'suil-' + uid()
   background-color: var(--suil-shade);
   color: var(--suil-text);
   border-style: solid;
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
+  border-color: var(--suil-gray);
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
   border-bottom-width: var(--suil-border-width);
-  border-bottom-color: var(--suil-gray);
   padding-left: var(--suil-border-width);
   padding-right: var(--suil-border-width);
   padding-top: var(--suil-border-width);
@@ -76,6 +81,21 @@ const id = 'suil-' + uid()
   display: flex;
   flex-direction: row;
   position: relative;
+}
+
+.suil-field--transparent {
+  background-color: transparent;
+}
+
+.suil-field--ghost {
+  border-width: 0;
+  padding: var(--suil-border-width);
+  background-color: transparent;
+}
+
+.suil-field--boxed {
+  border-width: var(--suil-border-width);
+  padding: 0;
 }
 
 .suil-field--disabled {
