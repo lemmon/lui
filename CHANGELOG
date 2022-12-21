@@ -1,4 +1,4 @@
-# 0.7.0 (2022-12-XX)
+# 0.7.0 (2022-12-21)
 
   * Select component
   * inputs' kind {"transparent" | "ghost" | "boxed"}
