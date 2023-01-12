@@ -4,8 +4,6 @@ import Field from './Field.svelte'
 import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
 
 /** @type {string} */
-export let type = 'text'
-/** @type {string} */
 export let name
 /** @type {string|number} */
 export let value = undefined
@@ -43,7 +41,7 @@ let invalid
 
 // update validity
 $: if (control && invalid) {
-  control.value = value || ''
+  control.value = value
   if (control.validity.valid) {
     invalid = false
   } else if (!control.validity.valid) {
@@ -95,7 +93,6 @@ function handleInvalid({ target }) {
     <textarea
       {id}
       class="suil-control"
-      {type}
       {name}
       {placeholder}
       {minlength}
@@ -103,7 +100,6 @@ function handleInvalid({ target }) {
       {required}
       {readonly}
       {disabled}
-      value={value || ''}
       on:input={handleInput}
       on:blur={handleBlur}
       on:invalid|preventDefault={handleInvalid}
@@ -111,6 +107,8 @@ function handleInvalid({ target }) {
       on:blur
       on:input
       on:change
+      bind:this={control}
+      bind:value
     />
   </div>
   {#if readonly}
