@@ -1,22 +1,16 @@
 <script>
-import TextInput from '$lib/TextInput.svelte'
-import PasswordInput from '$lib/PasswordInput.svelte'
-import NumberInput from '$lib/NumberInput.svelte'
-import TextArea from '$lib/TextArea.svelte'
+import Select from '$lib/Select.svelte'
+import Logo from '../Logo.svelte'
 </script>
 
 <div class="span1 col">
-  <div class="view bg-blue bg-sat10 bg-lum80 col justify-center px4 ma">
-    <div class="window bg-white">
-      <div class="col gap1 p2">
-        <TextInput label="Text" value="Hello World!" />
-        <PasswordInput label="Password" value="12345678" error="Err, this password is no good." />
-        <NumberInput label="Number" value={42} />
-        <TextArea
-          label="Text"
-          info="Place for some helpful information."
-          value="Mauris molestie purus egestas elit fermentum porta. Sed et placerat ligula, vel molestie nulla. Phasellus nisl nulla, pulvinar quis finibus eget, sollicitudin eu neque."
-        />
+  <div class="view suil-theme-gray90 col justify-center px4 ma">
+    <div class="w100 max30 mx col gap3">
+      <Select label="This is <Select />" value="Hello World!" />
+      <div class="row items-center gap1">
+        <Logo />
+        <div class="div" style="width: 2rem;" />
+        <h2 class="h4">Svelte Components</h2>
       </div>
     </div>
   </div>
