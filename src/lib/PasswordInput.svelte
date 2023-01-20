@@ -122,7 +122,7 @@ function handleVisibilityToggle() {
     <div class="suil-input-icon"><PencilSlashIcon /></div>
   {:else}
     <div class="suil-input-buttons">
-      <Button type="button" min size="sm" color="current" kind="ghost" on:click={handleVisibilityToggle}
+      <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handleVisibilityToggle}
         >{#if visible}<AsteriskIcon />{:else}<EyeIcon />{/if}</Button
       >
     </div>

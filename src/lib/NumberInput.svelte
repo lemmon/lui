@@ -134,6 +134,7 @@ function handleInvalid({ target }) {
     {max}
     {step}
     {required}
+    {disabled}
     on:invalid={handleInvalid}
     bind:this={control}
     bind:value
@@ -142,8 +143,12 @@ function handleInvalid({ target }) {
     <div class="suil-input-icon"><PencilSlashIcon /></div>
   {:else}
     <div class="suil-input-buttons">
-      <Button type="button" min size="sm" color="current" kind="ghost" on:click={handleMinus}><MinusIcon /></Button>
-      <Button type="button" min size="sm" color="current" kind="ghost" on:click={handlePlus}><PlusIcon /></Button>
+      <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handleMinus}
+        ><MinusIcon /></Button
+      >
+      <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handlePlus}
+        ><PlusIcon /></Button
+      >
     </div>
   {/if}
 </Field>
