@@ -1,10 +1,11 @@
 <script>
+import AddIcon from 'carbon-icons-svelte/lib/Add.svelte'
+import SubtractIcon from 'carbon-icons-svelte/lib/Subtract.svelte'
+import EditOffIcon from 'carbon-icons-svelte/lib/EditOff.svelte'
+import Icon from './Icon.svelte'
 import options from './options'
 import Field from './Field.svelte'
 import Button from './Button.svelte'
-import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
-import MinusIcon from './icons/MinusIcon.svelte'
-import PlusIcon from './icons/PlusIcon.svelte'
 import formatNumber from './format-number'
 
 /** @type {string} */
@@ -140,14 +141,14 @@ function handleInvalid({ target }) {
     bind:value
   />
   {#if readonly}
-    <div class="suil-input-icon"><PencilSlashIcon /></div>
+    <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
   {:else}
     <div class="suil-input-buttons">
       <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handleMinus}
-        ><MinusIcon /></Button
+        ><Icon C={SubtractIcon} /></Button
       >
       <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handlePlus}
-        ><PlusIcon /></Button
+        ><Icon C={AddIcon} /></Button
       >
     </div>
   {/if}

@@ -1,6 +1,7 @@
 <script>
 import { page } from '$app/stores'
-import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
+import LaunchIcon from 'carbon-icons-svelte/lib/Launch.svelte'
+import Icon from '$lib/Icon.svelte'
 
 const nav = [
   {
@@ -81,7 +82,7 @@ const nav = [
           class="row gap025 p05 ul:hover"
           href="https://github.com/lemmon/suil"
           target="_blank"
-          rel="external noreferrer">GitHub <ExternalLinkIcon /></a
+          rel="external noreferrer">GitHub <Icon C={LaunchIcon} /></a
         ></li
       >
       <li
@@ -89,7 +90,7 @@ const nav = [
           class="row gap025 p05 ul:hover"
           href="https://www.npmjs.com/package/suil"
           target="_blank"
-          rel="external noreferrer">NPM <ExternalLinkIcon /></a
+          rel="external noreferrer">NPM <Icon C={LaunchIcon} /></a
         ></li
       >
     </ul>

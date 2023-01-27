@@ -3,6 +3,7 @@ const options = {
   nullable: false,
   decPoint: '.',
   thousandsSep: ',',
+  iconSize: 16,
 }
 
 export default options

@@ -1,7 +1,8 @@
 <script>
 import Button from './Button.svelte'
-import CopyIcon from './icons/CopyIcon.svelte'
-import CheckIcon from './icons/CheckIcon.svelte'
+import Icon from './Icon.svelte'
+import CopyIcon from 'carbon-icons-svelte/lib/Copy.svelte'
+import CheckmarkIcon from 'carbon-icons-svelte/lib/Checkmark.svelte'
 
 export let text
 
@@ -44,5 +45,5 @@ function handleCopy() {
   on:mouseenter
   on:mouseleave
 >
-  <svelte:component this={!copied ? CopyIcon : CheckIcon} />
+  <Icon C={!copied ? CopyIcon : CheckmarkIcon} />
 </Button>

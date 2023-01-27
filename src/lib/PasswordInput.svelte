@@ -1,10 +1,11 @@
 <script>
+import ViewIcon from 'carbon-icons-svelte/lib/View.svelte'
+import ViewOffIcon from 'carbon-icons-svelte/lib/ViewOff.svelte'
+import EditOffIcon from 'carbon-icons-svelte/lib/EditOff.svelte'
 import options from './options'
+import Icon from './Icon.svelte'
 import Field from './Field.svelte'
 import Button from './Button.svelte'
-import EyeIcon from './icons/EyeIcon.svelte'
-import AsteriskIcon from './icons/AsteriskIcon.svelte'
-import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
 
 /** @type {string} */
 export let name
@@ -119,11 +120,11 @@ function handleVisibilityToggle() {
     bind:this={control}
   />
   {#if readonly}
-    <div class="suil-input-icon"><PencilSlashIcon /></div>
+    <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
   {:else}
     <div class="suil-input-buttons">
       <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handleVisibilityToggle}
-        >{#if visible}<AsteriskIcon />{:else}<EyeIcon />{/if}</Button
+        ><Icon C={visible ? ViewOffIcon : ViewIcon} /></Button
       >
     </div>
   {/if}

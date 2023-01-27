@@ -1,8 +1,8 @@
 <script>
-import options from './options'
+import ChevronSortIcon from 'carbon-icons-svelte/lib/ChevronSort.svelte'
+import EditOffIcon from 'carbon-icons-svelte/lib/EditOff.svelte'
+import Icon from './Icon.svelte'
 import Field from './Field.svelte'
-import ChevronExpandIcon from './icons/ChevronExpandIcon.svelte'
-import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
 
 /** @type {string} */
 export let name
@@ -84,9 +84,9 @@ function handleInvalid({ target }) {
   </select>
   <div class="suil-placeholder" />
   {#if readonly}
-    <div class="suil-input-icon"><PencilSlashIcon /></div>
+    <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
   {:else}
-    <div class="suil-input-icon"><ChevronExpandIcon /></div>
+    <div class="suil-input-icon"><Icon C={ChevronSortIcon} /></div>
   {/if}
 </Field>
 

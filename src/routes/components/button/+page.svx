@@ -3,10 +3,11 @@ title: Button Component
 ---
 
 <script>
+import LaunchIcon from 'carbon-icons-svelte/lib/Launch.svelte'
+import AddIcon from 'carbon-icons-svelte/lib/Add.svelte'
+import Icon from '$lib/Icon.svelte'
 import Code from '$lib/Code.svelte'
 import Button from '$lib/Button.svelte'
-import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
-import PlusIcon from '$lib/icons/PlusIcon.svelte'
 </script>
 
 <h1 class="h1 lh2 lsh">Button</h1>
@@ -37,15 +38,15 @@ Button component.
   <Button loading>Loading</Button>
 
   <Button>
-    <PlusIcon />
+    <Icon C={AddIcon} />
     Icon
   </Button>
-  <Button><PlusIcon /></Button>
-  <Button min><PlusIcon /></Button>
+  <Button><Icon C={AddIcon} /></Button>
+  <Button min><Icon C={AddIcon} /></Button>
 
   <Button href="https://www.lemmonjuice.com/" target="_blank" rel="external noreferrer">
     Link
-    <ExternalLinkIcon style="margin-left: auto;" />
+    <Icon C={LaunchIcon} style="margin-left: auto;" />
   </Button>
 </figure>
 

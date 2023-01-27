@@ -1,7 +1,8 @@
 <script>
+import EditOffIcon from 'carbon-icons-svelte/lib/EditOff.svelte'
+import Icon from './Icon.svelte'
 import options from './options'
 import Field from './Field.svelte'
-import PencilSlashIcon from './icons/PencilSlashIcon.svelte'
 
 /** @type {string} */
 export let name
@@ -112,7 +113,7 @@ function handleInvalid({ target }) {
     />
   </div>
   {#if readonly}
-    <div class="suil-input-icon"><PencilSlashIcon /></div>
+    <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
   {/if}
 </Field>
 

@@ -3,9 +3,10 @@ title: Svelte UI Library
 ---
 
 <script>
+import LaunchIcon from 'carbon-icons-svelte/lib/Launch.svelte'
+import Icon from '$lib/Icon.svelte'
 import Code from '$lib/Code.svelte'
 import Button from '$lib/Button.svelte'
-import ExternalLinkIcon from '$lib/icons/ExternalLinkIcon.svelte'
 </script>
 
 # Svelte UI Library
@@ -15,11 +16,11 @@ Components library inspired by Carbon Design System.
 <div class="row-wrap gap1">
   <Button kind="outlined" href="https://github.com/lemmon/suil" target="_blank" rel="external noreferrer">
     GitHub
-    <ExternalLinkIcon style="margin-left: auto;" />
+    <Icon C={LaunchIcon} style="margin-left: auto;" />
   </Button>
   <Button kind="outlined" href="https://www.npmjs.com/package/suil" target="_blank" rel="external noreferrer">
     NPM
-    <ExternalLinkIcon style="margin-left: auto;" />
+    <Icon C={LaunchIcon} style="margin-left: auto;" />
   </Button>
 </div>
 
