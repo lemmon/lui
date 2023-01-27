@@ -1,8 +1,8 @@
 <script>
 import EditOffIcon from 'carbon-icons-svelte/lib/EditOff.svelte'
 import Icon from './Icon.svelte'
-import options from './options'
 import Field from './Field.svelte'
+import options from './options'
 
 /** @type {string} */
 export let type = 'text'
@@ -30,7 +30,7 @@ export let required = false
 export let readonly = false
 /** @type {boolean} */
 export let disabled = false
-/** @type {"transparent" | "ghost" | "boxed"} */
+/** @type {"underlined" | "ghost" | "boxed"} */
 export let kind = undefined
 /** @type {string} */
 export let size = undefined

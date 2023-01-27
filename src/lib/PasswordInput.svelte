@@ -31,7 +31,7 @@ export let required = false
 export let readonly = false
 /** @type {boolean} */
 export let disabled = false
-/** @type {"transparent" | "ghost" | "boxed"} */
+/** @type {"underlined" | "ghost" | "boxed"} */
 export let kind = undefined
 /** @type {string} */
 export let size = undefined

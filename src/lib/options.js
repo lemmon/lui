@@ -4,6 +4,7 @@ const options = {
   decPoint: '.',
   thousandsSep: ',',
   iconSize: 16,
+  fieldKind: 'boxed',
 }
 
 export default options

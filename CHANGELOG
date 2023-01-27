@@ -1,6 +1,8 @@
 # 0.8.0 (2023-??-??)
 
-  * Drop own icons, use Carbon Design System Icons
+  * drop own icons, use Carbon Design System Icons
+  * inputs' kind drop "transparent",  add "underlined"
+  * inputs' kind set "boxed" as default
 
 # 0.7.0 (2022-12-21)
 

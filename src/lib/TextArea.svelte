@@ -28,7 +28,7 @@ export let readonly = false
 export let disabled = false
 /** @type {number} */
 export let minlines = 3
-/** @type {"transparent" | "ghost" | "boxed"} */
+/** @type {"underlined" | "ghost" | "boxed"} */
 export let kind = undefined
 /** @type {string} */
 export let size = undefined

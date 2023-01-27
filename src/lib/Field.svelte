@@ -1,14 +1,15 @@
 <script>
 import { uid } from 'uid'
 import Label from './Label.svelte'
+import options from './options'
 
 export let label = undefined
 export let disabled = false
 export let size = undefined
 export let info = undefined
 export let error = undefined
-/** @type {"transparent" | "ghost" | "boxed"} */
-export let kind = undefined
+/** @type {"underlined" | "ghost" | "boxed"} */
+export let kind = options.fieldKind
 
 const id = 'suil-' + uid()
 </script>
@@ -21,7 +22,7 @@ const id = 'suil-' + uid()
     class="suil-field"
     class:suil-field--error={!!error}
     class:suil-field--disabled={disabled}
-    class:suil-field--transparent={kind === 'transparent'}
+    class:suil-field--underlined={kind === 'underlined'}
     class:suil-field--ghost={kind === 'ghost'}
     class:suil-field--boxed={kind === 'boxed'}
     class:suil-xs={size === 'xs'}
@@ -67,14 +68,8 @@ const id = 'suil-' + uid()
   color: var(--suil-text);
   border-style: solid;
   border-color: var(--suil-gray);
-  border-left-width: 0;
-  border-right-width: 0;
-  border-top-width: 0;
-  border-bottom-width: var(--suil-border-width);
-  padding-left: var(--suil-border-width);
-  padding-right: var(--suil-border-width);
-  padding-top: var(--suil-border-width);
-  padding-bottom: 0;
+  border-width: 0;
+  padding: var(--suil-border-width);
 }
 
 .suil-field__inner {
@@ -83,13 +78,12 @@ const id = 'suil-' + uid()
   position: relative;
 }
 
-.suil-field--transparent {
-  background-color: transparent;
+.suil-field--underlined {
+  padding-bottom: 0;
+  border-bottom-width: var(--suil-border-width);
 }
 
 .suil-field--ghost {
-  border-width: 0;
-  padding: var(--suil-border-width);
   background-color: transparent;
 }
 
