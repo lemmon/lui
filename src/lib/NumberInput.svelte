@@ -74,7 +74,7 @@ function handleInput({ target }) {
 
 function handleMinus({ target }) {
   if (min && value <= min) return
-  value = parseFloat((value - ((step && parseFloat(step)) || 1)).toFixed(dec))
+  value = parseFloat(((value || 0) - ((step && parseFloat(step)) || 1)).toFixed(dec))
   target.dispatchEvent(new CustomEvent('input', { bubbles: true, cancelable: true }))
   target.dispatchEvent(new CustomEvent('change', { bubbles: true, cancelable: true }))
 }
