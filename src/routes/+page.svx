@@ -16,11 +16,11 @@ Components library inspired by Carbon Design System.
 <div class="row-wrap gap1">
   <Button kind="outlined" href="https://github.com/lemmon/suil" target="_blank" rel="external noreferrer">
     GitHub
-    <Icon C={LaunchIcon} style="margin-left: auto;" />
+    <div style="margin-left: auto;"><Icon C={LaunchIcon} /></div>
   </Button>
   <Button kind="outlined" href="https://www.npmjs.com/package/suil" target="_blank" rel="external noreferrer">
     NPM
-    <Icon C={LaunchIcon} style="margin-left: auto;" />
+    <div style="margin-left: auto;"><Icon C={LaunchIcon} /></div>
   </Button>
 </div>
 

@@ -7,12 +7,12 @@ export let size = options.iconSize
 
 <div class="suil-icon" style="--size: {size}px; {$$props.style || ''}"><svelte:component this={C} {size} /></div>
 
-<style global>
+<style>
 .suil-icon {
   padding: calc((var(--suil-line-height) - var(--size)) / 2);
 }
 
-.suil-icon svg {
+.suil-icon :global(svg) {
   display: block;
 }
 </style>

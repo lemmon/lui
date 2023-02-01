@@ -15,7 +15,7 @@ let value = ''
 TextInput component.
 
 <figure>
-  <TextInput name="value" label="Hello" placeholder="Enter something here..." bind:value />
+  <TextInput name="value" label="Hello" placeholder="Enter something here..." bind:value readonly />
 </figure>
 
 ```svelte
