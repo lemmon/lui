@@ -37,6 +37,7 @@
 
   --suil-button-width: 8rem;
   --suil-button-justify: start;
+  --suil-button-gap: 0.25rem;
   --suil-button-label: var(--suil-white);
 }
 

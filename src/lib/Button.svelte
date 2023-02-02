@@ -121,7 +121,7 @@ export let loading = false
   flex-direction: row;
   justify-content: var(--suil-button-justify);
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--suil-button-gap);
   color: var(--suil-label);
 }
 
