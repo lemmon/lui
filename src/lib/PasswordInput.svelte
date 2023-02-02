@@ -142,6 +142,7 @@ function handleVisibilityToggle() {
   border: 0;
   border-radius: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
+  padding-right: calc((var(--suil-size) - var(--suil-border-width)) * 2 + var(--suil-line-height));
   margin: 0;
   width: 100%;
   font-family: var(--suil-font-family);
@@ -170,10 +171,14 @@ function handleVisibilityToggle() {
 }
 
 .suil-input-icon {
+  position: absolute;
+  right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 
 .suil-input-buttons {
+  position: absolute;
+  right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width) - var(--suil-size-sm));
   display: flex;
   flex-direction: row;

@@ -89,8 +89,8 @@ function handleInvalid({ target }) {
   error={invalid || error}
   let:id
 >
-  <div class="suil-textarea" style="--suil-min-lines: {minlines};">
-    <div class="suil-textarea__preview">{value || ''}.</div>
+  <div class="suil-textarea" class:suil-textarea--has-icon={readonly} style="--suil-min-lines: {minlines};">
+    <div class="suil-preview">{value || ''}.</div>
     <textarea
       {id}
       class="suil-control"
@@ -124,7 +124,7 @@ function handleInvalid({ target }) {
   min-height: calc(var(--suil-min-lines) * var(--suil-line-height) + 2 * (var(--suil-size) - var(--suil-border-width)));
 }
 
-.suil-textarea__preview,
+.suil-preview,
 .suil-control {
   padding: calc(var(--suil-size) - var(--suil-border-width));
   margin: 0;
@@ -139,7 +139,7 @@ function handleInvalid({ target }) {
   text-align: left;
 }
 
-.suil-textarea__preview {
+.suil-preview {
   white-space: pre-wrap;
   overflow-wrap: break-word;
   word-break: normal;
@@ -172,7 +172,14 @@ function handleInvalid({ target }) {
   cursor: not-allowed;
 }
 
+.suil-textarea--has-icon .suil-control,
+.suil-textarea--has-icon .suil-preview {
+  padding-right: calc((var(--suil-size) - var(--suil-border-width)) * 2 + var(--suil-line-height));
+}
+
 .suil-input-icon {
+  position: absolute;
+  right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 </style>

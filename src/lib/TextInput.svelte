@@ -94,6 +94,7 @@ function handleInvalid({ target }) {
   <input
     {id}
     class="suil-control"
+    class:suil-control--has-icon={readonly}
     {type}
     {name}
     {placeholder}
@@ -157,7 +158,13 @@ function handleInvalid({ target }) {
   cursor: not-allowed;
 }
 
+.suil-control--has-icon {
+  padding-right: calc((var(--suil-size) - var(--suil-border-width)) * 2 + var(--suil-line-height));
+}
+
 .suil-input-icon {
+  position: absolute;
+  right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 </style>

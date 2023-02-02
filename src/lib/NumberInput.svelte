@@ -166,6 +166,9 @@ function handleInvalid({ target }) {
   border: 0;
   border-radius: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
+  padding-right: calc(
+    (var(--suil-size) - var(--suil-border-width)) * 2 + (var(--suil-line-height) + var(--suil-size-sm)) * 2
+  );
   margin: 0;
   width: 100%;
   font-family: var(--suil-font-family);
@@ -202,12 +205,16 @@ function handleInvalid({ target }) {
 }
 
 .suil-input-buttons {
+  position: absolute;
+  right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width) - var(--suil-size-sm));
   display: flex;
   flex-direction: row;
 }
 
 .suil-input-icon {
+  position: absolute;
+  right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 </style>

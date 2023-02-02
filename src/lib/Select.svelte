@@ -102,6 +102,7 @@ function handleInvalid({ target }) {
   border: 0;
   border-radius: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
+  padding-right: calc((var(--suil-size) - var(--suil-border-width)) * 2 + var(--suil-line-height));
   margin: 0;
   position: absolute;
   z-index: 1;
