@@ -14,13 +14,13 @@ import Button from '$lib/Button.svelte'
 Components library inspired by Carbon Design System.
 
 <div class="row-wrap gap1">
-  <Button kind="outlined" href="https://github.com/lemmon/suil" target="_blank" rel="external noreferrer">
+  <Button kind="outlined" href="https://github.com/lemmon/suil" target="_blank" rel="external noreferrer" justify="space-between">
     GitHub
-    <div style="margin-left: auto;"><Icon C={LaunchIcon} /></div>
+    <Icon C={LaunchIcon} />
   </Button>
-  <Button kind="outlined" href="https://www.npmjs.com/package/suil" target="_blank" rel="external noreferrer">
+  <Button kind="outlined" href="https://www.npmjs.com/package/suil" target="_blank" rel="external noreferrer" justify="space-between">
     NPM
-    <div style="margin-left: auto;"><Icon C={LaunchIcon} /></div>
+    <Icon C={LaunchIcon} />
   </Button>
 </div>
 

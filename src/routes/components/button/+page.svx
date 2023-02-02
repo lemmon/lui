@@ -44,9 +44,9 @@ Button component.
   <Button><Icon C={AddIcon} /></Button>
   <Button min><Icon C={AddIcon} /></Button>
 
-  <Button href="https://www.lemmonjuice.com/" target="_blank" rel="external noreferrer">
+  <Button href="https://www.lemmonjuice.com/" target="_blank" rel="external" justify="space-between">
     Link
-    <div style="margin-left: auto;"><Icon C={LaunchIcon} /></div>
+    <Icon C={LaunchIcon} />
   </Button>
 </figure>
 

@@ -4,6 +4,7 @@
   * inputs' kind drop "transparent", add "underlined"
   * inputs' kind set "boxed" as default
   * Button `--suil-button-gap` css var
+  * Button justify prop
 
 # 0.7.0 (2022-12-21)
 

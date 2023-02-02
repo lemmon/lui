@@ -14,6 +14,8 @@ export let kind = undefined
 /** @type {boolean} */
 export let min = false
 /** @type {string} */
+export let justify = undefined
+/** @type {string} */
 export let size = undefined
 /** @type {boolean} */
 export let disabled = false
@@ -48,7 +50,7 @@ export let loading = false
     on:mouseenter
     on:mouseleave
   >
-    <span class="suil-button__label"><slot /></span>
+    <span class="suil-button__label" style:justify-content={justify}><slot /></span>
   </a>
 {:else}
   <button
