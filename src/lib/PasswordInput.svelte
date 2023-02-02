@@ -8,7 +8,7 @@ import Field from './Field.svelte'
 import Button from './Button.svelte'
 
 /** @type {string} */
-export let name
+export let name = undefined
 /** @type {string|number} */
 export let value = undefined
 /** @type {string} */
