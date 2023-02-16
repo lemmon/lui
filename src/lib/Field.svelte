@@ -14,9 +14,11 @@ export let kind = options.fieldKind
 const id = 'suil-' + uid()
 </script>
 
-<div class={$$props.class}>
-  {#if label}
-    <Label {id} {disabled}>{label}</Label>
+<div class="suil {$$props.class || ''}">
+  {#if label || $$slots.header}
+    <div class="suil-field-header"
+      >{#if label}<Label {id} {disabled}>{label}</Label>{/if}<slot name="header" /></div
+    >
   {/if}
   <label
     class="suil-field"
@@ -41,9 +43,7 @@ const id = 'suil-' + uid()
 </div>
 
 <style>
-.suil-info {
-  box-sizing: border-box;
-  display: block;
+.suil {
   font-family: var(--suil-font-family);
   font-size: var(--suil-font-size);
   font-stretch: normal;
@@ -54,12 +54,27 @@ const id = 'suil-' + uid()
 }
 
 .suil-info {
+  box-sizing: border-box;
+  display: block;
+}
+
+.suil-info {
   margin-top: 4px;
 }
 
 .suil-info--disabled {
   color: var(--suil-gray);
   opacity: 50%;
+}
+
+.suil-field-header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 4px;
+}
+
+.suil-field-header:empty {
+  display: none;
 }
 
 .suil-field {
@@ -114,42 +129,5 @@ const id = 'suil-' + uid()
 .suil-field--error:not(:focus-within) {
   --suil-focus-color: var(--suil-color-danger);
   --suil-outline-color: var(--suil-color-danger);
-}
-
-.suil-control {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-  box-sizing: border-box;
-  display: block;
-  background-color: transparent;
-  border: 0;
-  border-radius: 0;
-  padding: calc(var(--suil-size) - var(--suil-border-width));
-  margin: 0;
-  width: 100%;
-  font-family: var(--suil-font-family);
-  font-size: var(--suil-font-size);
-  font-stretch: normal;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: normal;
-  line-height: var(--suil-line-height);
-  text-align: left;
-  outline: 0;
-}
-
-.suil-control::-webkit-inner-spin-button,
-.suil-control::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  margin: 0;
-}
-
-.suil-control:disabled {
-  color: var(--suil-gray);
-  opacity: 50%;
-  cursor: not-allowed;
 }
 </style>

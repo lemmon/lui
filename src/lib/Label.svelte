@@ -3,7 +3,7 @@ export let id = undefined
 export let disabled = undefined
 </script>
 
-<label for={id} class="suil-label" class:suil-label--disabled={disabled}><slot /></label>
+<label for={id} class="suil-label" class:suil-label--disabled={disabled} style={$$props.style}><slot /></label>
 
 <style>
 .suil-label {
@@ -16,10 +16,6 @@ export let disabled = undefined
   font-variant: normal;
   font-weight: normal;
   line-height: var(--suil-line-height);
-}
-
-.suil-label {
-  margin-bottom: 4px;
 }
 
 .suil-label--disabled {

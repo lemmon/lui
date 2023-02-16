@@ -36,6 +36,8 @@ export let kind = undefined
 /** @type {string} */
 export let size = undefined
 /** @type {boolean} */
+export let counter = label && maxlength > 0
+/** @type {boolean} */
 export let nullable = options.nullable
 /** @type {boolean} */
 export let trim = options.trim
@@ -97,6 +99,11 @@ function handleVisibilityToggle() {
   error={invalid || error}
   let:id
 >
+  <svelte:fragment slot="header"
+    >{#if counter}<div class="suil-counter"
+        >{value?.length || 0}{#if maxlength}/{maxlength}{/if}</div
+      >{/if}</svelte:fragment
+  >
   <input
     {id}
     class="suil-control"
@@ -168,6 +175,10 @@ function handleVisibilityToggle() {
   color: var(--suil-gray);
   opacity: 50%;
   cursor: not-allowed;
+}
+
+.suil-counter {
+  margin-left: auto;
 }
 
 .suil-input-icon {

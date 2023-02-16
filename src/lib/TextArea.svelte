@@ -33,6 +33,8 @@ export let kind = undefined
 /** @type {string} */
 export let size = undefined
 /** @type {boolean} */
+export let counter = label && maxlength > 0
+/** @type {boolean} */
 export let nullable = options.nullable
 /** @type {boolean} */
 export let trim = options.trim
@@ -89,6 +91,11 @@ function handleInvalid({ target }) {
   error={invalid || error}
   let:id
 >
+  <svelte:fragment slot="header"
+    >{#if counter}<div class="suil-counter"
+        >{value?.length || 0}{#if maxlength}/{maxlength}{/if}</div
+      >{/if}</svelte:fragment
+  >
   <div class="suil-textarea" class:suil-textarea--has-icon={readonly} style="--suil-min-lines: {minlines};">
     <div class="suil-preview">{value || ''}.</div>
     <textarea
@@ -175,6 +182,10 @@ function handleInvalid({ target }) {
 .suil-textarea--has-icon .suil-control,
 .suil-textarea--has-icon .suil-preview {
   padding-right: calc((var(--suil-size) - var(--suil-border-width)) * 2 + var(--suil-line-height));
+}
+
+.suil-counter {
+  margin-left: auto;
 }
 
 .suil-input-icon {
