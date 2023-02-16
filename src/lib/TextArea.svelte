@@ -33,7 +33,7 @@ export let kind = undefined
 /** @type {string} */
 export let size = undefined
 /** @type {boolean} */
-export let counter = label && maxlength > 0
+export let counter = false
 /** @type {boolean} */
 export let nullable = options.nullable
 /** @type {boolean} */
