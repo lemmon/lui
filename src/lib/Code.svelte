@@ -30,6 +30,8 @@ export let size = undefined
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  border-radius: var(--suil-border-radius);
+  overflow: clip;
 }
 
 .suil-code > pre {

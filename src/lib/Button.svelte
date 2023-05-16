@@ -98,7 +98,8 @@ export let loading = false
   margin: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
   border: var(--suil-border-width) solid transparent;
-  border-radius: 0;
+  border-radius: var(--suil-border-radius);
+  overflow: clip;
   width: initial;
   font-family: var(--suil-font-family);
   font-size: var(--suil-font-size);

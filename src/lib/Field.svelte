@@ -84,6 +84,8 @@ const id = 'suil-' + uid()
   border-style: solid;
   border-color: var(--suil-gray);
   border-width: 0;
+  border-radius: var(--suil-border-radius);
+  overflow: clip;
   padding: var(--suil-border-width);
 }
 

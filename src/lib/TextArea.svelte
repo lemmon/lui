@@ -162,7 +162,7 @@ function handleInvalid({ target }) {
   background-color: transparent;
   color: inherit;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--suil-border-radius);
   resize: none;
   outline: 0;
   position: absolute;

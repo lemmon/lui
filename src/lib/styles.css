@@ -29,6 +29,7 @@
   --suil-size-xl: 2rem;
 
   --suil-border-width: 1px;
+  --suil-border-radius: 0px;
   --suil-focus-color: var(--suil-color-primary);
   --suil-focus-inset-width: 1px;
   --suil-outline-color: var(--suil-focus-color);

@@ -136,7 +136,7 @@ function handleInvalid({ target }) {
   background-color: transparent;
   color: inherit;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--suil-border-radius);
   padding: calc(var(--suil-size) - var(--suil-border-width));
   margin: 0;
   width: 100%;

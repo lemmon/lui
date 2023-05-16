@@ -147,7 +147,7 @@ function handleVisibilityToggle() {
   background-color: transparent;
   color: inherit;
   border: 0;
-  border-radius: 0;
+  border-radius: var(--suil-border-radius);
   padding: calc(var(--suil-size) - var(--suil-border-width));
   padding-right: calc((var(--suil-size) - var(--suil-border-width)) * 2 + var(--suil-line-height));
   margin: 0;
