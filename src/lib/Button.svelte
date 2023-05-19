@@ -207,7 +207,7 @@ export let loading = false
   display: block;
   width: var(--suil-line-height);
   height: var(--suil-line-height);
-  border-width: var(--suil-border-width);
+  border-width: var(--suil-loader-width);
   border-style: solid;
   border-color: var(--suil-label) var(--suil-label) transparent transparent;
   border-radius: 100%;
