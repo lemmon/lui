@@ -1,4 +1,5 @@
 const options = {
+  buttonUnderline: 'hover',
   trim: false,
   nullable: false,
   decPoint: '.',

@@ -1,4 +1,6 @@
 <script>
+import options from './options'
+
 /** @type {string} */
 export let type = undefined
 /** @type {string} */
@@ -11,6 +13,8 @@ export let rel = undefined
 export let color = 'primary'
 /** @type {string} */
 export let kind = undefined
+/** @type {boolean | "hover"} */
+export let ul = options.buttonUnderline
 /** @type {boolean} */
 export let min = false
 /** @type {string} */
@@ -36,6 +40,8 @@ export let loading = false
     class:suil-button--outlined={kind === 'outlined'}
     class:suil-button--ghost={kind === 'ghost'}
     class:suil-button--minimal={min}
+    class:suil-button--ul={ul === true}
+    class:suil-button--ul:hover={ul === 'hover'}
     class:suil-xs={size === 'xs'}
     class:suil-sm={size === 'sm'}
     class:suil-md={size === 'md'}
@@ -64,6 +70,8 @@ export let loading = false
     class:suil-button--outlined={kind === 'outlined'}
     class:suil-button--ghost={kind === 'ghost'}
     class:suil-button--minimal={min}
+    class:suil-button--ul={ul === true}
+    class:suil-button--ul:hover={ul === 'hover'}
     class:suil-xs={size === 'xs'}
     class:suil-sm={size === 'sm'}
     class:suil-md={size === 'md'}
@@ -156,7 +164,8 @@ export let loading = false
   min-width: auto;
 }
 
-.suil-button:hover:not(:disabled) .suil-button__label {
+.suil-button--ul:not(:disabled) .suil-button__label,
+.suil-button--ul\:hover:hover:not(:disabled) .suil-button__label {
   text-decoration: underline;
 }
 
