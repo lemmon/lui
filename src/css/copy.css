@@ -1,37 +1,29 @@
-.copy {
-  --space: 2.5rem;
-}
-
-.copy > table:not(:first-child) {
-  margin-top: var(--space);
-}
-
-.copy > table:not(:last-child) {
-  margin-bottom: var(--space);
+:root {
+  --copy-space: 2.5rem;
 }
 
 .copy > h1 {
-  --space: 2rem;
-  --space-heading: 6rem;
   font-size: 2em;
   line-height: var(--lh1);
   letter-spacing: var(--lsh);
+  margin-top: 6rem;
+  margin-bottom: 2rem;
 }
 
 .copy > h2 {
-  --space: 2rem;
-  --space-heading: 6rem;
   font-size: 1.5em;
   line-height: var(--lh1);
   letter-spacing: var(--lsh);
+  margin-top: 6rem;
+  margin-bottom: 2rem;
 }
 
 .copy > h3 {
-  --space: 2rem;
-  --space-heading: 4rem;
   font-size: 1.25em;
   line-height: var(--lh1);
   letter-spacing: var(--lsh);
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 .copy a {

@@ -56,7 +56,7 @@ const nav = [
 ]
 </script>
 
-<div class="h6 rlh1" style:width="16rem">
+<div class="h6 rlh2" style:width="16rem">
   <nav class="py1 sd:p1">
     {#each nav as section}
       <div class="p05">
