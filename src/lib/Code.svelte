@@ -1,14 +1,19 @@
 <script>
+import options from './options'
 import CopyButton from './CopyButton.svelte'
 
 /** @type {string} */
 export let code
 /** @type {string} */
 export let size = undefined
+/** @type {null | "ghost" | "boxed"} */
+export let kind = options.codeKind
 </script>
 
 <div
   class="suil-code {$$props.class || ''}"
+  class:suil-code--ghost={kind === 'ghost'}
+  class:suil-code--boxed={kind === 'boxed'}
   class:suil-xs={size === 'xs'}
   class:suil-sm={size === 'sm'}
   class:suil-md={size === 'md'}
@@ -30,8 +35,21 @@ export let size = undefined
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  border-style: solid;
+  border-color: var(--suil-gray);
+  border-width: 0;
   border-radius: var(--suil-border-radius);
+  padding: var(--suil-border-width);
   overflow: clip;
+}
+
+.suil-code--ghost {
+  background-color: transparent;
+}
+
+.suil-code--boxed {
+  border-width: var(--suil-border-width);
+  padding: 0;
 }
 
 .suil-code > pre {
@@ -41,11 +59,11 @@ export let size = undefined
   word-break: break-word; /* Safari */
   overflow-wrap: anywhere;
   flex: 1;
-  padding: var(--suil-size);
+  padding: calc(var(--suil-size) - var(--suil-border-width));
   font: inherit;
 }
 
 .suil-code > div {
-  padding: calc(var(--suil-size) - var(--suil-size-sm));
+  padding: calc(var(--suil-size) - var(--suil-size-sm) - var(--suil-border-width));
 }
 </style>

@@ -1,14 +1,14 @@
 <script>
 import { uid } from 'uid'
-import Label from './Label.svelte'
 import options from './options'
+import Label from './Label.svelte'
 
 export let label = undefined
 export let disabled = false
 export let size = undefined
 export let info = undefined
 export let error = undefined
-/** @type {"underlined" | "ghost" | "boxed"} */
+/** @type {null | "underlined" | "ghost" | "boxed"} */
 export let kind = options.fieldKind
 
 const id = 'suil-' + uid()
@@ -85,8 +85,8 @@ const id = 'suil-' + uid()
   border-color: var(--suil-gray);
   border-width: 0;
   border-radius: var(--suil-border-radius);
-  overflow: clip;
   padding: var(--suil-border-width);
+  overflow: clip;
 }
 
 .suil-field__inner {

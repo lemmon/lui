@@ -3,12 +3,13 @@
   * border-radius
   * loader-width
   * Button underline option
+  * Code kind {null | "ghost" | "boxed"} (default: null)
 
 # 0.8.0 (2023-02-16)
 
   * drop own icons, use Carbon Design System Icons
-  * inputs' kind drop "transparent", add "underlined"
-  * inputs' kind set "boxed" as default
+  * Field kind drop "transparent", add "underlined"
+  * Field kind set "boxed" as default
   * inputs' counter
   * Button `--suil-button-gap` css var
   * Button justify prop
@@ -16,7 +17,7 @@
 # 0.7.0 (2022-12-21)
 
   * Select component
-  * inputs' kind {"transparent" | "ghost" | "boxed"}
+  * Field kind {"transparent" | "ghost" | "boxed"}
   * themes
 
 # 0.6.0 (2022-11-23)
