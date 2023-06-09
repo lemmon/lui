@@ -133,6 +133,7 @@ export let loading = false
   justify-content: var(--suil-button-justify);
   align-items: center;
   gap: var(--suil-button-gap);
+  min-width: var(--suil-line-height);
   color: var(--suil-label);
 }
 
