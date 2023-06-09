@@ -215,8 +215,8 @@ export let loading = false
   content: '';
   box-sizing: border-box;
   display: block;
-  width: var(--suil-line-height);
-  height: var(--suil-line-height);
+  width: var(--suil-loader-size);
+  height: var(--suil-loader-size);
   border-width: var(--suil-loader-width);
   border-style: solid;
   border-color: var(--suil-label) var(--suil-label) transparent transparent;

@@ -35,7 +35,8 @@
   --suil-outline-color: var(--suil-focus-color);
   --suil-outline-width: 1px;
   --suil-outline-offset: 0px;
-  --suil-loader-width: var(--suil-border-width);
+  --suil-loader-size: var(--suil-line-height);
+  --suil-loader-width: 1.5px;
 
   --suil-button-width: 8rem;
   --suil-button-justify: start;
