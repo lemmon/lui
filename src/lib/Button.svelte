@@ -27,38 +27,7 @@ export let disabled = false
 export let loading = false
 </script>
 
-{#if href}
-  <a
-    {href}
-    {target}
-    {rel}
-    {disabled}
-    class="suil-button {$$props.class || ''}"
-    class:suil-button--primary={color === 'primary'}
-    class:suil-button--secondary={color === 'secondary'}
-    class:suil-button--danger={color === 'danger'}
-    class:suil-button--outlined={kind === 'outlined'}
-    class:suil-button--ghost={kind === 'ghost'}
-    class:suil-button--minimal={min}
-    class:suil-button--ul={ul === true}
-    class:suil-button--ul:hover={ul === 'hover'}
-    class:suil-xs={size === 'xs'}
-    class:suil-sm={size === 'sm'}
-    class:suil-md={size === 'md'}
-    class:suil-lg={size === 'lg'}
-    class:suil-xl={size === 'xl'}
-    style={$$props.style}
-    on:click
-    on:hover
-    on:focus
-    on:blur
-    on:mouseover
-    on:mouseenter
-    on:mouseleave
-  >
-    <span class="suil-button__label" style:justify-content={justify}><slot /></span>
-  </a>
-{:else}
+{#if !href}
   <button
     {type}
     disabled={disabled || loading}
@@ -91,6 +60,57 @@ export let loading = false
       <span class="suil-button__loader" />
     {/if}
   </button>
+{:else if !disabled}
+  <a
+    {href}
+    {target}
+    {rel}
+    class="suil-button {$$props.class || ''}"
+    class:suil-button--disabled={disabled === true}
+    class:suil-button--primary={color === 'primary'}
+    class:suil-button--secondary={color === 'secondary'}
+    class:suil-button--danger={color === 'danger'}
+    class:suil-button--outlined={kind === 'outlined'}
+    class:suil-button--ghost={kind === 'ghost'}
+    class:suil-button--minimal={min}
+    class:suil-button--ul={ul === true}
+    class:suil-button--ul:hover={ul === 'hover'}
+    class:suil-xs={size === 'xs'}
+    class:suil-sm={size === 'sm'}
+    class:suil-md={size === 'md'}
+    class:suil-lg={size === 'lg'}
+    class:suil-xl={size === 'xl'}
+    style={$$props.style}
+    on:click
+    on:hover
+    on:focus
+    on:blur
+    on:mouseover
+    on:mouseenter
+    on:mouseleave
+  >
+    <span class="suil-button__label" style:justify-content={justify}><slot /></span>
+  </a>
+{:else}
+  <span
+    class="suil-button suil-button--disabled {$$props.class || ''}"
+    class:suil-button--primary={color === 'primary'}
+    class:suil-button--secondary={color === 'secondary'}
+    class:suil-button--danger={color === 'danger'}
+    class:suil-button--outlined={kind === 'outlined'}
+    class:suil-button--ghost={kind === 'ghost'}
+    class:suil-button--minimal={min}
+    class:suil-button--ul={ul === true}
+    class:suil-button--ul:hover={ul === 'hover'}
+    class:suil-xs={size === 'xs'}
+    class:suil-sm={size === 'sm'}
+    class:suil-md={size === 'md'}
+    class:suil-lg={size === 'lg'}
+    class:suil-xl={size === 'xl'}
+    style={$$props.style}
+  >
+    <span class="suil-button__label" style:justify-content={justify}><slot /></span>
+  </span>
 {/if}
 
 <style>
@@ -150,7 +170,7 @@ export let loading = false
 }
 
 .suil-button--outlined:not(:hover, :focus),
-.suil-button--outlined:disabled {
+.suil-button--outlined:is(:disabled, .suil-button--disabled) {
   --suil-label: var(--suil-color);
   background-color: transparent;
   border-color: var(--suil-color);
@@ -165,27 +185,32 @@ export let loading = false
   min-width: auto;
 }
 
-.suil-button--ul:not(:disabled) .suil-button__label,
-.suil-button--ul\:hover:hover:not(:disabled) .suil-button__label {
+.suil-button--ul:not(:disabled, .suil-button--disabled) .suil-button__label,
+.suil-button--ul\:hover:hover:not(:disabled, .suil-button--disabled) .suil-button__label {
   text-decoration: underline;
 }
 
-.suil-button:focus:not(:disabled) {
+.suil-button:focus:not(:disabled, .suil-button--disabled) {
   outline: var(--suil-outline-width) solid var(--suil-outline-color);
   outline-offset: var(--suil-outline-offset);
   border-color: var(--suil-focus-color, var(--suil-color));
 }
 
-.suil-button:focus:not(:disabled, .suil-button--ghost) {
+.suil-button:focus:not(:disabled, .suil-button--disabled, .suil-button--ghost) {
   box-shadow: inset 0 0 0 var(--suil-focus-inset-width) var(--suil-bg);
 }
 
-.suil-button:disabled:not(.suil-button--outlined, .suil-button--ghost, .suil-button--loading) .suil-button__label {
+.suil-button:is(:disabled, .suil-button--disabled):not(
+    .suil-button--outlined,
+    .suil-button--ghost,
+    .suil-button--loading
+  )
+  .suil-button__label {
   color: var(--suil-text);
   opacity: 60%;
 }
 
-.suil-button:disabled:not(.suil-button--loading) {
+.suil-button:is(:disabled, .suil-button--disabled):not(.suil-button--loading) {
   --suil-color: var(--suil-gray);
   opacity: 50%;
   cursor: not-allowed;
