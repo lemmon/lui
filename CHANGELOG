@@ -5,6 +5,7 @@
   * loader-size
   * Button underline option
   * Code kind {null | "ghost" | "boxed"} (default: null)
+  * TextInput, TextArea align {"left" | "center" | "right"}
 
 # 0.8.0 (2023-02-16)
 

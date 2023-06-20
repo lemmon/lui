@@ -16,6 +16,8 @@ export let label = undefined
 export let info = undefined
 /** @type {boolean|string} */
 export let error = undefined
+/** @type {string} */
+export let align = undefined
 /** @type {number} */
 export let minlength = undefined
 /** @type {number} */
@@ -96,7 +98,14 @@ function handleInvalid({ target }) {
         >{value?.length || 0}{#if maxlength}/{maxlength}{/if}</div
       >{/if}</svelte:fragment
   >
-  <div class="suil-textarea" class:suil-textarea--has-icon={readonly} style="--suil-min-lines: {minlines};">
+  <div
+    class="suil-textarea"
+    class:suil-textarea--has-icon={readonly}
+    class:suil-textarea--align-left={align === 'left'}
+    class:suil-textarea--align-center={align === 'center'}
+    class:suil-textarea--align-right={align === 'right'}
+    style="--suil-min-lines: {minlines};"
+  >
     <div class="suil-preview">{value || ''}.</div>
     <textarea
       {id}
@@ -143,7 +152,7 @@ function handleInvalid({ target }) {
   font-variant: normal;
   font-weight: normal;
   line-height: var(--suil-line-height);
-  text-align: left;
+  text-align: inherit;
 }
 
 .suil-preview {
@@ -182,6 +191,18 @@ function handleInvalid({ target }) {
 .suil-textarea--has-icon .suil-control,
 .suil-textarea--has-icon .suil-preview {
   padding-right: calc((var(--suil-size) - var(--suil-border-width)) * 2 + var(--suil-line-height));
+}
+
+.suil-textarea--align-left {
+  text-align: left;
+}
+
+.suil-textarea--align-center {
+  text-align: center;
+}
+
+.suil-textarea--align-right {
+  text-align: right;
 }
 
 .suil-counter {
