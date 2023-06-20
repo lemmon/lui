@@ -21,6 +21,8 @@ export let label = undefined
 export let info = undefined
 /** @type {boolean|string} */
 export let error = undefined
+/** @type {boolean} */
+export let controls = true
 /** @type {number} */
 export let minlength = undefined
 /** @type {number} */
@@ -107,6 +109,7 @@ function handleVisibilityToggle() {
   <input
     {id}
     class="suil-control"
+    class:suil-control--padding-right-one={readonly || controls}
     type={visible ? 'text' : 'password'}
     {name}
     {placeholder}
@@ -128,8 +131,8 @@ function handleVisibilityToggle() {
   />
   {#if readonly}
     <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
-  {:else}
-    <div class="suil-input-buttons">
+  {:else if controls}
+    <div class="suil-input-controls">
       <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handleVisibilityToggle}
         ><Icon C={visible ? ViewOffIcon : ViewIcon} /></Button
       >
@@ -149,7 +152,6 @@ function handleVisibilityToggle() {
   border: 0;
   border-radius: var(--suil-border-radius);
   padding: calc(var(--suil-size) - var(--suil-border-width));
-  padding-right: calc((var(--suil-size) - var(--suil-border-width)) * 2 + var(--suil-line-height));
   margin: 0;
   width: 100%;
   font-family: var(--suil-font-family);
@@ -161,6 +163,12 @@ function handleVisibilityToggle() {
   line-height: var(--suil-line-height);
   text-align: left;
   outline: 0;
+}
+
+.suil-control--padding-right-one {
+  padding-right: calc(
+    (var(--suil-size) - var(--suil-border-width)) + (var(--suil-line-height) + var(--suil-size-sm) * 2) * 1
+  );
 }
 
 .suil-control::-webkit-inner-spin-button,
@@ -187,7 +195,7 @@ function handleVisibilityToggle() {
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 
-.suil-input-buttons {
+.suil-input-controls {
   position: absolute;
   right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width) - var(--suil-size-sm));

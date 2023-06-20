@@ -20,6 +20,8 @@ export let label = undefined
 export let info = undefined
 /** @type {boolean|string} */
 export let error = undefined
+/** @type {boolean} */
+export let controls = true
 /** @type {number} */
 export let min = undefined
 /** @type {number} */
@@ -115,6 +117,8 @@ function handleInvalid({ target }) {
   <input
     {id}
     class="suil-control"
+    class:suil-control--padding-right-one={readonly}
+    class:suil-control--padding-right-two={controls && !readonly}
     {name}
     {placeholder}
     {readonly}
@@ -142,8 +146,8 @@ function handleInvalid({ target }) {
   />
   {#if readonly}
     <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
-  {:else}
-    <div class="suil-input-buttons">
+  {:else if controls}
+    <div class="suil-input-controls">
       <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handleMinus}
         ><Icon C={SubtractIcon} /></Button
       >
@@ -166,9 +170,6 @@ function handleInvalid({ target }) {
   border: 0;
   border-radius: var(--suil-border-radius);
   padding: calc(var(--suil-size) - var(--suil-border-width));
-  padding-right: calc(
-    (var(--suil-size) - var(--suil-border-width)) * 2 + (var(--suil-line-height) + var(--suil-size-sm)) * 2
-  );
   margin: 0;
   width: 100%;
   font-family: var(--suil-font-family);
@@ -204,17 +205,29 @@ function handleInvalid({ target }) {
   visibility: hidden;
 }
 
-.suil-input-buttons {
-  position: absolute;
-  right: 0;
-  padding: calc(var(--suil-size) - var(--suil-border-width) - var(--suil-size-sm));
-  display: flex;
-  flex-direction: row;
+.suil-control--padding-right-one {
+  padding-right: calc(
+    (var(--suil-size) - var(--suil-border-width)) + (var(--suil-line-height) + var(--suil-size-sm) * 2) * 1
+  );
+}
+
+.suil-control--padding-right-two {
+  padding-right: calc(
+    (var(--suil-size) - var(--suil-border-width)) + (var(--suil-line-height) + var(--suil-size-sm) * 2) * 2
+  );
 }
 
 .suil-input-icon {
   position: absolute;
   right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
+}
+
+.suil-input-controls {
+  position: absolute;
+  right: 0;
+  padding: calc(var(--suil-size) - var(--suil-border-width) - var(--suil-size-sm));
+  display: flex;
+  flex-direction: row;
 }
 </style>

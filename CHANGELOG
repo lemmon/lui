@@ -6,6 +6,7 @@
   * Button underline option
   * Code kind {null | "ghost" | "boxed"} (default: null)
   * TextInput, TextArea align {"left" | "center" | "right"}
+  * NumberInput, PasswordInput controls {boolean} (default: true)
 
 # 0.8.0 (2023-02-16)
 
