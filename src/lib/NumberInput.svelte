@@ -20,6 +20,8 @@ export let label = undefined
 export let info = undefined
 /** @type {boolean|string} */
 export let error = undefined
+/** @type {string} */
+export let align = undefined
 /** @type {boolean} */
 export let controls = true
 /** @type {number} */
@@ -119,6 +121,9 @@ function handleInvalid({ target }) {
     class="suil-control"
     class:suil-control--padding-right-one={readonly}
     class:suil-control--padding-right-two={controls && !readonly}
+    class:suil-control--align-left={align === 'left'}
+    class:suil-control--align-center={align === 'center'}
+    class:suil-control--align-right={align === 'right'}
     {name}
     {placeholder}
     {readonly}
@@ -179,7 +184,7 @@ function handleInvalid({ target }) {
   font-variant: normal;
   font-weight: normal;
   line-height: var(--suil-line-height);
-  text-align: left;
+  text-align: inherit;
   outline: 0;
 }
 
@@ -215,6 +220,18 @@ function handleInvalid({ target }) {
   padding-right: calc(
     (var(--suil-size) - var(--suil-border-width)) + (var(--suil-line-height) + var(--suil-size-sm) * 2) * 2
   );
+}
+
+.suil-control--align-left {
+  text-align: left;
+}
+
+.suil-control--align-center {
+  text-align: center;
+}
+
+.suil-control--align-right {
+  text-align: right;
 }
 
 .suil-input-icon {
