@@ -10,6 +10,8 @@ export let info = undefined
 export let error = undefined
 /** @type {null | "underlined" | "ghost" | "boxed"} */
 export let kind = options.fieldKind
+/** @type {"start" | "end" | "left" | "right" | "center"} */
+export let align = undefined
 
 const id = 'suil-' + uid()
 </script>
@@ -32,6 +34,11 @@ const id = 'suil-' + uid()
     class:suil-md={size === 'md'}
     class:suil-lg={size === 'lg'}
     class:suil-xl={size === 'xl'}
+    class:suil-align-start={align === 'start'}
+    class:suil-align-end={align === 'end'}
+    class:suil-align-left={align === 'left'}
+    class:suil-align-right={align === 'right'}
+    class:suil-align-center={align === 'center'}
   >
     <div class="suil-field__inner"><slot {id} /></div>
   </label>

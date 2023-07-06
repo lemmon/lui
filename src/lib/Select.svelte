@@ -26,6 +26,8 @@ export let disabled = false
 export let kind = undefined
 /** @type {string} */
 export let size = undefined
+/** @type {"start" | "end" | "left" | "right" | "center"} */
+export let align = undefined
 
 let control
 let invalid
@@ -59,6 +61,7 @@ function handleInvalid({ target }) {
   {disabled}
   {kind}
   {size}
+  {align}
   {info}
   error={invalid || error}
   let:id
@@ -118,7 +121,7 @@ function handleInvalid({ target }) {
   font-variant: normal;
   font-weight: normal;
   line-height: var(--suil-line-height);
-  text-align: left;
+  text-align: inherit;
   outline: 0;
 }
 

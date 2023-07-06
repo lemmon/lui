@@ -16,7 +16,7 @@ export let label = undefined
 export let info = undefined
 /** @type {boolean|string} */
 export let error = undefined
-/** @type {string} */
+/** @type {"start" | "end" | "left" | "right" | "center"} */
 export let align = undefined
 /** @type {number} */
 export let minlength = undefined
@@ -89,6 +89,7 @@ function handleInvalid({ target }) {
   {disabled}
   {kind}
   {size}
+  {align}
   {info}
   error={invalid || error}
   let:id
@@ -98,13 +99,7 @@ function handleInvalid({ target }) {
         >{value?.length || 0}{#if maxlength}/{maxlength}{/if}</div
       >{/if}</svelte:fragment
   >
-  <div
-    class="suil-textarea"
-    class:suil-textarea--align-left={align === 'left'}
-    class:suil-textarea--align-center={align === 'center'}
-    class:suil-textarea--align-right={align === 'right'}
-    style="--suil-min-lines: {minlines};"
-  >
+  <div class="suil-textarea" style="--suil-min-lines: {minlines};">
     <div class="suil-preview">{value || ''}.</div>
     <textarea
       {id}
@@ -185,18 +180,6 @@ function handleInvalid({ target }) {
   color: var(--suil-gray);
   opacity: 50%;
   cursor: not-allowed;
-}
-
-.suil-textarea--align-left {
-  text-align: left;
-}
-
-.suil-textarea--align-center {
-  text-align: center;
-}
-
-.suil-textarea--align-right {
-  text-align: right;
 }
 
 .suil-counter {

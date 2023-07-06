@@ -20,8 +20,6 @@ export let label = undefined
 export let info = undefined
 /** @type {boolean|string} */
 export let error = undefined
-/** @type {string} */
-export let align = undefined
 /** @type {boolean} */
 export let controls = true
 /** @type {number} */
@@ -42,6 +40,8 @@ export let disabled = false
 export let kind = undefined
 /** @type {string} */
 export let size = undefined
+/** @type {"start" | "end" | "left" | "right" | "center"} */
+export let align = undefined
 
 let inputValue = valueFormatted(value)
 let control
@@ -112,6 +112,7 @@ function handleInvalid({ target }) {
   {disabled}
   {kind}
   {size}
+  {align}
   {info}
   error={invalid || error}
   let:id
@@ -119,9 +120,6 @@ function handleInvalid({ target }) {
   <input
     {id}
     class="suil-control"
-    class:suil-control--align-left={align === 'left'}
-    class:suil-control--align-center={align === 'center'}
-    class:suil-control--align-right={align === 'right'}
     {name}
     {placeholder}
     {readonly}
@@ -206,18 +204,6 @@ function handleInvalid({ target }) {
   width: 0;
   z-index: -1;
   visibility: hidden;
-}
-
-.suil-control--align-left {
-  text-align: left;
-}
-
-.suil-control--align-center {
-  text-align: center;
-}
-
-.suil-control--align-right {
-  text-align: right;
 }
 
 .suil-input-icon {

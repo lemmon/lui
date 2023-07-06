@@ -37,6 +37,8 @@ export let disabled = false
 export let kind = undefined
 /** @type {string} */
 export let size = undefined
+/** @type {"start" | "end" | "left" | "right" | "center"} */
+export let align = undefined
 /** @type {boolean} */
 export let counter = false
 /** @type {boolean} */
@@ -97,6 +99,7 @@ function handleVisibilityToggle() {
   {disabled}
   {kind}
   {size}
+  {align}
   {info}
   error={invalid || error}
   let:id
@@ -161,7 +164,7 @@ function handleVisibilityToggle() {
   font-variant: normal;
   font-weight: normal;
   line-height: var(--suil-line-height);
-  text-align: left;
+  text-align: inherit;
   outline: 0;
 }
 

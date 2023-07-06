@@ -104,3 +104,23 @@
 .suil-xl {
   --suil-size: var(--suil-size-xl);
 }
+
+.suil-align-start {
+  text-align: start;
+}
+
+.suil-align-end {
+  text-align: end;
+}
+
+.suil-align-left {
+  text-align: left;
+}
+
+.suil-align-right {
+  text-align: right;
+}
+
+.suil-align-center {
+  text-align: center;
+}

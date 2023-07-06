@@ -20,7 +20,7 @@ export let label = undefined
 export let info = undefined
 /** @type {boolean|string} */
 export let error = undefined
-/** @type {string} */
+/** @type {"start" | "end" | "left" | "right" | "center"} */
 export let align = undefined
 /** @type {number} */
 export let minlength = undefined
@@ -91,6 +91,7 @@ function handleInvalid({ target }) {
   {disabled}
   {kind}
   {size}
+  {align}
   {info}
   error={invalid || error}
   let:id
@@ -103,9 +104,6 @@ function handleInvalid({ target }) {
   <input
     {id}
     class="suil-control"
-    class:suil-control--align-left={align === 'left'}
-    class:suil-control--align-center={align === 'center'}
-    class:suil-control--align-right={align === 'right'}
     {type}
     {name}
     {placeholder}
@@ -167,18 +165,6 @@ function handleInvalid({ target }) {
   color: var(--suil-gray);
   opacity: 50%;
   cursor: not-allowed;
-}
-
-.suil-control--align-left {
-  text-align: left;
-}
-
-.suil-control--align-center {
-  text-align: center;
-}
-
-.suil-control--align-right {
-  text-align: right;
 }
 
 .suil-counter {
