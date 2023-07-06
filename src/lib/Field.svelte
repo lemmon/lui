@@ -14,7 +14,7 @@ export let kind = options.fieldKind
 const id = 'suil-' + uid()
 </script>
 
-<div class="suil {$$props.class || ''}">
+<div class="suil {$$props.class || ''}" style={$$props.style}>
   {#if label || $$slots.header}
     <div class="suil-field-header"
       >{#if label}<Label {id} {disabled}>{label}</Label>{/if}<slot name="header" /></div
@@ -78,6 +78,7 @@ const id = 'suil-' + uid()
 }
 
 .suil-field {
+  --suil-button-size: min(var(--suil-size-sm), calc(var(--suil-size) - 3px));
   display: block;
   background-color: var(--suil-shade);
   color: var(--suil-text);
@@ -87,6 +88,10 @@ const id = 'suil-' + uid()
   border-radius: var(--suil-border-radius);
   padding: var(--suil-border-width);
   overflow: clip;
+}
+
+.suil-field :global(.suil-button) {
+  --suil-size: var(--suil-button-size);
 }
 
 .suil-field__inner {

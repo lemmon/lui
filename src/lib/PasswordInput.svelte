@@ -109,7 +109,6 @@ function handleVisibilityToggle() {
   <input
     {id}
     class="suil-control"
-    class:suil-control--padding-right-one={readonly || controls}
     type={visible ? 'text' : 'password'}
     {name}
     {placeholder}
@@ -152,6 +151,7 @@ function handleVisibilityToggle() {
   border: 0;
   border-radius: var(--suil-border-radius);
   padding: calc(var(--suil-size) - var(--suil-border-width));
+  padding-right: calc(var(--suil-line-height) + 2 * (var(--suil-size) - var(--suil-border-width)));
   margin: 0;
   width: 100%;
   font-family: var(--suil-font-family);
@@ -163,12 +163,6 @@ function handleVisibilityToggle() {
   line-height: var(--suil-line-height);
   text-align: left;
   outline: 0;
-}
-
-.suil-control--padding-right-one {
-  padding-right: calc(
-    (var(--suil-size) - var(--suil-border-width)) + (var(--suil-line-height) + var(--suil-size-sm) * 2) * 1
-  );
 }
 
 .suil-control::-webkit-inner-spin-button,
@@ -189,16 +183,18 @@ function handleVisibilityToggle() {
   margin-left: auto;
 }
 
-.suil-input-icon {
+.suil-input-icon,
+.suil-input-controls {
   position: absolute;
   right: 0;
+}
+
+.suil-input-icon {
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 
 .suil-input-controls {
-  position: absolute;
-  right: 0;
-  padding: calc(var(--suil-size) - var(--suil-border-width) - var(--suil-size-sm));
+  padding: calc(var(--suil-size) - var(--suil-border-width) - var(--suil-button-size));
   display: flex;
   flex-direction: row;
 }

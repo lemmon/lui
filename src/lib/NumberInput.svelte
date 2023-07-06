@@ -119,8 +119,6 @@ function handleInvalid({ target }) {
   <input
     {id}
     class="suil-control"
-    class:suil-control--padding-right-one={readonly}
-    class:suil-control--padding-right-two={controls && !readonly}
     class:suil-control--align-left={align === 'left'}
     class:suil-control--align-center={align === 'center'}
     class:suil-control--align-right={align === 'right'}
@@ -153,10 +151,10 @@ function handleInvalid({ target }) {
     <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
   {:else if controls}
     <div class="suil-input-controls">
-      <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handleMinus}
+      <Button type="button" min color="current" kind="ghost" {disabled} on:click={handleMinus}
         ><Icon C={SubtractIcon} /></Button
       >
-      <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handlePlus}
+      <Button type="button" min color="current" kind="ghost" {disabled} on:click={handlePlus}
         ><Icon C={AddIcon} /></Button
       >
     </div>
@@ -210,18 +208,6 @@ function handleInvalid({ target }) {
   visibility: hidden;
 }
 
-.suil-control--padding-right-one {
-  padding-right: calc(
-    (var(--suil-size) - var(--suil-border-width)) + (var(--suil-line-height) + var(--suil-size-sm) * 2) * 1
-  );
-}
-
-.suil-control--padding-right-two {
-  padding-right: calc(
-    (var(--suil-size) - var(--suil-border-width)) + (var(--suil-line-height) + var(--suil-size-sm) * 2) * 2
-  );
-}
-
 .suil-control--align-left {
   text-align: left;
 }
@@ -235,15 +221,11 @@ function handleInvalid({ target }) {
 }
 
 .suil-input-icon {
-  position: absolute;
-  right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 
 .suil-input-controls {
-  position: absolute;
-  right: 0;
-  padding: calc(var(--suil-size) - var(--suil-border-width) - var(--suil-size-sm));
+  padding: calc(var(--suil-size) - var(--suil-border-width) - var(--suil-button-size));
   display: flex;
   flex-direction: row;
 }

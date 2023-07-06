@@ -103,7 +103,6 @@ function handleInvalid({ target }) {
   <input
     {id}
     class="suil-control"
-    class:suil-control--has-icon={readonly}
     class:suil-control--align-left={align === 'left'}
     class:suil-control--align-center={align === 'center'}
     class:suil-control--align-right={align === 'right'}
@@ -182,17 +181,11 @@ function handleInvalid({ target }) {
   text-align: right;
 }
 
-.suil-control--has-icon {
-  padding-right: calc((var(--suil-size) - var(--suil-border-width)) * 2 + var(--suil-line-height));
-}
-
 .suil-counter {
   margin-left: auto;
 }
 
 .suil-input-icon {
-  position: absolute;
-  right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 </style>

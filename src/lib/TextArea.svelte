@@ -100,7 +100,6 @@ function handleInvalid({ target }) {
   >
   <div
     class="suil-textarea"
-    class:suil-textarea--has-icon={readonly}
     class:suil-textarea--align-left={align === 'left'}
     class:suil-textarea--align-center={align === 'center'}
     class:suil-textarea--align-right={align === 'right'}
@@ -188,11 +187,6 @@ function handleInvalid({ target }) {
   cursor: not-allowed;
 }
 
-.suil-textarea--has-icon .suil-control,
-.suil-textarea--has-icon .suil-preview {
-  padding-right: calc((var(--suil-size) - var(--suil-border-width)) * 2 + var(--suil-line-height));
-}
-
 .suil-textarea--align-left {
   text-align: left;
 }
@@ -210,8 +204,6 @@ function handleInvalid({ target }) {
 }
 
 .suil-input-icon {
-  position: absolute;
-  right: 0;
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 </style>

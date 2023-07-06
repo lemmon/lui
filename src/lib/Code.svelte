@@ -22,11 +22,12 @@ export let kind = options.codeKind
   style={$$props.style}
 >
   <pre><code>{code}</code></pre>
-  <div><CopyButton text={code} size="sm" color="current" kind="ghost" /></div>
+  <div><CopyButton text={code} color="current" kind="ghost" /></div>
 </div>
 
 <style>
 .suil-code {
+  --suil-button-size: min(var(--suil-size-sm), calc(var(--suil-size) - 3px));
   box-sizing: border-box;
   font-family: var(--suil-code-font-family);
   font-size: var(--suil-code-font-size);
@@ -41,6 +42,10 @@ export let kind = options.codeKind
   border-radius: var(--suil-border-radius);
   padding: var(--suil-border-width);
   overflow: clip;
+}
+
+.suil-code :global(.suil-button) {
+  --suil-size: var(--suil-button-size);
 }
 
 .suil-code--ghost {
@@ -64,6 +69,6 @@ export let kind = options.codeKind
 }
 
 .suil-code > div {
-  padding: calc(var(--suil-size) - var(--suil-size-sm) - var(--suil-border-width));
+  padding: calc(var(--suil-size) - var(--suil-border-width) - var(--suil-button-size));
 }
 </style>
