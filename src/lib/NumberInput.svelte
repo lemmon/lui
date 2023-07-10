@@ -68,6 +68,18 @@ function valueFormatted(value) {
   return typeof value === 'number' ? formatNumber(value, dec) : ''
 }
 
+// manipulate
+
+function increaseValue() {
+  if (max && value >= max) return
+  value = parseFloat(((value || 0) + ((step && parseFloat(step)) || 1)).toFixed(dec))
+}
+
+function decreaseValue() {
+  if (min && value <= min) return
+  value = parseFloat(((value || 0) - ((step && parseFloat(step)) || 1)).toFixed(dec))
+}
+
 // events
 
 function handleInput({ target }) {
@@ -76,16 +88,35 @@ function handleInput({ target }) {
   value = !isNaN(value) ? value : null
 }
 
-function handleMinus({ target }) {
-  if (min && value <= min) return
-  value = parseFloat(((value || 0) - ((step && parseFloat(step)) || 1)).toFixed(dec))
-  target.dispatchEvent(new CustomEvent('input', { bubbles: true, cancelable: true }))
-  target.dispatchEvent(new CustomEvent('change', { bubbles: true, cancelable: true }))
+function handleKeydown(e) {
+  if (e.defaultPrevented) return
+  switch (e.key) {
+    case 'ArrowUp':
+      e.preventDefault()
+      increaseValue()
+      e.target.value = inputValue = valueFormatted(value)
+      dispatchInput(e)
+      break
+    case 'ArrowDown':
+      e.preventDefault()
+      decreaseValue()
+      e.target.value = inputValue = valueFormatted(value)
+      dispatchInput(e)
+      break
+  }
 }
 
-function handlePlus({ target }) {
-  if (max && value >= max) return
-  value = parseFloat(((value || 0) + ((step && parseFloat(step)) || 1)).toFixed(dec))
+function handlePlus(e) {
+  increaseValue()
+  dispatchInput(e)
+}
+
+function handleMinus(e) {
+  decreaseValue()
+  dispatchInput(e)
+}
+
+function dispatchInput({ target }) {
   target.dispatchEvent(new CustomEvent('input', { bubbles: true, cancelable: true }))
   target.dispatchEvent(new CustomEvent('change', { bubbles: true, cancelable: true }))
 }
@@ -126,6 +157,7 @@ function handleInvalid({ target }) {
     {disabled}
     value={inputValue}
     on:input={handleInput}
+    on:keydown={handleKeydown}
     on:focus={handleFocus}
     on:blur={handleBlur}
     on:focus
