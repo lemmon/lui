@@ -19,8 +19,6 @@ export let error = undefined
 /** @type {boolean} */
 export let required = false
 /** @type {boolean} */
-export let readonly = false
-/** @type {boolean} */
 export let disabled = false
 /** @type {"underlined" | "ghost" | "boxed"} */
 export let kind = undefined
@@ -72,7 +70,6 @@ function handleInvalid({ target }) {
     {name}
     {placeholder}
     {required}
-    {readonly}
     {disabled}
     on:blur={handleBlur}
     on:invalid|preventDefault={handleInvalid}
@@ -86,11 +83,7 @@ function handleInvalid({ target }) {
     <slot />
   </select>
   <div class="suil-placeholder" />
-  {#if readonly}
-    <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
-  {:else}
-    <div class="suil-input-icon"><Icon C={ChevronSortIcon} /></div>
-  {/if}
+  <div class="suil-input-icon"><Icon C={ChevronSortIcon} /></div>
 </Field>
 
 <style>
