@@ -4,6 +4,7 @@
   * Code slot alternative input
   * fix Field Button sizes
   * Select drop readonly prop
+  * Code, Dump copy prop (default: true)
 
 # 0.9.0 (2023-06-20)
 

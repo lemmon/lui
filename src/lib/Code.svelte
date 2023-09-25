@@ -4,6 +4,8 @@ import CopyButton from './CopyButton.svelte'
 
 /** @type {string} */
 export let code = undefined
+/** @type {boolean} */
+export let copy = true
 /** @type {string} */
 export let size = undefined
 /** @type {null | "ghost" | "boxed"} */
@@ -22,7 +24,9 @@ export let kind = options.codeKind
   style={$$props.style}
 >
   <pre><code><slot>{code}</slot></code></pre>
-  <div><CopyButton text={code} color="current" kind="ghost" /></div>
+  {#if copy}
+    <div><CopyButton text={code} color="current" kind="ghost" /></div>
+  {/if}
 </div>
 
 <style>
