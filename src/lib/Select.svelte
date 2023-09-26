@@ -83,7 +83,7 @@ function handleInvalid({ target }) {
     <slot />
   </select>
   <div class="suil-placeholder" />
-  <div class="suil-input-icon"><Icon C={ChevronSortIcon} /></div>
+  <div class="suil-field__icon"><Icon C={ChevronSortIcon} /></div>
 </Field>
 
 <style>
@@ -127,9 +127,5 @@ function handleInvalid({ target }) {
 .suil-placeholder {
   box-sizing: border-box;
   flex: 1;
-}
-
-.suil-input-icon {
-  padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 </style>

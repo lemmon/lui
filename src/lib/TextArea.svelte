@@ -123,7 +123,7 @@ function handleInvalid({ target }) {
     />
   </div>
   {#if readonly}
-    <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
+    <div class="suil-field__icon"><Icon C={EditOffIcon} /></div>
   {/if}
 </Field>
 
@@ -184,9 +184,5 @@ function handleInvalid({ target }) {
 
 .suil-counter {
   margin-left: auto;
-}
-
-.suil-input-icon {
-  padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 </style>

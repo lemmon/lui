@@ -132,7 +132,7 @@ function handleVisibilityToggle() {
     bind:this={control}
   />
   {#if readonly}
-    <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
+    <div class="suil-field__icon"><Icon C={EditOffIcon} /></div>
   {:else if controls}
     <div class="suil-input-controls">
       <Button type="button" min size="sm" color="current" kind="ghost" {disabled} on:click={handleVisibilityToggle}
@@ -186,14 +186,10 @@ function handleVisibilityToggle() {
   margin-left: auto;
 }
 
-.suil-input-icon,
+.suil-field__icon,
 .suil-input-controls {
   position: absolute;
   right: 0;
-}
-
-.suil-input-icon {
-  padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 
 .suil-input-controls {

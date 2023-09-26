@@ -178,7 +178,7 @@ function handleInvalid({ target }) {
     bind:value
   />
   {#if readonly}
-    <div class="suil-input-icon"><Icon C={EditOffIcon} /></div>
+    <div class="suil-field__icon"><Icon C={EditOffIcon} /></div>
   {:else if controls}
     <div class="suil-input-controls">
       <Button type="button" min color="current" kind="ghost" {disabled} on:click={handleMinus}
@@ -236,10 +236,6 @@ function handleInvalid({ target }) {
   width: 0;
   z-index: -1;
   visibility: hidden;
-}
-
-.suil-input-icon {
-  padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 
 .suil-input-controls {

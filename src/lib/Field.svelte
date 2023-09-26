@@ -126,12 +126,12 @@ const id = 'suil-' + uid()
   cursor: not-allowed;
 }
 
-.suil-field--disabled :global(.suil-input-icon) {
+.suil-field--disabled :global(.suil-field__icon) {
   color: var(--suil-gray);
   opacity: 0.5;
 }
 
-.suil-field__icon {
+.suil-field :global(.suil-field__icon) {
   padding: calc(var(--suil-size) - var(--suil-border-width));
 }
 
