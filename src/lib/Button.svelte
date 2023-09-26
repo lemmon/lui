@@ -55,7 +55,7 @@ export let loading = false
     on:mouseenter
     on:mouseleave
   >
-    <span class="suil-button__label"><slot /></span>
+    <span class="suil-button__label" style:justify-content={justify}><slot /></span>
     {#if loading}
       <span class="suil-button__loader" />
     {/if}
