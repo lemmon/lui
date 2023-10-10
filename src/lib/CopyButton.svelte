@@ -46,4 +46,5 @@ function handleCopy() {
   on:mouseleave
 >
   <Icon C={!copied ? CopyIcon : CheckmarkIcon} />
+  <slot />
 </Button>

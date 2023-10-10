@@ -1,3 +1,7 @@
+# 0.11.0 (2023-XX-XX)
+
+  * CopyButton label slot
+
 # 0.10.0 (2023-09-27)
 
   * Field align {"start" | "end" | "left" | "right" | "center"}
