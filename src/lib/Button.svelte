@@ -187,7 +187,7 @@ export let loading = false
 
 .suil-button--ul:not(:disabled, .suil-button--disabled) .suil-button__label,
 .suil-button--ul\:hover:hover:not(:disabled, .suil-button--disabled) .suil-button__label {
-  text-decoration: underline;
+  text-decoration: var(--suil-underline);
 }
 
 .suil-button:focus:not(:disabled, .suil-button--disabled) {

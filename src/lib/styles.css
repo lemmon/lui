@@ -4,6 +4,8 @@
   --suil-font-weight: normal;
   --suil-line-height: 20px;
 
+  --suil-underline: underline;
+
   --suil-code-font-family: JetBrains Mono, JetBrainsMono, Menlo, Consolas, Monaco, Lucida Console, monospace;
   --suil-code-font-size: var(--suil-font-size);
   --suil-code-font-weight: var(--suil-font-weight);

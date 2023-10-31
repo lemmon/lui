@@ -100,6 +100,6 @@ const nav = [
 <style>
 .active {
   color: var(--suil-color-primary);
-  text-decoration: underline var(--suil-color-primary);
+  text-decoration: var(--suil-underline);
 }
 </style>

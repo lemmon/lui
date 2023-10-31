@@ -2,6 +2,7 @@
 
   * CopyButton label slot
   * font weight `--suil-font-weight` and `--suil-code-font-weight`
+  * underline style `--suil-underline`
 
 # 0.10.0 (2023-09-27)
 
