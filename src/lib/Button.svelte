@@ -134,7 +134,7 @@ export let loading = false
   font-stretch: normal;
   font-style: normal;
   font-variant: normal;
-  font-weight: normal;
+  font-weight: var(--suil-font-weight);
   line-height: var(--suil-line-height);
   text-decoration: none;
   text-align: left;

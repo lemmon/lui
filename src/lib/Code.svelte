@@ -33,9 +33,6 @@ export let kind = options.codeKind
 .suil-code {
   --suil-button-size: min(var(--suil-size-sm), calc(var(--suil-size) - 3px));
   box-sizing: border-box;
-  font-family: var(--suil-code-font-family);
-  font-size: var(--suil-code-font-size);
-  line-height: var(--suil-code-line-height);
   background-color: var(--suil-shade);
   display: flex;
   flex-direction: row;
@@ -46,6 +43,14 @@ export let kind = options.codeKind
   border-radius: var(--suil-border-radius);
   padding: var(--suil-border-width);
   overflow: clip;
+  font-family: var(--suil-code-font-family);
+  font-size: var(--suil-code-font-size);
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: var(--suil-code-font-weight);
+  line-height: var(--suil-code-line-height);
+  text-align: inherit;
 }
 
 .suil-code :global(.suil-button) {
