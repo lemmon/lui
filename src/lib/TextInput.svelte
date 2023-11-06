@@ -59,22 +59,12 @@ $: if (control && invalid) {
 // events
 
 function handleInput({ target }) {
-  value = target.value || (nullable ? null : target.value)
+  value = target.value
+  if (trim) value = value.trim()
+  if (nullable && !value) value = null
 }
 
 function handleBlur({ target }) {
-  // sanitize value
-  const origValue = target.value
-  if (trim) target.value = target.value.trim()
-  if (nullable && !target.value) target.value = null
-  if (value !== origValue) {
-    target.dispatchEvent(
-      new CustomEvent('input', {
-        bubbles: true,
-        cancelable: true,
-      })
-    )
-  }
   // check validity
   target.checkValidity()
 }
