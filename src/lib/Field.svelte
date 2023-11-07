@@ -85,7 +85,7 @@ const id = 'suil-' + uid()
 }
 
 .suil-field {
-  --suil-button-size: min(var(--suil-size-sm), calc(var(--suil-size) - 3px));
+  --suil-button-size: clamp(var(--suil-border-width), calc(var(--suil-size) - 4px), var(--suil-size-sm));
   display: block;
   background-color: var(--suil-shade);
   color: var(--suil-text);

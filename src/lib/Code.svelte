@@ -31,7 +31,7 @@ export let kind = options.codeKind
 
 <style>
 .suil-code {
-  --suil-button-size: min(var(--suil-size-sm), calc(var(--suil-size) - 3px));
+  --suil-button-size: clamp(var(--suil-border-width), calc(var(--suil-size) - 4px), var(--suil-size-sm));
   box-sizing: border-box;
   background-color: var(--suil-shade);
   display: flex;
