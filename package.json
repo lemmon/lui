@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "suil",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "dependencies": {
     "carbon-icons-svelte": "~11.4.0",
     "uid": "~2.0.0"
