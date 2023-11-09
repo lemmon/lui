@@ -41,7 +41,9 @@ export let nullable = options.nullable
 /** @type {boolean} */
 export let trim = options.trim
 
+let inputValue
 let control
+let focused = false
 let invalid
 
 // update validity
@@ -57,12 +59,19 @@ $: if (control && invalid) {
 // events
 
 function handleInput({ target }) {
-  value = target.value
+  inputValue = value = target.value
   if (trim) value = value.trim()
   if (nullable && !value) value = null
 }
 
+function handleFocus() {
+  focused = true
+  inputValue = control.value
+}
+
 function handleBlur({ target }) {
+  focused = false
+  inputValue = undefined
   // check validity
   target.checkValidity()
 }
@@ -90,7 +99,7 @@ function handleInvalid({ target }) {
       >{/if}</svelte:fragment
   >
   <div class="suil-textarea" style="--suil-min-lines: {minlines};">
-    <div class="suil-preview">{value || ''}.</div>
+    <div class="suil-preview">{inputValue || value || ''}.</div>
     <textarea
       {id}
       class="suil-control"
@@ -101,8 +110,9 @@ function handleInvalid({ target }) {
       {required}
       {readonly}
       {disabled}
-      value={value || ''}
+      value={inputValue || value || ''}
       on:input={handleInput}
+      on:focus={handleFocus}
       on:blur={handleBlur}
       on:invalid|preventDefault={handleInvalid}
       on:focus
