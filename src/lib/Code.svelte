@@ -23,7 +23,7 @@ export let kind = options.codeKind
   class:suil-xl={size === 'xl'}
   style={$$props.style}
 >
-  <pre><code><slot>{code}</slot></code></pre>
+  <pre><code>{code}</code></pre>
   {#if copy}
     <div><CopyButton text={code} color="current" kind="ghost" /></div>
   {/if}
