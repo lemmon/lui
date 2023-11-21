@@ -207,7 +207,7 @@ export let loading = false
   )
   .suil-button__label {
   color: var(--suil-text);
-  opacity: 60%;
+  opacity: 50%;
 }
 
 .suil-button:is(:disabled, .suil-button--disabled):not(.suil-button--loading) {
