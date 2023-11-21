@@ -15,6 +15,8 @@ export let placeholder = undefined
 /** @type {string} */
 export let pattern = undefined
 /** @type {string} */
+export let autocomplete = undefined
+/** @type {string} */
 export let label = undefined
 /** @type {string} */
 export let info = undefined
@@ -107,6 +109,7 @@ function handleInvalid({ target }) {
     {name}
     {placeholder}
     {pattern}
+    {autocomplete}
     {minlength}
     {maxlength}
     {required}

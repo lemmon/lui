@@ -1,6 +1,7 @@
 # 0.12.0 (2023-XX-XX)
 
   * remove Code alternative input via slot
+  * autocomplete prop
 
 # 0.11.0 (2023-11-07)
 

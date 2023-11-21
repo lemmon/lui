@@ -11,6 +11,8 @@ export let value = undefined
 /** @type {string} */
 export let placeholder = undefined
 /** @type {string} */
+export let autocomplete = undefined
+/** @type {string} */
 export let label = undefined
 /** @type {string} */
 export let info = undefined
@@ -105,6 +107,7 @@ function handleInvalid({ target }) {
       class="suil-control"
       {name}
       {placeholder}
+      {autocomplete}
       {minlength}
       {maxlength}
       {required}
