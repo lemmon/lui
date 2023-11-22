@@ -17,6 +17,8 @@ export let placeholder = undefined
 export let pattern = undefined
 /** @type {string} */
 export let autocomplete = undefined
+/** @type {string|boolean} */
+export let autofocus = undefined
 /** @type {string} */
 export let label = undefined
 /** @type {string} */
@@ -84,6 +86,7 @@ function handleVisibilityToggle() {
 }
 </script>
 
+<!-- svelte-ignore a11y-autofocus -->
 <Field
   class={$$props.class}
   style={$$props.style}
@@ -109,6 +112,7 @@ function handleVisibilityToggle() {
     {placeholder}
     {pattern}
     {autocomplete}
+    {autofocus}
     {minlength}
     {maxlength}
     {required}

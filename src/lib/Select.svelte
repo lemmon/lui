@@ -12,6 +12,8 @@ export let value = undefined
 export let placeholder = undefined
 /** @type {string} */
 export let autocomplete = undefined
+/** @type {string|boolean} */
+export let autofocus = undefined
 /** @type {string} */
 export let label = undefined
 /** @type {string} */
@@ -54,6 +56,7 @@ function handleInvalid({ target }) {
 }
 </script>
 
+<!-- svelte-ignore a11y-autofocus -->
 <Field
   class={$$props.class}
   style={$$props.style}
@@ -72,6 +75,7 @@ function handleInvalid({ target }) {
     {name}
     {placeholder}
     {autocomplete}
+    {autofocus}
     {required}
     {disabled}
     on:blur={handleBlur}

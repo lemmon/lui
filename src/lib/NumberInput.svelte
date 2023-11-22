@@ -14,6 +14,8 @@ export let name = undefined
 export let value = undefined
 /** @type {string} */
 export let placeholder = undefined
+/** @type {string|boolean} */
+export let autofocus = undefined
 /** @type {string} */
 export let label = undefined
 /** @type {string} */
@@ -136,6 +138,7 @@ function handleInvalid({ target }) {
 }
 </script>
 
+<!-- svelte-ignore a11y-autofocus -->
 <Field
   class={$$props.class}
   style={$$props.style}
@@ -153,6 +156,7 @@ function handleInvalid({ target }) {
     class="suil-control"
     {name}
     {placeholder}
+    {autofocus}
     {readonly}
     {disabled}
     value={inputValue}

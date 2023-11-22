@@ -9,6 +9,8 @@ export let href = undefined
 export let target = undefined
 /** @type {string} */
 export let rel = undefined
+/** @type {string|boolean} */
+export let autofocus = undefined
 /** @type {string} */
 export let color = 'primary'
 /** @type {string} */
@@ -27,9 +29,11 @@ export let disabled = false
 export let loading = false
 </script>
 
+<!-- svelte-ignore a11y-autofocus -->
 {#if !href}
   <button
     {type}
+    {autofocus}
     disabled={disabled || loading}
     class="suil-button {$$props.class || ''}"
     class:suil-button--loading={loading}
@@ -65,6 +69,7 @@ export let loading = false
     {href}
     {target}
     {rel}
+    {autofocus}
     class="suil-button {$$props.class || ''}"
     class:suil-button--disabled={disabled === true}
     class:suil-button--primary={color === 'primary'}
@@ -93,6 +98,7 @@ export let loading = false
   </a>
 {:else}
   <span
+    {autofocus}
     class="suil-button suil-button--disabled {$$props.class || ''}"
     class:suil-button--primary={color === 'primary'}
     class:suil-button--secondary={color === 'secondary'}
