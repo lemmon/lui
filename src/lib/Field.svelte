@@ -69,6 +69,10 @@ const id = 'suil-' + uid()
   margin-top: 4px;
 }
 
+.suil-info:not(.suil-info--disabled, .suil-danger) {
+  color: var(--suil-info-color, currentColor);
+}
+
 .suil-info--disabled {
   color: var(--suil-gray);
   opacity: 50%;

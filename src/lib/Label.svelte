@@ -18,6 +18,7 @@ export let disabled = undefined
   font-variant: normal;
   font-weight: var(--suil-font-weight);
   line-height: var(--suil-line-height);
+  color: var(--suil-label-color, currentColor);
 }
 
 .suil-label--disabled {

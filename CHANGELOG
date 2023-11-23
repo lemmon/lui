@@ -3,6 +3,7 @@
   * remove Code alternative input via slot
   * autocomplete prop
   * autofocus prop
+  * color props `--suil-label-color`, `--suil-info-color`
 
 # 0.11.0 (2023-11-07)
 
