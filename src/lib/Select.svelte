@@ -1,6 +1,7 @@
 <script>
 import ChevronSortIcon from 'carbon-icons-svelte/lib/ChevronSort.svelte'
 import EditOffIcon from 'carbon-icons-svelte/lib/EditOff.svelte'
+import options from './options'
 import Icon from './Icon.svelte'
 import Field from './Field.svelte'
 
@@ -30,8 +31,11 @@ export let kind = undefined
 export let size = undefined
 /** @type {"start" | "end" | "left" | "right" | "center"} */
 export let align = undefined
+/** @type {boolean} */
+export let validateTouched = options.validateTouched
 
 let control
+let changed = false
 let invalid
 
 // update validity
@@ -46,9 +50,15 @@ $: if (control && invalid) {
 
 // events
 
+function handleInput() {
+  changed = true
+}
+
 function handleBlur({ target }) {
   // check validity
-  target.checkValidity()
+  if (changed || validateTouched) {
+    target.checkValidity()
+  }
 }
 
 function handleInvalid({ target }) {
@@ -78,6 +88,7 @@ function handleInvalid({ target }) {
     {autofocus}
     {required}
     {disabled}
+    on:input={handleInput}
     on:blur={handleBlur}
     on:invalid|preventDefault={handleInvalid}
     on:focus

@@ -44,10 +44,13 @@ export let kind = undefined
 export let size = undefined
 /** @type {"start" | "end" | "left" | "right" | "center"} */
 export let align = undefined
+/** @type {boolean} */
+export let validateTouched = options.validateTouched
 
 let inputValue = valueFormatted(value)
 let control
 let focused = false
+let changed = false
 let invalid
 
 // update validity
@@ -75,11 +78,13 @@ function valueFormatted(value) {
 function increaseValue() {
   if (max && value >= max) return
   value = parseFloat(((value || 0) + ((step && parseFloat(step)) || 1)).toFixed(dec))
+  changed = true
 }
 
 function decreaseValue() {
   if (min && value <= min) return
   value = parseFloat(((value || 0) - ((step && parseFloat(step)) || 1)).toFixed(dec))
+  changed = true
 }
 
 // events
@@ -88,6 +93,7 @@ function handleInput({ target }) {
   value = target.value.replace(/\s+/, '').replaceAll(options.thousandsSep, '').replace(options.decPoint, '.')
   value = parseFloat(value)
   value = !isNaN(value) ? value : null
+  changed = true
 }
 
 function handleKeydown(e) {
@@ -130,7 +136,9 @@ function handleFocus() {
 function handleBlur() {
   focused = false
   // check validity
-  control.checkValidity()
+  if (changed || validateTouched) {
+    control.checkValidity()
+  }
 }
 
 function handleInvalid({ target }) {

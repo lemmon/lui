@@ -46,10 +46,13 @@ export let counter = false
 export let nullable = options.nullable
 /** @type {boolean} */
 export let trim = options.trim
+/** @type {boolean} */
+export let validateTouched = options.validateTouched
 
 let inputValue
 let control
 let focused = false
+let changed = false
 let invalid
 
 // update validity
@@ -68,6 +71,7 @@ function handleInput({ target }) {
   inputValue = value = target.value
   if (trim) value = value.trim()
   if (nullable && !value) value = null
+  changed = true
 }
 
 function handleFocus() {
@@ -79,7 +83,9 @@ function handleBlur({ target }) {
   focused = false
   inputValue = undefined
   // check validity
-  target.checkValidity()
+  if (changed || validateTouched) {
+    target.checkValidity()
+  }
 }
 
 function handleInvalid({ target }) {
