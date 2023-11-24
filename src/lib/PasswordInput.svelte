@@ -51,8 +51,9 @@ export let nullable = options.nullable
 export let trim = options.trim
 /** @type {boolean} */
 export let validateTouched = options.validateTouched
+/** @type {boolean} */
+export let visible = false
 
-let visible = false
 let control
 let changed = false
 let invalid

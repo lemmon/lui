@@ -5,6 +5,7 @@
   * autofocus prop
   * validateTouched porp (default: false)
   * color props `--suil-label-color`, `--suil-info-color`
+  * PasswordInput visible prop
 
 # 0.11.0 (2023-11-07)
 
