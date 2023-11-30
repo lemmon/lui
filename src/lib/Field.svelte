@@ -8,7 +8,7 @@ export let disabled = false
 export let size = undefined
 export let info = undefined
 export let error = undefined
-/** @type {null | "underlined" | "ghost" | "boxed"} */
+/** @type {"underlined" | "ghost" | "boxed" | "unboxed"} */
 export let kind = options.fieldKind
 /** @type {"start" | "end" | "left" | "right" | "center"} */
 export let align = undefined
@@ -29,6 +29,7 @@ const id = 'suil-' + uid()
     class:suil-field--underlined={kind === 'underlined'}
     class:suil-field--ghost={kind === 'ghost'}
     class:suil-field--boxed={kind === 'boxed'}
+    class:suil-field--unboxed={kind === 'unboxed'}
     class:suil-xs={size === 'xs'}
     class:suil-sm={size === 'sm'}
     class:suil-md={size === 'md'}
