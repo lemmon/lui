@@ -141,7 +141,7 @@ const id = 'suil-' + uid()
 }
 
 .suil-field--error:not(.suil-field--disabled),
-.suil-field:focus-within {
+.suil-field:not(.suil-field--unboxed):focus-within {
   border-width: var(--suil-border-width);
   border-style: solid;
   border-color: var(--suil-focus-color);

@@ -7,7 +7,7 @@ const options = {
   thousandsSep: ',',
   iconSize: 16,
   fieldKind: 'boxed',
-  codeKind: null,
+  codeKind: 'unboxed',
 }
 
 export default options

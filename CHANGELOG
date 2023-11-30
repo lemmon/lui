@@ -7,6 +7,7 @@
   * color props `--suil-label-color`, `--suil-info-color`
   * PasswordInput visible prop
   * Field kind "unboxed"
+  * wrap Code and Dump using Field
 
 # 0.11.0 (2023-11-07)
 
