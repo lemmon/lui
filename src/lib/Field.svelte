@@ -22,7 +22,7 @@ const id = 'suil-' + uid()
       >{#if label}<Label {id} {disabled}>{label}</Label>{/if}<slot name="header" /></div
     >
   {/if}
-  <label
+  <div
     class="suil-field"
     class:suil-field--error={!!error}
     class:suil-field--disabled={disabled}
@@ -42,7 +42,7 @@ const id = 'suil-' + uid()
     class:suil-align-center={align === 'center'}
   >
     <div class="suil-field__inner"><slot {id} /></div>
-  </label>
+  </div>
   {#if error && typeof error === 'string'}
     <div class="suil-info suil-danger" class:suil-info--disabled={disabled}>{error}</div>
   {:else if info}
